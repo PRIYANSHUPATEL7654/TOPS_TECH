@@ -40,3 +40,6 @@ values
 
 select * from dept;
 select * from emp;
+
+-- always use primary key value after where clause
+update emp set salary = 303000.40 where emp_id = 18;
