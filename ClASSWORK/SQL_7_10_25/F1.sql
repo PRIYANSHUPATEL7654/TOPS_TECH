@@ -135,3 +135,151 @@ select * from employee_ where ename like "__n__";
 
 -- Display name of employees whose name contains second last letter y 
 select * from employee_ where ename like "%y_";
+
+-- 22/11/25
+
+-- Display the records ascending to city 
+select * from employee_ order by city,ename;
+
+-- Dsiplay the recored decending wise ename 
+select * from employee_ order by ename desc;
+
+-- Display employee details with department name 
+
+select employee_.dept_id,ename,city,email,dept_name from employee_,department  
+where department.dept_id=employee_.dept_id;
+
+
+-- Dsiplay maximum salary from employee master
+select max(salary) from employee_;
+
+-- Display Average and maxium of salary 
+select avg(salary) as 'Average salary',max(salary) as 'maximum salary' from employee_;
+
+-- Display how many employees 
+select count(*) from employee_;
+
+-- Left Join 
+select ename,email,salary,employee_.dept_id from employee_ left join department on
+employee_.dept_id=department.dept_id;
+
+-- right join
+select ename,email,salary,employee_.dept_id from employee_ right join department on
+employee_.dept_id=department.dept_id;
+
+-- Display sum of salary in each department 
+
+select dept_name,sum(salary) from employee_, department where department.dept_id=employee_.dept_id
+group by employee_.dept_id;
+
+-- Find max salary in each department
+select dept_name,max(salary) from employee_, department where department.dept_id=employee_.dept_id
+group by employee_.dept_id;
+
+
+update employee_ set salary=12000 where e_id= 25;
+
+select * from employee_ ;
+
+-- 25/11/25
+
+-- having clause
+-- fetch records whose dept have more than 2 emp
+select dept_name, count(*) from employee_, department where department.dept_id = employee_.dept_id group by department.dept_id having count(*) <= 2;
+
+-- sub queries
+select ename,salary from employee_ where salary > (select avg(salary) from employee_) order by ename;
+
+-- select ename,salary,dept_name from employee_,department where salary > (select avg(salary) from employee_ where department.dept_id = employee_.dept_id) group by department.dept_id;
+
+-- 27/11/25
+
+    
+insert into department 
+values 
+(5,"higher networking");
+
+-- fetch dept in which there is no employee
+select dept_id,dept_name from department where dept_id not in (select dept_id from employee_);
+
+-- fetch dept which has more than 2 employees
+select d.dept_id,dept_name from department d,employee_ where 2 < (select count(*) from employee_ where d.dept_id = employee_.dept_id group by employee_.dept_id);
+
+-- view
+-- 29/11/25
+select concat(ename," ",city) as name_city from employee_;
+
+select upper(city) from employee_;
+
+select replace(ename,"Aarav","aarush") from employee_;
+
+select subsrting(ename,1,5) from employee_;
+
+select * from student;
+alter table student add birth_date date;
+
+insert into student values(1,"PSP",111111,"p@gmail.com","2001-12-12"),
+(2,"SSP",222222,"s@gmail.com","2002-10-13"),
+(3,"DSP",112121,"d@gmail.com","2003-08-14");
+
+select month(birth_date) from student;
+
+insert into student values(4,"ASP",112221,"a@gmail.com",curdate());
+
+select * from employee_;
+
+select ceil(salary) from employee_;
+
+select floor(salary) from employee_;
+
+select power(salary,0.5) from employee_;
+
+Delimiter $$
+create function get_full_name(emp_name varchar(20), emp_surname varchar(20))
+returns varchar(50)
+deterministic
+begin
+	return concat(emp_name," ",emp_surname);
+end$$
+
+select get_full_name(ename,salary) as name_city from employee_;
+
+-- 2/12/25
+
+Delimiter &&
+create function getTotalDeptSalary(deptid int) 
+returns int
+reads sql data
+begin
+	declare total_salary int;
+    select sum(salary) into total_salary from employee_ where dept_id = deptid;
+	return total_salary;
+end&&
+
+select getTotalDeptSalary(2);
+select sum(salary) from employee_ group by dept_id;
+
+Delimiter &&
+create function calculateSalaryWithDA(salary1 decimal(7,2), incre decimal(4,2))
+returns decimal(8,5)
+deterministic
+begin
+	declare incre_salary decimal(8,5);
+    set incre_salary = salary1 + (salary1 * incre);
+    return incre_salary;
+end&&
+
+ drop function calculateSalaryWithDA;
+    
+select calculateSalaryWithDA(salary,0.5) from employee_;
+
+select * from employee_
+Delimiter &&
+create procedure GetEmployeesByDepartment(d_name varchar(20))
+begin
+	select ename,city,salary from employee_, department where employee_.dept_id = department.dept_id and dept_name = d_name;
+end&&
+    
+drop procedure GetEmployeesByDepartment;
+
+call GetEmployeesByDepartment("Networking");
