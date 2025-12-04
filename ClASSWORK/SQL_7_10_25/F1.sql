@@ -283,3 +283,45 @@ end&&
 drop procedure GetEmployeesByDepartment;
 
 call GetEmployeesByDepartment("Networking");
+
+-- 4/12/25
+
+Delimiter &&
+create function calculateSalaryWithDAHRA(salary1 decimal(7,2), incre decimal(4,2),HRA decimal(4,2))
+returns decimal(8,5)
+deterministic
+begin
+	declare incre_salary decimal(8,5);
+    set incre_salary = salary1 + (salary1 * incre) + (salary1 * HRA);
+    return incre_salary;
+end&&
+
+ drop function calculateSalaryWithDAHRA;
+    
+select calculateSalaryWithDAHRA(salary,0.5,0.2) from employee_;
+
+-- get total employees by department using procedure
+delimiter &&
+create procedure GetTotalEmpByDepartment(dept_name varchar(20), out total_emp int)
+begin
+	select count(e_id) into total_emp from employee_ e, department d 
+	where e.dept_id = d.dept_id
+	and d.dept_name = dept_name group by d.dept_id;
+end&&
+
+select * from employee_;
+drop procedure GetTotalEmpByDepartment;
+
+call GetTotalEmpByDepartment("IT", @total_employees);
+select @total_employees;
+
+-- insert values using procedure
+delimiter &&
+create procedure insertValues(dept_id int, dept_name varchar(20))
+begin
+	insert into department values (dept_id,dept_name);
+end&&
+
+select * from department;
+
+call insertValues(11,"Products");
