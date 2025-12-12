@@ -400,4 +400,4 @@ if(salary > 80000, "Good Salary",
 from employee_;
 
 -- if salary is greater than 50000 leave it as it is otherwise update the salary by adding 10000 in it.
--- update employee_ set salary = if(salary > 50000,salary,salary + 10000)
+-- update employee_ set salary = if(salary > 50000,salary,salary + 10000);
