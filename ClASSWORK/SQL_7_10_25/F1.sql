@@ -399,4 +399,5 @@ if(salary > 80000, "Good Salary",
 	if(salary > 50000,"Average Salary", "Low Salary")) 
 from employee_;
 
-update employee_ set salary = if(salary > 50000,salary,salary + 10000)
+-- if salary is greater than 50000 leave it as it is otherwise update the salary by adding 10000 in it.
+-- update employee_ set salary = if(salary > 50000,salary,salary + 10000)
