@@ -88,7 +88,7 @@ VALUES
 describe employee_;
 select * from employee_;
 
-SET SQL_SAFE_UPDATES = 1; -- 0 MEANS OFF AND 1 MEANS ON
+SET SQL_SAFE_UPDATES = 0; -- 0 MEANS OFF AND 1 MEANS ON
 update employee_ set salary = 30000 where e_id = 25;
 
 -- 20/11/2025
@@ -325,3 +325,78 @@ end&&
 select * from department;
 
 call insertValues(11,"Products");
+
+-- 6/12/25
+
+-- TRIGGERS : SQL triggers are stored procedures that automatically execute in response to certain events in a specific table or view in a database
+create table employee_backup(eid int, insert_date date)
+
+delimiter &&
+create trigger emp_insert_record
+after insert 
+on employee_
+for each row
+begin
+	insert into employee_backup values (new.e_id,now());
+end&&
+
+select * from employee_;
+
+insert into employee_ values ('Aarvi', 'Ahmedabad', 50000.20, 'aarvi@ex.com', 3);
+
+create table employee_backup2 (ename varchar(20), city varchar(20), currentdate date);
+
+delimiter &&
+create trigger emp_delete_record
+before delete
+on employee_
+for each row
+begin
+	insert into employee_backup2 values (old.ename, old.city, now());
+end&&
+
+select * from employee_backup2;
+
+delete from employee_ where ename = "Riya";
+
+delimiter &&
+create trigger inserted
+after insert
+on employee_
+for each row
+begin
+	insert into employee_backup3(message)
+    values ("Inserted Successfully");
+end&&
+
+drop trigger inserted;
+
+delimiter &&
+create trigger deleted
+after delete
+on employee_
+for each row
+begin
+	insert into employee_backup3(message)
+    values ("Deleted Successfully");
+end&&
+
+drop trigger deleted;
+
+create table employee_backup3 (message varchar(50), currentdate date);
+
+insert into employee_ values (101,'Ravi', 'Ahmedabad', 60000.20, 'ravi@ex.com', 4);
+
+delete from employee_ where ename = "Ravi";
+
+select * from employee_backup3;
+
+-- 9/12/25
+
+-- if/else
+select ename, salary, 
+if(salary > 80000, "Good Salary", 
+	if(salary > 50000,"Average Salary", "Low Salary")) 
+from employee_;
+
+update employee_ set salary = if(salary > 50000,salary,salary + 10000)
