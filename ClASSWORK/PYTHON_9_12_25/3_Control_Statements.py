@@ -54,7 +54,7 @@ match month:
     case _ : print("Please enter valid day")
 
 # 2) For
-
+# (for i in range()) is for digits and (for i in ) is for strings
 for a in range (10):
     print(f"{a}")
 start = int(input("Enter starting position : "))
@@ -160,6 +160,8 @@ while i<=10:
     if(i==3):
         continue
     print(i)
+
+# 6) Pass
 
 # 23/12/25
 

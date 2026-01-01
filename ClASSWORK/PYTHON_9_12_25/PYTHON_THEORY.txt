@@ -1,0 +1,19 @@
+types of language
+1. oops : partial oop : python, fully oop
+2. procedural : c : top to bottom
+3. markup : tag based: html, xml
+4. modelling : uml(unified modeling language)
+
+interpreted :The code is executed line by line by an interpreter at runtime, instead of being compiled all at once before execution.code converted to byte code(python is machine dependent but its byte code is machine independent)
+robust : error and exception handling(error can be solved but exception cannot be solved)
+
+try {our code}
+catch { exception handling}
+finally {will execute irrespective of exception}
+variable 
+datatype : primitive datatype (can store only 1 value at a time), non primitive datatype(can store multiple data at a time)
+function : inbuilt, user defined, made without class and object, called by itself
+method : inbuilt, user defined, made within class and object, called by making an object of a class
+defination for function and method : collection of code that will be used for a particular task
+
+call back : calling a function via another function parameter

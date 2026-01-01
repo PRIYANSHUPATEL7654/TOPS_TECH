@@ -101,6 +101,7 @@ print(f"{c is a}") # or a is c both are same
 
 # 8) Ternary
 e = 10
+result = "Positive" if e > 0 else "Negative" 
 if e > 0:
     print(f"{e} is positive")
 elif e == 0:
