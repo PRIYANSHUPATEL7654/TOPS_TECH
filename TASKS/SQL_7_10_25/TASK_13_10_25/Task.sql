@@ -1,4 +1,4 @@
--- in psp database
+USE PSP;
 
 create table dept(dept_id int primary key auto_increment, dept_name varchar(20));
 
