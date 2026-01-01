@@ -18,7 +18,7 @@ select * from student; -- to show all the values of the table
 -- 2) Unique key : same as primary key but can be more than one in the entire table
 -- 3) Not null : must have some value
 -- 4) Check : check the values (age<18)
--- 5) Foreign key : reference to another table(if a table A has id and if another table B also has id then)
+-- 5) Foreign key : reference to another table(if a table A has id and if another table B also has id then one id is primary key and another is made foreign key to connect both)
 -- 6) Default : sets a default value
 
 create table department(dept_id int primary key auto_increment, dept_name varchar(20));
@@ -115,7 +115,7 @@ select ename, city, salary from employee_ where salary between 20000 and 70000;
 select * from employee_ where city in ("surat","ahmedabad");
 
 -- Fetch employees whose salary is 10000 and 20000 salary
-select ename, salary from employee_ where salary in (52000,45000);
+select ename, salary from employee_ where salary in (52000,22000);
 
 -- Display name of employees whose name starts with R
 select * from employee_ where ename like "R%";
