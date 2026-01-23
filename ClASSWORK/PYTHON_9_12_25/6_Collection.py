@@ -6,7 +6,42 @@
 # Set{} : Unordered, mutable collection that does not allow duplicate elements.
 # Dictionary{key:value} : Ordered, mutable collection that stores data in key–value pairs with unique keys.
 
-# 1) LIST []
+# Common methods/functions for all 4 :
+# 1) max() : Returns the largest element from an iterable
+# 2) min() : Returns the smallest element from an iterable
+# 3) sorted() : Returns a new sorted list
+# 4) len() : Returns number of elements
+# 5) sum() : Returns total of elements (numeric only)
+# 6) any() : Returns True if any element is true
+# 7) all() : Returns True if all elements are true
+# 8) zip() : It is a function that combines multiple iterables element-wise into tuples
+
+# Below methods/functions not common for all 4 :
+# 1) append() : Tuple & dict don’t support it
+# 2) remove() : Tuple is immutable
+# 3) pop() : Different behavior in dict
+# 4) clear() : Tuple doesn’t support
+# 5) index() : Set & dict don’t support
+# 6) count() : Set & dict don’t support
+
+# 1) LIST [] : Ordered, Mutable, Duplicate elements
+
+# 1) append(x) : Adds an element x to the end of the list
+# 2) extend(iterable) : Adds multiple elements from another iterable
+# 3) insert(i, x) : Inserts element x at index i
+# 4) remove(x) : Removes first occurrence of value x
+# 5) pop(i) : Removes and returns element at index i (default: last)
+# 6) clear() : Removes all elements from the list
+# 7) index(x) : Returns index of first occurrence of x
+# 8) count(x) : Counts how many times x appears
+# 9) sort() : Sorts the list in ascending order
+# 10) reverse() : Reverses the list
+# 11) copy() : Returns a shallow copy of the list
+# 12) del : It is a keyword which deletes an element, slice, or entire object
+# 13) max() : Returns the largest element from an iterable
+# 14) min() : Returns the smallest element from an iterable
+# 15) zip() : It is a function that combines multiple iterables element-wise into tuples
+
 
 # Adding int values in list
 list = [1,"int",2,3,4]
@@ -124,7 +159,7 @@ list_city_6 = {'ahmedabad': 'Gandhinagar', 'baroda': 'Jaipur'}
 print(list(zip(*list_city_3)))
 print(tuple(zip(*list_city_4)))
 print(set(zip(*list_city_5)))
-print(dict(zip(*list_city_6))) # it only unzips the keys letter wise and also in letters if there is any duplicate values it automatically removes it and does not show in output
+print(dict(zip(*list_city_6))) # it only unzips the keys letter wise and also in letters if there is any duplicate key it automatically removes it and does not show in output
 list_city_7,list_city_8 = zip(*list_city_3)
 print(list(list_city_7))
 print(tuple(list_city_8))
@@ -154,7 +189,11 @@ list1 = ["ahmedabad","baroda","surat"]
 ans = [i.upper() for i in list1]
 print(ans)
 
-# 2) TUPLE ()
+# 2) TUPLE () : Ordered, Immutable, Duplicate elements
+
+# 1) count(x) : Counts occurrences of x
+# 2) index(x) : Returns index of first occurrence of x
+
 # faster than list as it is immutable (it cannot be changed)
 tuple_num = (1,22,333,4444,55555)
 print(tuple_num[1:4]) # gives element from index 1 to 3 (4th is excluded)
@@ -166,9 +205,32 @@ print(tuple_state_city[2][1])
 
 # 3/1/26
 
-# 3) SET {}
+# 3) SET {} : Unordered, Mutable, No Duplicate elements
 
-# does not allow a duplicate value
+# Adding and removing : 
+# 1) add(x) : Adds element x
+# 2) update(iterable) : Adds multiple elements
+# 3) remove(x) : Removes x (error if not found)
+# 4) discard(x) : Removes x (no error if not found)
+# 5) pop() : Removes and returns a random element
+# 6) clear() : Removes all elements
+
+# Set Operations :
+# 1) union(set2) : Returns all elements from both sets
+# 2) intersection(set2) : Returns common elements
+# 3) difference(set2) : Elements in first set but not second
+# 4) symmetric_difference(set2) : Elements in either set but not both
+
+# Update Versions :
+# 1) intersection_update(set2) : Keeps only common elements
+# 2) difference_update(set2) : Removes common elements
+# 3) symmetric_difference_update(set2) : Updates with non-common elements
+
+# Checking Methods :
+# 1) issubset(set2) : Checks if set is part of another
+# 2) issuperset(set2) : Checks if set contains another
+# 3) isdisjoint(set2) : True if no common elements
+
 lst = {} # it is by default a dictionary until we put values in set form
 lst = {1,2,3,4,1} # now it is a set
 print(lst)
@@ -194,7 +256,24 @@ print(num6)
 num6 = num1 | num2 | num3 # another way of union
 print(num6)
 
-# 4) DICTIONARY {}
+# 4) DICTIONARY {} : Ordered, Mutable, (No Duplicate key)-value pairs
+
+# Accessing & Updating :
+# 1) get(key) : Returns value of key (no error if missing)
+# 2) keys() : Returns all keys
+# 3) values() : Returns all values
+# 4) items() : Returns key-value pairs
+# 5) update(dict2) : Updates dictionary with another
+ 
+# Removing :
+# 1) pop(key) : Removes key and returns value
+# 2) popitem() : Removes and returns last inserted pair
+# 3) clear() : Removes all items
+
+# Other Useful Methods :
+# 1) copy() : Returns a shallow copy
+# 2) setdefault(key, default) : Returns value if key exists, else adds key with default
+# 3) fromkeys(keys, value) : Creates dictionary from keys
 
 dict1 = {1 : "ONE",2 : "TWO",3 : "THREE"} # KEY : VALUE
 # OR
