@@ -1,0 +1,159 @@
+sql :   request in frontend ---------------- response ---------------- server
+orm :   request - object ---------------- orm -------------------- server
+
+1. connection provider : check db conn, table
+2. session : orm will start session of current request
+3. session factory : as soon as session ends it goes in it
+4. transaction : whenever we insert or update or do any other operation it is known as transaction
+5. transaction factory : all chats stored in it
+
+request sent to 1, orm will start session of current request in 2
+
+caching : stores temp data such as login credentials and when user requests login it does not go to server , orm checks the data itself so the server does not get busy
+
+View : creating a virtual table of an existing table(the data in the virtual table maybe less than or equal to the original table
+should not do insert, update, delete as the new data will also be reflected in the original table, if we insert new data in the original table then it will also be reflected in the original table
+
+ACID PROPERTIES
+A - Atomicity : Either the operation is done fully, or it is completelty destroyed. When it is completed it is called commit and if destroyed then it is called rollback
+C - Consistency : After inserting, updating, deleting data (transaction) the table structure should not change
+I - Isolation : All transactions must happen independently (at the same time)
+D - Durability : If there is a crash in database or server ,all the transactions before the time of crash should be saved(backup) and it should not get lost
+
+NORMALIZATION : Normalization is a database design technique used to organize data efficiently by reducing redundancy (duplicate data) and avoiding data anomalies (insert, update, delete problems).
+Normalization full content : (https://chatgpt.com/share/69522248-e168-8010-a710-2814eccfaa59)
+
+JOINS
+Inner Join : common values of tables (can be applied to any number of tables in which there is relationship)
+Left Join : all records of left table and all common values of both tables (cannot be applied to more than 2 tables)
+Right Join : all records of right table and all common values of both tables (cannot be applied to more than 2 tables)
+Full Join : all records of tables (can be applied to any number of tables in which there is relationship)
+Cross Join : table A * table B - ALL UNIQUE VALUES FROM TABLE A AND B
+
+INDEXING
+1. default index - made by default in sql
+2. simple index - 1 column
+3. composite index - made on multiple columns
+4. unique - email, mobile
+
+PROCEDURES
+IN : TO INSERT AND UPDATE IN THE TABLE
+
+QUERY ARCHITECTURE: user query -> query parser -> query optimizer -> execution engine -> storage engine
+1) user query : select * from table
+2) query parser : check syntax of the query, if the query is wrong then it will not go further and show us the error in the query, otherwise if the query is right then it will go on to query optimizer
+3) query optimizer : checks if the query can be optimized or not, if there is no index generated then it will give output acc to it, if the index is generated then it will call the index for the output
+4) execution engine : it will give appropriate output of the query
+5) storage engine : all query will be stored in the cache
+
+SLOW QUERY : it may show errors like 
+-> ui load : first the ui gets load and then the data
+-> api time out : first the ui gets load and then the data but if the set time out is finished and the query is not completed then it shows this error
+-> db load : if the ram is filled more, then the db load error is more
+-> load : multiuser login per millisecond and access db (to check load we do load testing on db side and gradually increase the number of users like first we do with 1 lac users and if it works then we do with 2 lac users and do this until db crashes and at a certain point like for eg here 5 lac if db crashes then we get output of load testing that at a time 5 lac users can access db and not more than that)
+-> stress : we check the performance of the website(db) with increasing number of users till the load value. Eg start with 20k users and check performance and do the same process with 50k users then 1lac users and then in increasing manner upto 5 lac (considering 5 lac as the load value)
+-> volume : we check the performance of the website(db) with increasing stored data like firstly with 1gb data then 5gb data and then increasing data until it crashes.
+
+Apache jmeter : to check the performance and load testing of various services like web apps, db and apis.
+
+ALPHA, BETA, UNIT, INTEGRATION TESTING 
+-> alpha testing is done in company environment by developers outside the team or testers.
+-> beta testing can be done tester but it is done outside the company where beta version is given to users in some areas.
+-> unit testing(testing 1 functionality at a time(eg voice call)) is done by coder / (ai/ml) developer himself.
+-> integration testing(testing more than 1 functionality simultaneously(eg voice and video call both at the same time)) done by the code / (ai/ml) developer himself.
+
+AI/ML developer must know unit testing, integration testing, test cases, agile model development (scrum meeting / concall done daily)
+
+DATE FUNCTION
+-> to store data with date (year, month, date)
+
+After writing query we have 3 options as below
+ROLLBACK : if by chance a query is executed and stopped halfway due to some error then after solving the error when we re-execute the query then it should not start from the halfway where it stopped before and should start from the beginning
+COMMIT : to permanently store the query
+TRANSACTION : when the query is fired it is called transaction
+SAVE POINT : if we have kept save point at controller 2 out of 5 controllers (<- for eg) and if our query fails to execute fully then while again running query we can continue from the controller 2 where the save point is kept.
+
+MVC ARCHITECTURE
+Model : Database - MySQL
+View : Frontend - react/angular
+Controller : Logic - python (there can be more than one controllers as per our need and more the controller more is the safety)
+
+START TRANSACTION
+.
+.
+QUERY
+.
+.
+COMMIT 
+ROLLBACK
+
+EXCEPTION
+Abnormal condition in our code which disrupts normal execution of the code. It should be handled for normal flow
+
+ERROR VS EXCEPTION
+-> in error output doesn't come but in exception the output of the code till the exception is given
+-> error can be solved but exception should be handled as it cannot be solved
+
+TYPES OF EXCEPTION
+1. 
+
+TRY, CATCH, THROW, THROWS, FINALLY (keywords in exception)
+
+These keywords are supported in python exceptions
+TRY, EXCEPT, FINALLY, RAISE (Custom Exception)
+Try : Our code is written in try block
+Except : Exception is handled here
+Finally : Atlast this block of code is executed whether the exception occurs or not
+
+These parameters are passed to establish a connection between MySQL and python
+Username : root (default)
+Password : empty (default)
+DB Name : tops
+Localhost : server ip address is passed
+
+There is a class called cursor class which executes sql query in python
+
+FUNCTIONS VS METHODS
+-> in functional programming functions do not follow oops concept and in methods oops concept is followed
+-> function does not require object to do any task( execute() ) but method needs an object to call itself ( c.execute() )
+
+SQL INJECTION
+-> %s is used to prevent sql injection as user input is treated as data, not SQL code
+-> cursor class will set values as %s in query
+
+Python and MySQL integration : Basemodel -> MySQL -> table -> schema -> id name address
+MVC Architecture
+
+CONSTRUCTORS 
+-> Constructors exist in class and has same name as class name and is invoked automatically on object initialization (cursor c = new cursor()).
+
+EDA - Exploratory Data Analysis - sqsl store/ ai/ml training
+
+web scraper - cloud- scrap - dashboard
+
+-> 2 oultiers - drop or replace outlier - eg. if most of the values are between 5 to 45 and some are like 200,150, 0 then we will remove it or replace it. If the percentage of outlier is <= 1.5% of total data then we will remove it and if is more than that then we will replace it using mean/avg/middle values.
+-> After that we will remove duplicate rows (all the values of both rows are same including id).
+-> We call rows as features.
+-> After that we will split the table into 2 namely training and testing. We will train the model with 80% data and test that model on the 20% data. If the result is not accurate then we will take more data and do EDA on it like before for more accuracy.
+
+pip install mysql-connector-python
+eda - MySQL and python integration
+username, pass, host, db name- connect
+cursor class, sql execute
+%s sql injection prevent
+exception handling anti gravity
+xyz(la) sql-cursor
+
+API : Application Programming Language
+-> Language independent
+-> URL - Technically called as end point
+-> Eg, rest, soap
+-> REST : follows no protocol, can be called in low bandwidth, less secure than soap, supports all formats
+-> SOAP : follows protocol, requires high bandwidth, more secure than rest, only supports XML format
+-> Formats to write api : JSON (Java Script Object Notation), XML (Extensible Markup Language), html, xhtml, text
+
+get (select)
+post (insert)
+delete
+put/patch
+used in postman for testing

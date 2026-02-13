@@ -12,4 +12,11 @@ def fact(num):
         fact*=i
     return fact
 
+class C1:
+    def __init__(self):
+        pass
+
+    def display(self):
+        print("Inside display")
+
 # MATH,OS,SYS,RANDOM,DATETIME
