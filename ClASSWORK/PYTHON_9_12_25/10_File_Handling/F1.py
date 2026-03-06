@@ -88,7 +88,8 @@ user_data["age"] = int(input("Enter your age : "))
 user_data["city"] = input("Enter your city : ")
 
 user_data1 = ({"a":"b","c":"d"},{"e":"f","g":"h"}) # using [] or () brackets does not matter as it will always be stored in [] form
-# user_data2 = {"i":"j","k":"l"},{"l":"m","n":"o"} 
+# user_data2 = {"b" : {"a":"b","c":"d"},"c" : {"e":"f","g":"h"}} # this will save data as a dictionary
+# user_data3 = {"i":"j","k":"l"},{"l":"m","n":"o"} 
 with open("10_File_Handling\\user_data.json","w") as file1:
     # write the dictionary (here user_data) to the file in json format
     json.dump(user_data1,file1,indent=4)
