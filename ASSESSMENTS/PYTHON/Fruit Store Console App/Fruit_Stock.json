@@ -1,0 +1,14 @@
+{
+    "A": {
+        "quantity": 5,
+        "price": 35
+    },
+    "B": {
+        "quantity": 20,
+        "price": 50
+    },
+    "C": {
+        "quantity": 15,
+        "price": 45
+    }
+}
