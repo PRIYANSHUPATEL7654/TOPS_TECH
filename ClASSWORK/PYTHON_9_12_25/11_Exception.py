@@ -27,7 +27,7 @@ try:
     # print(dic["age"])
 # except:
 #     traceback.print_exc()
-except Exception as e:
+except Exception as e: # this is the general exception which can be used anywhere
     print(type(e).__name__,":",e)
 
 # Custom Exception
