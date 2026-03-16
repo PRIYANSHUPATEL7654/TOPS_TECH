@@ -1,106 +1,93 @@
 from manager import Manager
 from customer import Customer
+from utils import log_transaction, get_valid_integer, get_fruit_name
 
 class Main:
-
-    def __init__(self):
-        pass
-
     def fruit_market(self):
-
+        """Main controller - displays role menu and runs until user exits"""
         while True:
             try:
-                print("\n\t\t\t\t\tWELCOME TO FRUIT MARKET")
-                user_choice = int(input(
-                    "\n\t\t\t\t\t1) Manager"
-                    "\n\t\t\t\t\t2) Customer"
-                    "\n\t\t\t\t\t3) Exit"
-                    "\n\nEnter your choice from above options : "
-                ))
+                print("\n" + "="*70)
+                print("                    WELCOME TO FRUIT MARKET")
+                print("="*70)
+                
+                choice = get_valid_integer(
+                    "\n1) Manager\n"
+                    "2) Customer\n"
+                    "3) Exit\n\n"
+                    "Select your Role : ", min_value=1
+                )
 
-                if user_choice == 1:
-                    obj_manager = Manager()
-
-                    print("\n\t\t\t\t\tWelcome Fruit Stock Manager")
-
-                    while True:
-                        try:
-                            manager_choice = int(input(
-                                "\n\t\t\t\t\t1) Add fruit stock\n"
-                                "\t\t\t\t\t2) View fruit stock\n"
-                                "\t\t\t\t\t3) Update fruit stock\n"
-                                "\t\t\t\t\t4) Delete fruit stock\n"
-                                "\t\t\t\t\t5) Exit\n"
-                                "\nEnter your choice from above options : "
-                            ))
-
-                            if manager_choice == 1:
-                                obj_manager.add_fruit_stock()
-
-                            elif manager_choice == 2:
-                                obj_manager.view_fruit_stock()
-
-                            elif manager_choice == 3:
-                                obj_manager.update_fruit_stock()
-
-                            elif manager_choice == 4:
-                                obj_manager.delete_fruit_stock()
-
-                            elif manager_choice == 5:
-                                break
-
-                            else:
-                                print("Invalid choice!")
-
-                        except Exception as e:
-                            print("Error occurred:", e)
-
-                elif user_choice == 2:
-                    obj_customer = Customer()
-
-                    print("\n\t\t\t\t\tWelcome Fruit Stock Customer")
-
-                    while True:
-                        try:
-                            customer_choice = int(input(
-                                "\n\t\t\t\t\t1) Order fruit\n"
-                                "\t\t\t\t\t2) View order\n"
-                                "\t\t\t\t\t3) Update order\n"
-                                "\t\t\t\t\t4) Cancel order\n"
-                                "\t\t\t\t\t5) Exit\n"
-                                "\nEnter your choice from above options : "
-                            ))
-
-                            if customer_choice == 1:
-                                obj_customer.order_fruit()
-
-                            elif customer_choice == 2:
-                                obj_customer.view_order()
-
-                            elif customer_choice == 3:
-                                obj_customer.update_order()
-
-                            elif customer_choice == 4:
-                                obj_customer.cancel_order()
-
-                            elif customer_choice == 5:
-                                break
-
-                            else:
-                                print("Invalid choice!")
-
-                        except Exception as e:
-                            print("Error occurred:", e)
-
-                elif user_choice == 3:
+                if choice == 1:
+                    self.run_manager()
+                elif choice == 2:
+                    self.run_customer()
+                elif choice == 3:
+                    print("\nThank you for using Fruit Market! 👋")
                     break
-
                 else:
                     print("Invalid choice!")
 
             except Exception as e:
-                print("Error occurred:", e)
+                print(f"Unexpected error: {e}. Returning to main menu.")
+
+    def run_manager(self):
+        obj = Manager()
+        print("\n" + "="*50)
+        print("             FRUIT MARKET MANAGER")
+        print("="*50)
+        
+        while True:
+            try:
+                ch = get_valid_integer(
+                    "\n1) Add Fruit Stock\n"
+                    "2) View Fruit Stock\n"
+                    "3) Update Fruit Stock\n"
+                    "4) Delete Fruit Stock\n"
+                    "5) Exit to Main Menu\n\n"
+                    "Enter your choice : ", min_value=1
+                )
+
+                if ch == 1:    obj.add_fruit_stock()
+                elif ch == 2:  obj.view_fruit_stock()
+                elif ch == 3:  obj.update_fruit_stock()
+                elif ch == 4:  obj.delete_fruit_stock()
+                elif ch == 5:  break
+                else:
+                    print("Invalid choice!")
+
+            except Exception as e:
+                print(f"Error: {e}. Returning to Manager menu.")
+
+    def run_customer(self):
+        obj = Customer()
+        print("\n" + "="*50)
+        print("             FRUIT MARKET CUSTOMER")
+        print("="*50)
+        
+        while True:
+            try:
+                ch = get_valid_integer(
+                    "\n1) Order Fruit\n"
+                    "2) View Order\n"
+                    "3) Update Order\n"
+                    "4) Cancel Order\n"
+                    "5) Exit to Main Menu\n\n"
+                    "Enter your choice : ", min_value=1
+                )
+
+                if ch == 1:    obj.order_fruit()
+                elif ch == 2:  obj.view_order()
+                elif ch == 3:  obj.update_order()
+                elif ch == 4:  obj.cancel_order()
+                elif ch == 5:  break
+                else:
+                    print("Invalid choice!")
+
+            except Exception as e:
+                print(f"Error: {e}. Returning to Customer menu.")
 
 
-obj_main = Main()
-obj_main.fruit_market()
+# ================== START PROGRAM ==================
+if __name__ == "__main__":
+    Main().fruit_market()

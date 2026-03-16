@@ -1,9 +1,8 @@
 import json
 import os
-
+from utils import log_transaction, get_valid_integer, get_fruit_name
 
 class Customer:
-
     FILE_NAME = "Fruit_Stock.json"
     FILE_NAME2 = "Fruit_Orders.json"
 
@@ -14,129 +13,130 @@ class Customer:
     def load_data(self):
         if os.path.exists(self.FILE_NAME):
             try:
-                with open(self.FILE_NAME, "r") as stock_data:
-                    return json.load(stock_data)
+                with open(self.FILE_NAME, "r") as f:
+                    return json.load(f)
             except json.JSONDecodeError:
                 return {}
         return {}
-    
+
     def load_order(self):
         if os.path.exists(self.FILE_NAME2):
             try:
-                with open(self.FILE_NAME2, "r") as order_data:
-                    return json.load(order_data)
+                with open(self.FILE_NAME2, "r") as f:
+                    return json.load(f)
             except json.JSONDecodeError:
                 return {}
         return {}
 
     def save_data(self):
-        with open(self.FILE_NAME, "w") as stock_data:
-            json.dump(self.fruit_stock, stock_data, indent=4)
+        with open(self.FILE_NAME, "w") as f:
+            json.dump(self.fruit_stock, f, indent=4)
 
     def save_order(self):
-        with open(self.FILE_NAME2,"w") as order_data:
-            json.dump(self.cust_order, order_data, indent=4)
+        with open(self.FILE_NAME2, "w") as f:
+            json.dump(self.cust_order, f, indent=4)
 
     def order_fruit(self):
-
-        print("\nFruits in Current Stock")
-
-        if not self.fruit_stock:
-            print("No fruit stock found.")
-        else:
-            for fruit_name, fruit_details in self.fruit_stock.items():
-                print(f"\n\t\t\t\t\tFruit name: {fruit_name}")
-                print(f"\t\t\t\t\t\tFruit quantity: {fruit_details['quantity']}")
-                print(f"\t\t\t\t\t\tFruit price: {fruit_details['price']}")
+        """Customer places order and stock is reduced"""
+        print("\n" + "="*50)
+        print("               AVAILABLE FRUITS")
+        print("="*50)
         
-        fruit_name = input("\nEnter the fruit you want to order : ").capitalize()
-        fruit_quantity = int(input("Enter the quantity of fruit : "))
+        if not self.fruit_stock:
+            print("No stock available.")
+            return
+
+        for name, d in self.fruit_stock.items():
+            print(f"→ {name} | Qty: {d['quantity']} kg | ₹{d['price']}/kg")
+
+        fruit_name = get_fruit_name("\nEnter fruit you want to order: ")
+        quantity = get_valid_integer("Enter quantity (kg): ")
 
         if fruit_name in self.fruit_stock:
-
-            available_quantity = self.fruit_stock[fruit_name]["quantity"]
+            available = self.fruit_stock[fruit_name]["quantity"]
             price = self.fruit_stock[fruit_name]["price"]
 
-            if fruit_quantity <= available_quantity:
+            if quantity <= available:
+                total_bill = quantity * price
+                self.fruit_stock[fruit_name]["quantity"] -= quantity
 
-                total_bill = fruit_quantity * price
-                self.fruit_stock[fruit_name]["quantity"] -= fruit_quantity
-
-                self.cust_order[fruit_name] = {"quantity" : fruit_quantity, "bill" : total_bill}
-
+                self.cust_order[fruit_name] = {"quantity": quantity, "bill": total_bill}
+                
                 self.save_data()
                 self.save_order()
 
-                print(f"Your total bill is : {total_bill}")
-
+                print(f"✅ Order placed! Total Bill = ₹{total_bill}")
+                log_transaction("Customer", "Order Fruit", 
+                               f"Ordered {quantity} kg {fruit_name} | Bill=₹{total_bill}")
             else:
-                print("Not enough stock for accomplishing order")
-
+                print("❌ Not enough stock!")
         else:
-            print("Sorry sir/mam, right now the fruit does not exist in our stock")
+            print("❌ Fruit not available in stock.")
 
     def view_order(self):
-        print("\n\t\t\t\t\tYour Order/s")
-
+        """Display customer's current orders"""
+        print("\n" + "="*50)
+        print("                 YOUR ORDERS")
+        print("="*50)
+        
         if not self.cust_order:
-            print("\t\t\t\t\tNo orders found.")
+            print("No orders yet.")
         else:
-            for fruit_name, order_details in self.cust_order.items():
-                print(f"\n\t\t\t\t\tFruit name : {fruit_name}")
-                print(f"\t\t\t\t\t\tFruit quantity : {order_details['quantity']}")
-                print(f"\t\t\t\t\t\tTotal bill : {order_details['bill']}")
+            for name, d in self.cust_order.items():
+                print(f"Fruit     : {name}")
+                print(f"Quantity  : {d['quantity']} kg")
+                print(f"Bill      : ₹{d['bill']}")
+                print("-" * 40)
+        
+        log_transaction("Customer", "View Order", "Viewed orders")
 
     def update_order(self):
+        """Update existing order quantity"""
+        fruit_name = get_fruit_name("Enter fruit name to update: ")
+        
+        if fruit_name not in self.cust_order:
+            print("❌ You have no order for this fruit.")
+            return
+        if fruit_name not in self.fruit_stock:
+            print("❌ This fruit is no longer in stock.")
+            return
 
-        fruit_name = input("\nEnter fruit name to update your order : ").capitalize()
         price = self.fruit_stock[fruit_name]["price"]
+        old_qty = self.cust_order[fruit_name]["quantity"]
+        new_qty = get_valid_integer("Enter new quantity (kg): ")
 
-        if fruit_name in self.cust_order:
+        if new_qty < old_qty:
+            refund_qty = old_qty - new_qty
+            self.fruit_stock[fruit_name]["quantity"] += refund_qty
+        elif new_qty > old_qty:
+            extra_needed = new_qty - old_qty
+            if extra_needed > self.fruit_stock[fruit_name]["quantity"]:
+                print("❌ Not enough stock for increase.")
+                return
+            self.fruit_stock[fruit_name]["quantity"] -= extra_needed
 
-            order_quantity = int(input("Enter non zero quantity of order to update : "))
-            available_quantity = self.fruit_stock[fruit_name]["quantity"]
-            ordered_quantity = self.cust_order[fruit_name]["quantity"]
-            
-            if order_quantity < ordered_quantity:
+        bill = new_qty * price
+        self.cust_order[fruit_name] = {"quantity": new_qty, "bill": bill}
 
-                self.cust_order[fruit_name]["quantity"] = order_quantity
-                reduced_fruit_stock_quantity = ordered_quantity - order_quantity
-                self.fruit_stock[fruit_name]["quantity"] += reduced_fruit_stock_quantity
-
-            elif order_quantity > ordered_quantity:
-                
-                increased_fruit_stock_quantity = order_quantity - ordered_quantity
-
-                if increased_fruit_stock_quantity <= available_quantity:
-
-                    self.fruit_stock[fruit_name]["quantity"] -= increased_fruit_stock_quantity
-                    self.cust_order[fruit_name]["quantity"] = order_quantity
-
-                else:
-
-                    print("The updated quantity is more than the stock quantity, so it cannot be updated")
-                    return
-                
-            bill = order_quantity * price
-
-            self.cust_order[fruit_name] = {
-                "quantity": order_quantity,
-                "bill": bill
-            }
-
-            self.save_data()
-            self.save_order()
-
-            print("Fruit data updated successfully!")
-        else:
-            print("Fruit not found.")
-
-    def cancel_order(self):
-
-        fruit_name = input("Enter fruit name to delete your order : ").capitalize()
-        ordered_quantity = self.cust_order[fruit_name]["quantity"]
-        self.fruit_stock[fruit_name]["quantity"] += ordered_quantity
-        del self.cust_order[fruit_name]
         self.save_data()
         self.save_order()
-        print("Order cancelled successfully!")
+        print("✅ Order updated successfully!")
+        log_transaction("Customer", "Update Order", 
+                       f"Updated {fruit_name} to {new_qty} kg | New Bill=₹{bill}")
+
+    def cancel_order(self):
+        """Cancel order and restore stock"""
+        fruit_name = get_fruit_name("Enter fruit name to cancel: ")
+        
+        if fruit_name in self.cust_order:
+            qty = self.cust_order[fruit_name]["quantity"]
+            if fruit_name in self.fruit_stock:
+                self.fruit_stock[fruit_name]["quantity"] += qty
+            
+            del self.cust_order[fruit_name]
+            self.save_data()
+            self.save_order()
+            print("✅ Order cancelled successfully!")
+            log_transaction("Customer", "Cancel Order", f"Cancelled {fruit_name} ({qty} kg)")
+        else:
+            print("❌ You have no order for this fruit.")

@@ -1,0 +1,15 @@
+[2026-03-16 22:14:15] Manager - View Fruit Stock: Viewed current stock
+[2026-03-16 22:15:11] Manager - Add Fruit Stock: Added 1 fruit(s)
+[2026-03-16 22:15:13] Manager - View Fruit Stock: Viewed current stock
+[2026-03-16 22:15:27] Manager - Update Fruit Stock: Updated D → Qty=30, Price=120
+[2026-03-16 22:15:31] Manager - View Fruit Stock: Viewed current stock
+[2026-03-16 22:15:49] Manager - Delete Fruit Stock: Deleted D
+[2026-03-16 22:15:53] Manager - View Fruit Stock: Viewed current stock
+[2026-03-16 22:16:02] Customer - View Order: Viewed orders
+[2026-03-16 22:16:35] Customer - Order Fruit: Ordered 10 kg B | Bill=₹500
+[2026-03-16 22:16:45] Customer - View Order: Viewed orders
+[2026-03-16 22:17:09] Customer - Update Order: Updated B to 15 kg | New Bill=₹750
+[2026-03-16 22:17:14] Customer - View Order: Viewed orders
+[2026-03-16 22:17:22] Manager - View Fruit Stock: Viewed current stock
+[2026-03-16 22:17:54] Customer - Cancel Order: Cancelled B (15 kg)
+[2026-03-16 22:18:00] Manager - View Fruit Stock: Viewed current stock
