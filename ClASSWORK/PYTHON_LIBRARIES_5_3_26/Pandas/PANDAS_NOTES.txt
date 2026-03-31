@@ -1,0 +1,18 @@
+We will work on dict in pandas.
+Series means single column.
+Dataframe means multiple columns.
+The keys in dict will act as a column name.
+we do preprocessing of raw data in exploratory data analysis only with pandas.
+The data is always given indexes by default in pandas.
+pandas represent missing values as NaN
+we do not have to write print a variable value in ipynb file, i will print by default.
+
+27/3/2026
+df.info() : count of non null values.
+df.isnull().sum() : it will give count of all null values column wise.
+df.dropna(axis = 0, how = "any")
+df.fillna(value) : it is used to replace NaN values either with mean or median or constant value
+
+30/3/26
+we can only use lambda with apply function
+to do work with dates first we have to convert data into dates using pd.to_datetime() method

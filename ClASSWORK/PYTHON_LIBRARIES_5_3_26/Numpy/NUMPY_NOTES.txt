@@ -1,0 +1,79 @@
+9/3/2026
+
+SHIFT + ALT + DOWNKEY : to print/ copy-paste the current line in next line as it is and viceversa for upkey
+
+list : it is mutable, it is ordered so it can be accessed through index
+set : it is mutable but its element cannot be accessed through index as it has a inbuilt feature of ascending it and removing duplicate values.
+
+TASK : Name of all methods, its parameters, arguments, and its APPLICATIONS after every lecture.
+
+Numpy properties : it is used to retrieve useful information about the arrays and nothing new is created or shown using this and it does not have brackets
+Numpy methods : it is used to retrieve new information from existing data.
+eg, np.shape, np.ndim, np.size, np.dtype.
+
+10/3/2026
+
+np.zeros(2,3) : It creates an matrix of zeros (as elements) and it helps us to know if there are any other things other than number (like NaN) by adding this matrix to zeros matrix.
+np.ones(3,4) : It does the same thing but here it just multiplies instead of adding , i.e, if i have a matrix of radiuses of circle and i want to multiply it by 2 * pie then i will multiply ones matrix by 2 * pie and then multiply this matrix with original matrix to obtain circumference of all.
+np.arange(1,1000,2) : It gives an array of 1 to 999 with a step of 2, like 1,3,5...,995,997,999
+
+np.linspace(0,10,5) : it partitions from 0 to 10 in 5  equal parts.
+
+np.eye(4,2) : the larger value is the shape of the identity matrix and the smaller value is the number of rows or columns(here columns) which will be displayed from it.
+np.identity(5) : it will create an identity matrix of 5 * 5.
+
+arr.ravel : It creates a view of an arr
+arr.flatten : It creates a copy of an arr
+resize : It changes the shape of arr permanently
+reshape : 
+
+14/3/26
+
+percentile : (p/100) * (n-1) where n is number of values in an array and p is the percentile we want to find
+eg. if i want to find 90th percentile for array having 5 values then it will be 
+p = 70, 
+n-1 = 5-1 = 4
+therefore acc to formula (80/100) * 4 = 2.8
+[1,2,3,4,5]
+so the 90th percentile value is present at position 2.8 in an array of 5. 
+Now to find that value we take 2 of 2.8 and go on that index of array, here 3 and then multiply 0.8 of 2.8 to the (next element(here 4) - 3), 
+so 0.8 * 1 = 0.8 
+now this 0.8 ans will be added to the value 3 so our answer will be 3.8
+
+16/3/26
+numpy_3 :
+
+concatenation :
+axis=0 means all list will be converted into columns
+axis=1 means the first lists of all variables will come in one list in one row and then the second lists of all variables in single list in another row
+NOTE : always write axis at last, without it it will be axis = 0 by default
+
+concatenation using functions :
+np.vstack((a,b)) = it is similar to axis=0 
+np.hstack((a,b)) = it is similar to axis=1
+np.dstack((a,b)) = it converts all the first elements of first column of first list of first outer list in a single row and then going further vertically to print in another row
+
+split : it splits an array into equal parts
+array_split : it splits an array into unequal parts
+
+17/3/26
+
+copy vs view:
+view : it creates a view of an array and when done any changes in view it also gets changed in original array.
+copy : it creates a copy of an array and when done any changes in view it does not get changed in original array.
+
+sort : it sorts the elements of an array in ascending order.
+argsort : it gives indices of array elements in the same order which are present in original array.
+
+nonzero : it gives indices of all elements which are not zero.
+clip : we replace any outliers present in array with our minimum and maximum values we have set in array while clipping.
+
+18/3/26
+
+# Special Values
+NaN : Not A Number 
+Infinite
+
+np.isnan() : checks whether i
+np.isinf()
+np.isfinite()
