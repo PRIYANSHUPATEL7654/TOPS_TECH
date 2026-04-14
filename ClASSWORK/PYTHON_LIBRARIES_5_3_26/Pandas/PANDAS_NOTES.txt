@@ -16,3 +16,8 @@ df.fillna(value) : it is used to replace NaN values either with mean or median o
 30/3/26
 we can only use lambda with apply function
 to do work with dates first we have to convert data into dates using pd.to_datetime() method
+
+\d is used to recognize the digits in a string to replace or whatever to do with.
+\d → matches: 1, 2, 3, 4, 5 (5 matches)
+\d+ → matches: 12, 345 (2 matches)
+\d takes more time than \d+ as it considers every number separately unlike \d+ where tens hundreds digits are considered as one number

@@ -1,0 +1,34 @@
+KDE : It stands for Kernel Density Estimation. A histogram shows bars (rough view). KDE draws a smooth curve showing where data is concentrated. So instead of blocks, you get a continuous curve.
+
+Seaborn has built-in datasets for practice, we just need to load it and use it.
+print(sns.get_dataset_names()) # using this code we can see all seaborn datasets
+Popular datasets:
+tips → restaurant bills, tips, gender, time
+iris → flower measurements (very famous)
+titanic → passengers, survival, class
+penguins → similar to iris but modern
+flights → time series data
+diamonds → pricing dataset
+
+In boxplot,
+Box's lower black line is Q1
+Box's middle black line is median
+Box's upper black line is Q3
+Lower black line below Box is lower value (Q1 - 1.5 * IQR)
+Upper black line above Box is upper value (Q3 + 1.5 * IQR)
+Circles are outliers
+
+In violinplot, width shows density, height shows values, inner box shows summary (median + spread).
+Parts of Violin Plot : 
+X-axis (day) → categories (Thur, Fri, Sat, Sun)
+Y-axis (total_bill) → values of data
+Violin shape → overall data distribution
+Width of violin → density
+Wide → more data
+Narrow → less data
+Top & bottom ends → minimum and maximum values
+Inner box (boxplot inside):
+Middle white horzontal line/dot → median
+Box → middle 50% data (IQR)
+Thin lines → spread of data
+Symmetry → left & right are same (just for visual)

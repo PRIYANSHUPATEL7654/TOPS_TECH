@@ -30,10 +30,10 @@ reshape :
 14/3/26
 
 percentile : (p/100) * (n-1) where n is number of values in an array and p is the percentile we want to find
-eg. if i want to find 90th percentile for array having 5 values then it will be 
+eg. if i want to find 70th percentile for array having 5 values then it will be 
 p = 70, 
 n-1 = 5-1 = 4
-therefore acc to formula (80/100) * 4 = 2.8
+therefore acc to formula (70/100) * 4 = 2.8
 [1,2,3,4,5]
 so the 90th percentile value is present at position 2.8 in an array of 5. 
 Now to find that value we take 2 of 2.8 and go on that index of array, here 3 and then multiply 0.8 of 2.8 to the (next element(here 4) - 3), 

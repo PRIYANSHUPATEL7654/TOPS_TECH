@@ -262,13 +262,81 @@
 #     print()
 
 # 26) Print Pattern
-#     *
-#   *   *
-# *   *   *
-#   *   *
-#     *
+#       *
+#     *   *
+#   *   *   *
+# *   *   *   *
+#   *   *   *
+#     *   *
+#       *
 
-# for i in range (1,5):
-#     for j in range (1,i+1):
-#         print(j,end=" ")
+# n = 10
+# for i in range(1, n+1):
+#     print(" " * (2*(n-i)),end = "")
+#     # First star
+#     print("*", end="")
+
+#     if i > 1:
+#         for j in range(i,1,-1):
+#             print(" " * 3,end = "")
+#             print("*",end ="")
+    
 #     print()
+
+# for i in range(n - 1, 0, -1):
+#     # Leading spaces
+#     print(" " * (2*(n-i)), end="")
+    
+#     # First star
+#     print("*", end="")
+    
+#     # Inner spaces
+#     if i > 1:
+#         for j in range(i,1,-1):
+#             print(" " * 3,end = "")
+#             print("*",end ="")
+    
+#     print()
+
+# 27) Print Pattern
+#    *
+#   * *
+#  *   *
+# *     *
+#  *   *
+#   * *
+#    *
+
+# n = 4  # Change this value to make it bigger/smaller
+
+# # Upper half (including middle row)
+# for i in range(1, n + 1):
+#     # Leading spaces
+#     print(" " * (n - i), end="")
+    
+#     # First star
+#     print("*", end="")
+    
+#     # Inner spaces (only if not the first row)
+#     if i > 1:
+#         print(" " * (2 * i - 3), end="")
+#         # Second star
+#         print("*", end="")
+    
+#     print()  # new line
+
+# # Lower half (excluding the middle row — start from n-1 down to 1)
+# for i in range(n - 1, 0, -1):
+#     # Leading spaces
+#     print(" " * (n - i), end="")
+    
+#     # First star
+#     print("*", end="")
+    
+#     # Inner spaces
+#     if i > 1:
+#         print(" " * (2 * i - 3), end="")
+#         # Second star
+#         print("*", end="")
+    
+#     print()  # new line
