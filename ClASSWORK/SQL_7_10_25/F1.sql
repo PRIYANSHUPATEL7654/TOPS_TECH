@@ -167,7 +167,7 @@ employee_.dept_id=department.dept_id;
 select ename,email,salary,employee_.dept_id from employee_ right join department on
 employee_.dept_id=department.dept_id;
 
--- Display sum of salary in each department 
+-- Display sum of s	alary in each department 
 
 select dept_name,sum(salary) from employee_, department where department.dept_id=employee_.dept_id
 group by employee_.dept_id;
@@ -213,7 +213,7 @@ select upper(city) from employee_;
 
 select replace(ename,"Aarav","aarush") from employee_;
 
-select subsrting(ename,1,5) from employee_;
+select substring(ename,1,5) from employee_;
 
 select * from student;
 alter table student add birth_date date;

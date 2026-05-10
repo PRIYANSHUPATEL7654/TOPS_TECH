@@ -248,3 +248,33 @@ group by name;
 -- 23/1/26 
 -- data inserted using python in vscode 
 select * from stud_marks;
+
+CREATE TABLE EMPS (id int auto_increment primary key,name varchar(5), dept varchar(10),salary int);
+
+drop table emps;
+insert into EMPS 
+(name,salary,dept) 
+values 
+("A",20000,"HR"),
+("B",30000,"IT"),
+("C",40000,"SALES"),
+("D",50000,"SALES"),
+("E",60000,"SALES"),
+("F",55000,"IT"),
+("G",50000,"HR");
+
+-- 16/4/26
+-- Window Function 
+select *,
+rank() over(partition by dept order by salary desc) as mydept
+from emps;
+
+-- select dept, max(salary) from emps group by dept; 
+
+select * from emps;
+
+-- 22/4/26
+select name,salary, rank() over (order by salary desc) as t from emps; -- if there are same values then the rank will be same and after that the number of values which were repeated will be skipped and next value will be given, eg, if there are two same values and the rank there was 3 then it will be 3 then 3 and then directly 5
+select name,salary, dense_rank() over (order by salary desc) as t from emps; -- if there are same values then the rank will be same and after that the number of values which were repeated will not be skipped and next value will be given, eg, if there are two same values and the rank there was 3 then it will be 3 then 3 and then 4 unlike in rank where it becomes 5
+select name,salary, row_number() over (order by salary desc) as t from emps; -- in this even if there are same values the number will be given unique only
+select name,salary, row_number() over (partition by dept order by salary desc) as t from emps;

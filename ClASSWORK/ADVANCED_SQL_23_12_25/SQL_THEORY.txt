@@ -157,3 +157,12 @@ post (insert)
 delete
 put/patch
 used in postman for testing
+
+16/4/26
+
+Window Functions : Adds rows unlike other functions where rows were merged.
+1. Over : data functionality implement partition by dept order by desc
+2. partition : group by 
+3. rank
+4. row number
+5. dense rank

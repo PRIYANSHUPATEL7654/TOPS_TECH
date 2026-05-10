@@ -1,0 +1,219 @@
+13/3/2026
+Machine Learning : 
+AI : 
+1. ML (not used much) : 
+   1. Supervised : 
+   2. Unsupervised : 
+   3. Reinforcement : self driving cars, robots
+2. DL (used mostly to make models and on images)
+3. Gen AI : is for public use. eg :chatgpt
+4. Agentic AI : It is used for automation/private work used by companies/person to implement functionalities. To work on it we should have strong knowledge of python backend.
+
+ai model (end to end) - api  - docker + githubaction/Jenkins - deployserver 
+manage pipeline
+frontend - call ai
+gemini, open ai, grok
+
+15/3/2026
+life cycle of ML : 
+1. problem
+2. data
+3. preprocessing : raw data cleaning 
+4. EDA : bringing insights/pattern from the data 
+5. feature engineering : adding a new column based on existing data
+6. model : choose model
+7. train/test : 80/20
+8. accuracy : percentage of true prediction 0 to 1 : 0.7 to 0.94 (accurate) 
+9. development
+10. monitor : we make it live where it will get new data so we montior the effect on accuracy.
+
+17/4/26
+
+1. Supervised Learning : 
+Labelled data (both input and output available in it)
+   1. Regression : It has continuous values
+
+      1. Linear Regression : algorithm
+      y = mx + c
+      where y = output
+            m = slope
+            x = input
+            c = constant
+
+      eg,
+      experience(x)  salary (y)
+      1              20k
+      2              25k
+      3              30k
+
+      when x moved from 1 to 2
+      m = 25k - 20k = 5k
+      if y continuously increases then it is forward propogation and vice versa.
+      25k = 5(1) + c
+
+      Overfitting : If a model works perfectly fine on trained data but not on test data then it is called Overfitting.
+      Underfitting : If a model does not work perfectly fine on trained data then it is called Underfitting.
+
+      In ML language column name is called as label. 
+
+      Encoding : ML does not understand text that is why it converts into numbers.
+      1. Label one encoding : It converts text into number
+
+      city         pincode
+      ahmd   0     123
+      ahmd   0     234
+      surat  1     564
+      patan  2     789
+
+      2. One hot encoding : It converts unique texts into labels and removes duplicate values
+
+      city         pincode  ahmd  surat  patan
+      ahmd   0     123        1     0      0
+      ahmd   0     234        1     0      0
+      surat  1     564        0     1      0
+      patan  2     789        0     0      1
+      
+      epoch = iteration 
+      if we say 5 epoch then it iterates 5 times
+
+      random state : It takes data from training only when training the model and same for testing. 0.42 is the default value but we can change it.
+
+   2. Classification : It has categorical values . answers in yes or not
+   eg, spam / not spam
+
+20/4/26
+
+Error : Difference between actual and predicted data.
+MSE(Measured Square Error) : if 0 then model is perfect, if 0.7 to 0.8 then low/average model, if very high value then poor model. There is no fixed range of mse value, it depends on the number of dataset.
+-> If there are multiple teams working on the same data(different parts of that data are given to different teams) and then whichever team gets the lowest mse, that model will be passed ahead.
+RMSE : Root of MSE.
+Confusion Matrix : 
+   True Positive(TP) : Actual and model output is positively correct
+   True Negative(TN) : Actual and model output is negatively correct
+   FP : Actual is negative but Model says positive
+   FN : Actual is positive but Model says negative
+
+R^2(Accuracy Score) : ranges from 0 to 1 (It gives the accuracy of the model), eg, if 70% accuracy then R^2 is 0.7, 1 means perfect.
+If the accuracy is low then we should do following things to increase it.
+   -> Change the Dataset
+   -> Change the model
+
+
+22/4/26
+Input taken in 2D, and output will be in 1D
+x = df["Input Column"] where X is 2D
+y = df["Output Column"] where Y is 1D
+
+x = input
+   |
+   |
+Process between input and output
+y=mx+c
+   |
+   |
+y = output
+after that advance : make pipeline (step by step execution) which is custom
+
+make api of model 
+make streamlit design
+
+29/4/26
+
+API : The first method is it can be directly deployed in our server and the second method is through a pipeline.
+In first method whenever we change a code at that time we have to update and deploy it again and again on aws and in pipeline we have done automation so we do not need to do all process again and again.
+For pipeline we use github action and jenkins. The main difference between both is that in jenkins we create our own infrastructure.
+When we push our code changes after that the automation is started.
+In automation, the first step is merging all the code in a single file known as build file (eg, .exe file). After it is successfully built, it is given to aws to save changes (deploy it) otherwise it gives error.
+In this automation, different types of testing is done, namely unit, integration and end to end testing. After successful testing of all this 3 tests it will make build file otherwise it will give error.
+After making build file, Smoke testing and sanity testing are done, Smoke testing tests if the build is made properly or not, and in sanity testing it tests whether all the functionalities in build file works properly or not. In sanity testing, suppose we had a build file already made then the new functionalities will be checked with build file whether it works or not in that old file.
+We can also make requirements file in which python==version, fastapi==version and lib==version are mentioned, we need to download all those to make the project run.
+Advanced automation includes docker and kubernetes, docker is a OS level virtualization platform (image file) in which all the files including the project file, dependencies, requirements are stored in a single container and kubernetes has multiple containers like this.
+
+
+Monolithic Architecture : It has 1 project, 1 port (server), i database but it has multiple api.
+Microservice Architecture : Eg, zomato has admin, customer, hotel, rider and this all have their own servers and their requests are send to their respective servers.
+Main difference is monolithic has a single server whereas microservice has multiple servers.
+
+1/5/26
+
+Testing Server : While the project is building it remains in this server and after all the testing is done it is uploaded to production server.
+Production Server : It means we have now done the project live.
+
+Types of testing : 
+1. Alpha test : In this the project/AI model is given to all in house members of the company to use for some days and if there is any bug then it is being resolved and then comes beta testing.
+2. Beta test : In this test the project/AI model is being launched in some areas to use it and if any bug then it is being resolved and after that it is being launched as final version.
+
+On the server side, monitoring is being done, if any user faces any error then it is being stored in log file, multiple user having errors is being stored in this log file and then the errors in this log file is being resolved.
+
+We use Cors when there is a server conflict, suppose backend runs on 8000 and frontend runs on 4000 then it does not connect so we use cors to solve this conflict.
+
+4/5/26
+
+made requirements.txt, dockerfile and then deploy.yml in .github,workflows.
+
+render deployed project : it will be available in render
+then create a secret in github actions (here named as render_deploy hook)
+render deploy hook : see in whatsapp
+
+then go to docker and in settings go to personal access tokens and create a new token
+personal access token password : a new token will be created in docker
+
+
+after that in github actions create a new repository secret and in that 
+name should be same as we have written in yml file here (written in deploy file) and the secret will be our docker account username
+
+then create a new repository secret again and in that 
+name should be same as we have written in yml file here (written in deploy file) and the secret will be our token generated
+
+8/5/26
+
+      2. Multi Linear Regression : Input more than 1
+         y = mx+c
+
+         b means weight
+         y = b0 +b1.x1+b2.x2+b3.x3
+
+         y = 20 + 0.5 . 2 + 0.5 . 4 + 0.5 . 4
+
+         1 starting weight
+         2 predict 35
+         3 actual data set comparison
+         4 weight change
+         5 train 
+         6 predict
+         7 repeat
+
+   2. Classification : It has categorical values . answers in yes or not
+      eg, spam / not spam
+
+      threshold /checkpoint to decide one of two values eg, yes or no = 0.5
+      if 0.5 then positive
+      if 0.49 then negative
+
+      Alpha - learning rate 0.1 - slow 0 - medium in between - 1 means fast
+      pc - gpu and cpu
+
+      1. forward propogation
+      2. backward propogation
+
+      input = 20 + 0.5 . 20 + 0.5 . 40
+      this prediction is matched with the actual data and if it does not match then it is called loss.
+      this prediction process is called forward propogation
+      if there is loss then to match the actual data and predicted data, we do backward propogation in which we just change weights and then again train data and predict the data to match with the actual and it is repeated until we get the predicted same as actual
+
+      epoch = no of iteration ,eg, 10
+      batch size means the number of data we take in each epoch, eg, batch size of 30 in a data of 1000
+
+      Eg, dataset = 100 , epoch = 5, batch size = 20
+
+      1st epoch - loss - 0.99
+      2nd epoch - loss - 0.8
+      |
+      |
+      |
+      |
+      
+      if the epoch value is greater than checkpoint then it is passed otherwise fail/loss
+      
+      in linear and multi linear regression the input is connected directly to output
+      and in classification there can be single or multiple hidden layers between input and output and has weights between them

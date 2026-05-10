@@ -1,0 +1,55 @@
+from fastapi import FastAPI
+from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+import pickle
+import numpy as np
+
+app = FastAPI()
+
+app.mount(
+    "/assets",
+    StaticFiles(directory="fitness-react-ui/dist/assets"),
+    name="assets"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Load model
+model = pickle.load(open("health_fitness.pkl", "rb"))
+
+# Input schema
+class HealthData(BaseModel):
+    exercise_minutes: float
+    steps: float    
+    food_calories: float
+    sleep_hours: float
+    water_intake_liters: float
+
+@app.get("/")
+def serve_react():
+    return FileResponse("fitness-react-ui/dist/index.html")
+
+@app.post("/predict")
+def predict(data: HealthData):
+
+    features = np.array([[
+        data.exercise_minutes,
+        data.steps,
+        data.food_calories,
+        data.sleep_hours,
+        data.water_intake_liters
+    ]])
+
+    prediction = model.predict(features)
+
+    return {
+        "predicted_weight": float(prediction[0])
+    }
