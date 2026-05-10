@@ -15,7 +15,7 @@ class Main:
                     "\n1) Manager\n"
                     "2) Customer\n"
                     "3) Exit\n\n"
-                    "Select your Role : ", min_value=1
+                    "Select your Role : ", min_value=1, max_value=3
                 )
 
                 if choice == 1:
@@ -45,7 +45,7 @@ class Main:
                     "3) Update Fruit Stock\n"
                     "4) Delete Fruit Stock\n"
                     "5) Exit to Main Menu\n\n"
-                    "Enter your choice : ", min_value=1
+                    "Enter your choice : ", min_value=1, max_value=5
                 )
 
                 if ch == 1:    obj.add_fruit_stock()
@@ -73,7 +73,7 @@ class Main:
                     "3) Update Order\n"
                     "4) Cancel Order\n"
                     "5) Exit to Main Menu\n\n"
-                    "Enter your choice : ", min_value=1
+                    "Enter your choice : ", min_value=1, max_value=5
                 )
 
                 if ch == 1:    obj.order_fruit()
