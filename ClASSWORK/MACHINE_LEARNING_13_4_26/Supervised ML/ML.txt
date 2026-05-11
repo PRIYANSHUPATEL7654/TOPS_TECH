@@ -217,3 +217,23 @@ name should be same as we have written in yml file here (written in deploy file)
       
       in linear and multi linear regression the input is connected directly to output
       and in classification there can be single or multiple hidden layers between input and output and has weights between them
+
+11/5/26
+
+   Standard Scaler class : We use this class if there is a data with high range like x1 (age) = 30, x2 (blood pressure) = 180, x3 (sugar) = 350, so here normally sugar will get high priority because of high value and it will help in prediction but we want all the data to be used in prediction with prioritization so we will use standard scaler as it will bring all data in a small range which will be very useful in training / testing.
+   Its formula is : value - mean / std deviation.
+
+   from sklearn.linear_model import LogisticRegression
+   from sklearn.preprocessing import StandardScaler
+
+   scaler = StandardScaler()
+   X_train = scaler.fit_transform(X_train)
+   X_test = scaler.transform(X_test)
+
+   model = LogisticRegression() # we use LogisticRegression in classification when answer is yes/no , spam/not spam
+   model.fit(X_train,Y_train)
+   y_pred = model.predict(X_test)
+   accuracy_score(Y_test, Y_pred)
+   new_patient = [[30,120,180]]
+   new_patient = scaler.transform(new_patient)
+   model.predict(new_patient)
