@@ -237,3 +237,7 @@ name should be same as we have written in yml file here (written in deploy file)
    new_patient = [[30,120,180]]
    new_patient = scaler.transform(new_patient)
    model.predict(new_patient)
+
+regression has r2_score to check for accuracy and classification has accuracy_score for the same
+
+python -m uvicorn main:app --reload # this code always runs even if uvicorn path is not set.
