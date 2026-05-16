@@ -244,5 +244,5 @@ python -m uvicorn main:app --reload # this code always runs even if uvicorn path
 
 15/5/26
 
-Dropout functionality in models : Suppose there are neurons in between hidden layers and input and output layers
-Data Augmentation
+Dropout functionality in models : There are neurons in between hidden layers and input and output layers
+Dropout & Data Augmentation : https://chatgpt.com/share/6a08b1d3-6b14-8320-85f5-11ee9100fab9
