@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Food Predictor</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Animal Food Predictor</h1>
+
+    <div class="input-box">
+        <label>Animal</label>
+        <select id="animal"></select>
+    </div>
+
+    <div class="input-box">
+        <label>Weight</label>
+        <input type="number" id="weight" placeholder="Enter Weight">
+    </div>
+
+    <div class="input-box">
+        <label>Height</label>
+        <input type="number" id="height" placeholder="Enter Height">
+    </div>
+
+    <div class="input-box">
+        <label>Age</label>
+        <input type="number" id="age" placeholder="Enter Age">
+    </div>
+
+    <button onclick="predictFood()">Predict Food</button>
+
+    <div id="result"></div>
+
+</div>
+
+<script src="/assets/script.js"></script>
+
+</body>
+</html>

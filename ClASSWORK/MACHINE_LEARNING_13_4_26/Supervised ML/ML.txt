@@ -56,14 +56,14 @@ Labelled data (both input and output available in it)
 
       In ML language column name is called as label. 
 
-      Encoding : ML does not understand text that is why it converts into numbers.
+      Encoding : ML does not understand text that is why it converts into numbers alphabetically.
       1. Label one encoding : It converts text into number
 
       city         pincode
       ahmd   0     123
       ahmd   0     234
-      surat  1     564
-      patan  2     789
+      surat  2     564
+      patan  1     789
 
       2. One hot encoding : It converts unique texts into labels and removes duplicate values
 
@@ -241,3 +241,8 @@ name should be same as we have written in yml file here (written in deploy file)
 regression has r2_score to check for accuracy and classification has accuracy_score for the same
 
 python -m uvicorn main:app --reload # this code always runs even if uvicorn path is not set.
+
+15/5/26
+
+Dropout functionality in models : Suppose there are neurons in between hidden layers and input and output layers
+Data Augmentation
