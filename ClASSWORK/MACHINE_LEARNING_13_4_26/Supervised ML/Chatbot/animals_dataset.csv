@@ -1,0 +1,501 @@
+Animal,Category,Weight,Height,Age,Color,Continent
+Cow,Farm,678,285,20,Golden,Asia
+Horse,Farm,10,271,8,White,Europe
+Elephant,Wild,79,125,21,Brown,Africa
+Fox,Wild,565,20,16,Black,Asia
+Rabbit,Pet,613,318,16,Black,North America
+Parrot,Pet,664,273,11,Gray,Europe
+Dog,Pet,551,362,15,White,North America
+Elephant,Wild,605,307,20,Golden,Europe
+Goat,Farm,340,52,29,Brown,Asia
+Cow,Farm,649,73,6,Gray,Asia
+Tiger,Wild,309,229,4,Golden,Europe
+Horse,Farm,98,388,30,Black,Europe
+Horse,Farm,290,104,29,White,Asia
+Parrot,Pet,167,165,23,White,North America
+Fox,Wild,292,157,10,Golden,Europe
+Fox,Wild,322,307,29,Brown,North America
+Tiger,Wild,167,116,1,Black,Europe
+Horse,Farm,565,101,9,Gray,Europe
+Elephant,Wild,366,86,14,Gray,North America
+Cow,Farm,274,349,28,Black,North America
+Parrot,Pet,328,303,12,Gray,Africa
+Wolf,Wild,173,381,12,Brown,Asia
+Dog,Pet,161,356,20,Gray,Africa
+Fox,Wild,496,218,19,Black,Asia
+Tiger,Wild,23,128,6,Brown,Asia
+Rabbit,Pet,387,30,24,White,North America
+Goat,Farm,648,24,13,Black,North America
+Lion,Wild,631,190,4,White,Asia
+Horse,Farm,608,100,21,Golden,North America
+Parrot,Pet,521,217,18,Brown,North America
+Wolf,Wild,349,198,29,Black,Africa
+Fox,Wild,34,204,24,White,Europe
+Horse,Farm,189,111,25,Golden,Europe
+Lion,Wild,133,70,24,Golden,Africa
+Parrot,Pet,30,292,15,Gray,North America
+Dog,Pet,196,166,2,Black,North America
+Lion,Wild,15,65,18,Golden,Europe
+Cow,Farm,633,288,1,Gray,Asia
+Rabbit,Pet,546,362,15,Black,North America
+Wolf,Wild,504,216,18,Black,Asia
+Lion,Wild,490,207,20,Brown,Africa
+Cow,Farm,135,140,19,Black,Africa
+Fox,Wild,46,196,17,Black,Europe
+Goat,Farm,412,198,24,Gray,Africa
+Elephant,Wild,262,96,16,Brown,Africa
+Horse,Farm,536,162,17,Golden,Europe
+Fox,Wild,633,367,4,Golden,Asia
+Cat,Pet,63,377,23,Black,Asia
+Parrot,Pet,319,330,21,Gray,Europe
+Horse,Farm,265,159,11,Black,Asia
+Goat,Farm,190,336,22,White,North America
+Parrot,Pet,694,395,14,White,North America
+Lion,Wild,270,369,7,White,North America
+Goat,Farm,368,200,30,Golden,Africa
+Parrot,Pet,587,164,23,White,North America
+Fox,Wild,133,169,11,Brown,Africa
+Fox,Wild,322,258,24,White,Europe
+Lion,Wild,145,77,17,Black,Africa
+Parrot,Pet,92,37,26,White,North America
+Wolf,Wild,399,358,6,Brown,North America
+Wolf,Wild,547,183,22,Black,Europe
+Goat,Farm,326,187,10,Brown,Europe
+Elephant,Wild,343,171,1,Gray,Asia
+Cow,Farm,405,137,12,White,Africa
+Parrot,Pet,59,71,7,Gray,Europe
+Dog,Pet,682,249,20,Brown,Africa
+Cat,Pet,158,168,8,Black,Asia
+Cat,Pet,657,191,14,White,Africa
+Lion,Wild,259,323,13,Brown,Europe
+Cow,Farm,570,68,7,Golden,Asia
+Goat,Farm,124,221,25,White,Africa
+Tiger,Wild,168,158,10,Brown,North America
+Rabbit,Pet,496,309,28,White,Europe
+Elephant,Wild,226,107,1,Gray,Asia
+Cat,Pet,164,397,26,Black,Asia
+Fox,Wild,348,345,5,Brown,Asia
+Horse,Farm,484,57,12,Brown,North America
+Fox,Wild,472,302,5,White,North America
+Tiger,Wild,447,106,11,White,Asia
+Wolf,Wild,355,120,20,Brown,Europe
+Parrot,Pet,179,159,27,White,Asia
+Lion,Wild,609,339,19,Black,Europe
+Cow,Farm,371,275,9,Gray,Europe
+Parrot,Pet,119,295,24,Brown,Europe
+Wolf,Wild,465,274,11,Brown,Asia
+Lion,Wild,385,358,11,Black,Europe
+Fox,Wild,331,59,25,Brown,Africa
+Wolf,Wild,606,31,13,Gray,Europe
+Horse,Farm,680,291,6,Gray,Europe
+Dog,Pet,615,323,8,Gray,Africa
+Elephant,Wild,558,82,3,Black,Asia
+Cow,Farm,633,174,28,Brown,Africa
+Wolf,Wild,195,388,4,Gray,North America
+Goat,Farm,596,360,20,Black,North America
+Cow,Farm,253,327,14,Golden,Asia
+Horse,Farm,486,316,23,White,Europe
+Parrot,Pet,61,133,8,Golden,Africa
+Dog,Pet,622,253,17,White,Africa
+Rabbit,Pet,551,220,14,White,North America
+Rabbit,Pet,654,93,23,Black,Asia
+Fox,Wild,672,312,30,White,Europe
+Dog,Pet,289,80,5,Brown,Africa
+Parrot,Pet,217,275,25,White,Asia
+Rabbit,Pet,549,83,7,White,Europe
+Rabbit,Pet,133,202,7,Brown,North America
+Tiger,Wild,535,88,5,Brown,Africa
+Cow,Farm,543,134,12,Black,North America
+Goat,Farm,117,347,12,Golden,Europe
+Fox,Wild,257,357,11,Brown,North America
+Rabbit,Pet,516,212,18,Gray,Europe
+Horse,Farm,132,177,23,Golden,Africa
+Lion,Wild,578,122,2,Golden,Africa
+Wolf,Wild,180,231,12,White,Africa
+Lion,Wild,77,364,8,Black,North America
+Dog,Pet,64,39,29,Black,Europe
+Lion,Wild,671,29,17,Black,Asia
+Elephant,Wild,558,176,30,Golden,Africa
+Horse,Farm,290,119,16,Brown,Africa
+Horse,Farm,60,368,23,White,North America
+Rabbit,Pet,624,60,30,Brown,North America
+Horse,Farm,314,46,3,Brown,Africa
+Lion,Wild,627,257,24,White,Europe
+Fox,Wild,513,381,9,Golden,Africa
+Elephant,Wild,530,94,12,Golden,Africa
+Rabbit,Pet,252,231,11,Gray,Africa
+Wolf,Wild,88,279,29,Black,Asia
+Fox,Wild,393,145,23,Brown,Europe
+Fox,Wild,132,263,7,White,Asia
+Wolf,Wild,399,362,23,Golden,North America
+Rabbit,Pet,145,272,12,Gray,Asia
+Lion,Wild,466,38,6,Golden,North America
+Tiger,Wild,379,92,9,Gray,Asia
+Wolf,Wild,681,358,3,Gray,Asia
+Parrot,Pet,664,126,7,Gray,North America
+Lion,Wild,419,395,19,Gray,Asia
+Cow,Farm,46,171,18,White,Africa
+Horse,Farm,246,152,16,White,Europe
+Parrot,Pet,158,212,9,Black,Asia
+Horse,Farm,178,192,20,Golden,Europe
+Cat,Pet,285,324,1,Brown,Europe
+Elephant,Wild,21,125,3,Gray,North America
+Lion,Wild,576,225,17,Brown,Asia
+Tiger,Wild,514,153,18,Golden,Asia
+Dog,Pet,365,346,19,Golden,Europe
+Rabbit,Pet,159,271,7,Gray,Africa
+Horse,Farm,90,80,11,Gray,Asia
+Rabbit,Pet,33,224,28,White,Africa
+Lion,Wild,484,360,22,Gray,Europe
+Cat,Pet,334,331,11,Black,Asia
+Wolf,Wild,388,395,16,Black,Asia
+Rabbit,Pet,657,333,25,White,Asia
+Cow,Farm,537,87,27,Golden,Asia
+Horse,Farm,700,155,2,Black,North America
+Horse,Farm,183,76,10,Black,Europe
+Wolf,Wild,50,110,13,Golden,Africa
+Parrot,Pet,49,217,26,Gray,North America
+Tiger,Wild,54,240,29,Brown,Asia
+Parrot,Pet,230,128,7,Gray,Europe
+Cow,Farm,325,305,15,Brown,Europe
+Fox,Wild,404,298,29,Black,Europe
+Lion,Wild,534,380,23,Gray,Asia
+Lion,Wild,424,216,24,Black,Africa
+Goat,Farm,96,140,11,Gray,Africa
+Elephant,Wild,266,340,22,White,Africa
+Fox,Wild,236,127,8,Golden,Africa
+Dog,Pet,660,27,20,Brown,Asia
+Cat,Pet,391,212,19,White,Asia
+Wolf,Wild,214,220,17,Golden,North America
+Horse,Farm,351,157,2,Brown,North America
+Cow,Farm,659,200,17,Golden,Europe
+Dog,Pet,256,247,22,Brown,Africa
+Tiger,Wild,467,381,20,White,Asia
+Rabbit,Pet,681,371,29,Golden,Asia
+Tiger,Wild,134,82,10,Brown,Africa
+Cat,Pet,484,48,3,Brown,Africa
+Elephant,Wild,395,191,12,Black,Europe
+Cow,Farm,455,313,28,White,Africa
+Tiger,Wild,58,305,4,White,Europe
+Cat,Pet,251,139,1,White,Europe
+Horse,Farm,144,243,19,Brown,Africa
+Tiger,Wild,182,228,5,Golden,Asia
+Cat,Pet,277,189,9,Golden,Africa
+Cat,Pet,403,324,2,Black,Africa
+Parrot,Pet,115,296,1,White,Europe
+Rabbit,Pet,151,91,23,Gray,North America
+Cat,Pet,265,374,7,Gray,Asia
+Elephant,Wild,93,184,27,Black,Europe
+Wolf,Wild,185,73,3,Black,North America
+Lion,Wild,437,280,25,Brown,Asia
+Goat,Farm,395,245,23,White,Asia
+Parrot,Pet,389,53,27,Brown,Asia
+Wolf,Wild,683,347,24,White,Asia
+Parrot,Pet,362,258,2,Gray,North America
+Wolf,Wild,391,158,16,Gray,North America
+Cat,Pet,273,45,8,Golden,Europe
+Wolf,Wild,431,339,15,Gray,North America
+Dog,Pet,196,391,20,Gray,Africa
+Cow,Farm,87,358,5,Black,Europe
+Lion,Wild,590,299,18,Black,Asia
+Wolf,Wild,91,242,25,White,Europe
+Lion,Wild,549,164,28,Black,Europe
+Lion,Wild,48,61,6,Black,North America
+Goat,Farm,523,198,15,Golden,North America
+Rabbit,Pet,301,122,2,Golden,North America
+Elephant,Wild,581,244,14,Brown,North America
+Dog,Pet,324,260,14,Golden,Asia
+Rabbit,Pet,326,345,28,Brown,Europe
+Goat,Farm,488,269,23,Black,Asia
+Goat,Farm,584,133,17,Golden,Africa
+Goat,Farm,314,137,5,Black,Europe
+Goat,Farm,381,279,25,White,Africa
+Horse,Farm,72,283,10,Gray,Europe
+Dog,Pet,293,126,21,Golden,Europe
+Wolf,Wild,287,276,16,Brown,North America
+Cat,Pet,323,166,23,Golden,North America
+Tiger,Wild,233,295,3,White,Asia
+Tiger,Wild,620,387,27,Black,Africa
+Fox,Wild,259,114,8,White,Europe
+Tiger,Wild,619,255,9,Golden,North America
+Dog,Pet,58,103,9,Black,Africa
+Elephant,Wild,269,113,5,Black,North America
+Parrot,Pet,171,377,23,Gray,Asia
+Elephant,Wild,163,168,3,Black,Africa
+Tiger,Wild,199,34,26,Gray,Asia
+Cow,Farm,488,63,15,White,Europe
+Rabbit,Pet,696,279,10,Golden,Europe
+Tiger,Wild,50,292,11,White,Europe
+Fox,Wild,482,48,3,Black,Africa
+Dog,Pet,550,124,13,Brown,Asia
+Parrot,Pet,240,293,9,Gray,Europe
+Elephant,Wild,690,150,4,Brown,Europe
+Parrot,Pet,27,184,2,Brown,Europe
+Cow,Farm,331,62,27,Brown,Europe
+Cat,Pet,260,246,9,Black,Europe
+Horse,Farm,189,298,12,Gray,Europe
+Tiger,Wild,392,261,11,White,North America
+Tiger,Wild,113,224,15,Gray,North America
+Cat,Pet,619,142,25,Black,Africa
+Wolf,Wild,320,180,30,Brown,Europe
+Cat,Pet,422,118,30,Black,North America
+Rabbit,Pet,418,225,21,Brown,Africa
+Elephant,Wild,607,356,21,Brown,North America
+Dog,Pet,206,385,24,White,Asia
+Cow,Farm,464,343,13,Black,North America
+Dog,Pet,181,284,9,Golden,North America
+Rabbit,Pet,574,293,24,White,Europe
+Elephant,Wild,409,219,6,White,Asia
+Lion,Wild,607,319,4,Black,Africa
+Fox,Wild,147,40,2,Gray,Europe
+Cat,Pet,411,392,5,White,Africa
+Cat,Pet,539,281,6,Black,North America
+Lion,Wild,335,270,14,White,Asia
+Fox,Wild,676,315,4,Golden,North America
+Cat,Pet,580,337,7,White,Asia
+Parrot,Pet,192,256,15,Black,Europe
+Tiger,Wild,389,375,19,Golden,Asia
+Elephant,Wild,535,61,2,Golden,Africa
+Wolf,Wild,162,185,5,Gray,North America
+Rabbit,Pet,586,269,13,Brown,Europe
+Fox,Wild,345,212,21,Gray,Europe
+Lion,Wild,52,69,22,Gray,Africa
+Cat,Pet,698,246,23,Black,Europe
+Goat,Farm,170,176,16,White,Europe
+Rabbit,Pet,140,152,3,Brown,North America
+Dog,Pet,26,114,17,Golden,North America
+Rabbit,Pet,70,86,9,White,Asia
+Parrot,Pet,370,84,13,Brown,North America
+Goat,Farm,139,346,1,Golden,North America
+Wolf,Wild,547,104,20,Gray,Asia
+Rabbit,Pet,631,257,8,Golden,Europe
+Goat,Farm,517,244,8,Black,Asia
+Horse,Farm,157,209,20,Black,Africa
+Dog,Pet,245,224,25,White,Africa
+Dog,Pet,179,75,24,Gray,Africa
+Cow,Farm,195,256,5,Golden,Europe
+Goat,Farm,425,35,4,Golden,North America
+Goat,Farm,201,34,5,Black,North America
+Fox,Wild,223,276,1,Gray,Africa
+Fox,Wild,359,344,1,Golden,North America
+Cow,Farm,120,116,5,Gray,Asia
+Fox,Wild,558,49,22,Brown,Africa
+Goat,Farm,551,107,22,Golden,Asia
+Parrot,Pet,369,290,25,Black,Asia
+Cat,Pet,583,299,22,Golden,Europe
+Fox,Wild,166,337,1,Brown,Asia
+Cow,Farm,520,334,3,Black,Africa
+Rabbit,Pet,660,54,27,Golden,North America
+Elephant,Wild,110,283,11,Gray,Asia
+Tiger,Wild,311,265,20,Gray,Africa
+Dog,Pet,227,53,23,Black,Europe
+Tiger,Wild,624,125,24,Golden,Asia
+Fox,Wild,308,398,14,Brown,North America
+Tiger,Wild,548,22,26,Black,North America
+Lion,Wild,610,256,26,Golden,Europe
+Cow,Farm,158,286,10,Black,Asia
+Horse,Farm,567,28,18,White,Asia
+Dog,Pet,285,54,27,Golden,North America
+Fox,Wild,644,379,17,Gray,Africa
+Dog,Pet,311,67,3,White,Africa
+Tiger,Wild,640,245,10,Golden,North America
+Rabbit,Pet,646,233,4,Golden,Europe
+Fox,Wild,562,221,30,Brown,Europe
+Horse,Farm,602,57,14,Black,Europe
+Cow,Farm,43,129,30,Brown,North America
+Horse,Farm,379,82,22,Golden,Africa
+Tiger,Wild,188,227,13,Gray,Africa
+Cow,Farm,342,24,12,Gray,Africa
+Goat,Farm,27,220,10,Brown,Africa
+Cow,Farm,127,71,11,Gray,Europe
+Cow,Farm,101,255,16,Black,North America
+Horse,Farm,63,89,4,Black,North America
+Rabbit,Pet,249,147,10,Golden,Africa
+Parrot,Pet,629,169,6,Golden,Africa
+Rabbit,Pet,166,85,12,Golden,North America
+Horse,Farm,222,117,28,Gray,Africa
+Dog,Pet,664,219,23,Brown,North America
+Fox,Wild,566,249,20,White,Africa
+Fox,Wild,438,337,21,Gray,Europe
+Fox,Wild,32,57,7,White,North America
+Lion,Wild,418,326,22,White,Asia
+Fox,Wild,457,382,11,White,North America
+Lion,Wild,511,72,29,Gray,North America
+Wolf,Wild,118,174,24,Golden,Europe
+Tiger,Wild,371,98,23,White,North America
+Cat,Pet,393,164,4,Golden,North America
+Dog,Pet,687,41,6,Gray,Asia
+Wolf,Wild,36,117,18,Black,North America
+Cat,Pet,224,232,6,White,Africa
+Rabbit,Pet,131,279,15,Black,Africa
+Lion,Wild,158,200,18,Golden,Europe
+Parrot,Pet,202,139,28,Black,Africa
+Wolf,Wild,629,248,24,White,Asia
+Cow,Farm,625,77,29,Golden,North America
+Cat,Pet,405,149,6,White,North America
+Horse,Farm,394,85,14,White,Africa
+Goat,Farm,48,67,1,Brown,Europe
+Cow,Farm,571,319,2,Gray,Africa
+Elephant,Wild,193,191,19,Black,Europe
+Cow,Farm,75,232,29,Brown,Africa
+Rabbit,Pet,7,296,27,Black,Asia
+Cow,Farm,297,195,2,Gray,Africa
+Fox,Wild,88,141,11,Golden,North America
+Parrot,Pet,634,97,16,Brown,Europe
+Cat,Pet,152,83,11,Golden,Europe
+Cat,Pet,158,89,4,Brown,Asia
+Wolf,Wild,199,261,2,White,Africa
+Cow,Farm,283,291,4,Golden,North America
+Dog,Pet,653,301,28,Brown,Asia
+Goat,Farm,40,108,19,Black,Europe
+Wolf,Wild,150,104,8,Brown,Europe
+Lion,Wild,105,68,10,Gray,Europe
+Tiger,Wild,246,123,25,Gray,Asia
+Horse,Farm,411,284,10,Gray,North America
+Rabbit,Pet,662,170,17,Brown,Asia
+Tiger,Wild,251,343,19,White,North America
+Parrot,Pet,150,276,6,Golden,Africa
+Cat,Pet,374,112,7,White,Asia
+Rabbit,Pet,632,210,9,Gray,Africa
+Cow,Farm,354,44,29,Golden,Europe
+Dog,Pet,239,43,18,Golden,Asia
+Dog,Pet,670,61,12,Black,Asia
+Parrot,Pet,136,364,22,Golden,North America
+Lion,Wild,30,117,23,Brown,North America
+Goat,Farm,326,369,16,Golden,Asia
+Lion,Wild,277,151,18,Golden,North America
+Cow,Farm,52,46,19,Gray,Asia
+Dog,Pet,141,161,2,White,Europe
+Wolf,Wild,561,74,10,Gray,Asia
+Parrot,Pet,248,252,13,White,Asia
+Parrot,Pet,372,81,8,Brown,North America
+Dog,Pet,624,136,1,Black,Africa
+Dog,Pet,691,158,4,White,Africa
+Tiger,Wild,678,346,15,Brown,North America
+Fox,Wild,606,66,5,White,Asia
+Parrot,Pet,514,345,22,Black,Africa
+Fox,Wild,639,240,7,Black,Asia
+Cat,Pet,283,399,15,Gray,Africa
+Lion,Wild,185,337,28,Golden,Europe
+Goat,Farm,394,253,9,Gray,Asia
+Rabbit,Pet,451,206,5,Gray,North America
+Wolf,Wild,498,149,9,Golden,North America
+Lion,Wild,51,162,28,White,Asia
+Rabbit,Pet,513,310,9,Black,Africa
+Parrot,Pet,378,131,15,White,Asia
+Dog,Pet,532,374,15,Brown,North America
+Wolf,Wild,139,129,8,Golden,North America
+Dog,Pet,182,222,23,Golden,North America
+Dog,Pet,376,355,9,Gray,Africa
+Wolf,Wild,29,226,23,Black,Asia
+Elephant,Wild,434,191,11,Black,Africa
+Rabbit,Pet,76,204,28,Black,Asia
+Parrot,Pet,104,45,22,Gray,Europe
+Cat,Pet,435,57,16,Brown,North America
+Tiger,Wild,559,193,14,Gray,North America
+Tiger,Wild,456,233,10,Black,Asia
+Horse,Farm,663,157,24,White,North America
+Cow,Farm,113,132,7,Gray,North America
+Fox,Wild,137,392,24,Golden,Africa
+Fox,Wild,82,201,21,Brown,North America
+Rabbit,Pet,699,270,8,Gray,Africa
+Horse,Farm,199,273,29,Brown,Europe
+Cow,Farm,590,382,19,Golden,Europe
+Tiger,Wild,431,221,12,Gray,Asia
+Lion,Wild,428,195,16,White,Asia
+Rabbit,Pet,518,205,25,Black,Asia
+Cat,Pet,367,72,15,Golden,Africa
+Wolf,Wild,636,29,22,Golden,Africa
+Fox,Wild,488,396,27,Golden,Asia
+Wolf,Wild,363,239,20,Brown,Africa
+Lion,Wild,528,299,12,Brown,Europe
+Lion,Wild,461,346,10,Gray,Africa
+Parrot,Pet,170,387,6,Brown,Africa
+Dog,Pet,596,365,11,White,Africa
+Horse,Farm,261,43,24,Golden,North America
+Lion,Wild,120,38,6,Golden,Asia
+Cat,Pet,220,176,17,Golden,Asia
+Rabbit,Pet,563,61,1,Golden,Asia
+Cow,Farm,546,189,29,Black,Asia
+Wolf,Wild,270,66,2,Brown,North America
+Goat,Farm,188,172,18,Black,North America
+Lion,Wild,327,311,28,Gray,Europe
+Dog,Pet,562,52,4,Gray,North America
+Tiger,Wild,356,60,13,Brown,Europe
+Elephant,Wild,200,374,25,Brown,North America
+Wolf,Wild,365,227,22,Gray,Africa
+Parrot,Pet,257,107,8,Gray,Asia
+Lion,Wild,6,187,16,White,Asia
+Goat,Farm,410,238,8,Golden,Europe
+Tiger,Wild,231,364,7,Brown,Europe
+Parrot,Pet,262,351,20,Brown,Asia
+Elephant,Wild,561,393,2,Brown,Europe
+Rabbit,Pet,429,357,19,Golden,Asia
+Elephant,Wild,563,70,25,Gray,Europe
+Horse,Farm,610,383,21,Brown,Europe
+Elephant,Wild,337,69,24,Brown,North America
+Parrot,Pet,661,212,22,White,Europe
+Cow,Farm,211,346,15,Golden,Asia
+Elephant,Wild,474,168,28,Black,Africa
+Cow,Farm,10,295,19,Black,Europe
+Elephant,Wild,238,278,22,Brown,North America
+Lion,Wild,314,391,23,Golden,Africa
+Elephant,Wild,202,296,20,Black,Asia
+Goat,Farm,338,193,17,Black,Africa
+Rabbit,Pet,475,274,16,Golden,Africa
+Parrot,Pet,267,220,26,Brown,Europe
+Wolf,Wild,312,355,6,Gray,North America
+Horse,Farm,600,343,16,Black,North America
+Cow,Farm,408,178,25,Golden,Asia
+Fox,Wild,87,179,4,Gray,Africa
+Horse,Farm,465,220,18,Gray,Africa
+Dog,Pet,469,118,29,Gray,Asia
+Tiger,Wild,649,154,20,Golden,North America
+Tiger,Wild,191,252,18,Brown,North America
+Fox,Wild,324,183,7,Brown,Asia
+Horse,Farm,516,252,8,Gray,Asia
+Fox,Wild,518,112,7,Gray,North America
+Tiger,Wild,644,353,5,White,North America
+Dog,Pet,593,136,8,Golden,Asia
+Goat,Farm,424,186,12,Golden,North America
+Wolf,Wild,220,137,19,Gray,Africa
+Lion,Wild,408,286,20,Gray,North America
+Elephant,Wild,524,397,14,Brown,Asia
+Elephant,Wild,542,102,11,Brown,North America
+Fox,Wild,595,27,11,Golden,Africa
+Fox,Wild,665,63,17,White,Europe
+Parrot,Pet,186,385,18,Gray,Asia
+Rabbit,Pet,689,145,14,Brown,Asia
+Lion,Wild,442,248,16,Golden,Europe
+Cow,Farm,64,388,3,Brown,Asia
+Goat,Farm,416,368,3,Golden,North America
+Tiger,Wild,248,122,7,White,Africa
+Lion,Wild,260,331,19,Golden,Africa
+Dog,Pet,70,171,30,Brown,North America
+Lion,Wild,67,144,13,Gray,North America
+Lion,Wild,496,142,2,Gray,Africa
+Dog,Pet,255,215,8,Gray,North America
+Goat,Farm,386,196,12,White,Africa
+Elephant,Wild,123,313,10,Gray,Asia
+Elephant,Wild,145,54,14,White,North America
+Rabbit,Pet,403,184,24,Black,Europe
+Cat,Pet,313,320,16,Gray,North America
+Fox,Wild,635,311,3,Black,Asia
+Wolf,Wild,481,303,23,Golden,North America
+Dog,Pet,49,71,1,Golden,Europe
+Wolf,Wild,418,85,23,Gray,Africa
+Rabbit,Pet,212,236,13,Black,Europe
+Cow,Farm,14,67,25,White,Europe
+Lion,Wild,439,385,19,Gray,Africa
+Fox,Wild,70,90,10,Gray,Europe
+Horse,Farm,410,120,3,Black,Europe
+Cow,Farm,328,310,29,Gray,Africa
+Goat,Farm,379,170,4,Gray,North America
+Wolf,Wild,691,227,21,White,Europe
+Wolf,Wild,628,156,1,White,North America
+Cat,Pet,48,193,20,Gray,Africa
+Goat,Farm,383,281,12,Black,Europe
+Fox,Wild,600,208,22,Black,Africa
+Goat,Farm,616,231,4,Golden,North America
+Cow,Farm,413,360,7,Brown,North America
+Parrot,Pet,331,228,18,Gray,Africa
