@@ -1,5 +1,5 @@
 13/3/2026
-Machine Learning : 
+Machine Learning : https://chatgpt.com/share/6a245e83-21bc-8320-a4c0-c8de32120627
 AI : 
 1. ML (not used much) : 
    1. Supervised : 
@@ -253,3 +253,194 @@ Types of chatbot :
 1) Static bot : traditional bot with if else conditions
 2) Agentic AI : 1. Lang chain, 2. Lang graph, 3. Crew AI
 3) RAG based bot
+
+25/5/26
+
+Decision Tree : 
+
+28/5/26
+
+best split
+loan approval
+yes yes yes no
+gini = 1 - (p1^2 + p2^2)
+p1 = yes = positive
+p2 = no - negative
+gini = 0 best split
+50 = average
+3/4 = 0.75 p1
+1/4 = 0.25 p2
+gini = 1 - (0.75^2 + 0.25^2)
+gini = 
+
+
+gini if less then better (pure) and the more it gets it becomes impure and it ranges from 0 to 1. if 0 then 100% purity and if 0.9 then 90% impurity
+
+ONE HOT ENCODING : 
+   Spark Matrix : It only stores non zero value.
+   We convert this spark matrix into normal array using toarray() method.
+
+
+ENTROPY : Entropy measures impurity or disorder in a dataset. It ranges from 0 to 1. 
+Formula : Entropy(S)=−∑ pi*​log2​(pi​)
+
+Example 1: Pure Dataset
+
+Buy Laptop
+Yes
+Yes
+Yes
+Yes
+
+Probability:
+P(Yes)=4/4=1
+P(No)=0/4=0
+
+Entropy = −(1*log2(1)+0*log2(0))
+=0
+
+Entropy = 0
+Meaning:
+No uncertainty
+Perfectly pure
+
+Example 2: Mixed Dataset
+
+Buy Laptop
+Yes
+Yes
+No
+No
+
+Probability:
+P(Yes)=2/4=0.5
+P(No)=2/4=0.5
+
+Entropy = −(0.5*log2(0.5)+0.5*log2(0.5)
+=1
+
+Entropy = 1
+Maximum impurity.
+
+Entropy Range :
+Entropy = 0      → Pure 
+Entropy = 1      → Maximum impurity
+
+age salary exp city   purchased
+25  low    2   ahmd   no
+27  high   4   rjkt   yes
+27  low    4   baroda no
+27  high   4   rjkt   yes
+27  high   4   surat  yes
+27  low    4   rjkt   yes
+
+parent column is the output column and child column is the input column
+IG : Information Gain = Output score (parent entropy : purchased column) - weighted entropy (child entropy : age salary exp city)
+Based on the value of IG the weightage of columns is decided. Higher information gain means better split.
+To calculate the entropy, we see the output here purchased column , if there is all yes then 100% pure data with no disorder and then entropy will be 0 and as the percentage value of yes decrease and percentage value of no increase the entropy increases and the impurity and disorder also increases.
+
+yes   no   entropy
+100%  0%   0
+95%   5%   low
+80%   20%  medium
+70%   30%  high
+50%   50%  max
+
+pyes = 4/6 = 0.66
+pno = 2/6 = 0.33
+
+entropy(parent) = -(p of yes*log2(p of yes) + p of no*log2(p of no))
+        = 0.66 * log2(0.66) + 0.33 * log2(0.33)
+        = output (parent entropy)
+
+entropy(child) : we will find child entropy for each column by dividing the data of a particular column based on its dependence on the output column , here in age if the age is above 30 then the purchased values is yes and otherwise no so it will divide it into 2 different parts. and from that using the same formula we calculate the entropy for each input columns.
+
+after calculating the entropy of parent and all child we find ig for all columns and after that the column which has the highest ig will be the root node and the user will be asked questions about the root node for eg here age is the root node then it will ask about the age to the user and based on that it will take decision and give output and if there are two columns with same ig then the scikit learn will decide which column will be root node and for that it will refer to csv file and see which column comes first in that and takes that into priority , for eg it age and salary have same ig then scikit learn will go through the csv file and see which column comes first, suppose age salary comes first then user will be asked about salary and after that questions about all the leaf nodes will be asked.
+
+gini is better for small dataset and it is fast, but entropy is better for big dataset
+
+entropy, gini, decision tree : https://chatgpt.com/share/6a1eb82f-02f4-8320-9ebd-bc99109bbffd
+
+knn // job and placement// claude = kaggle
+
+2/6/26
+
+K NEAREST NEIGHBOUR : k = sqrt((x2-x1)^2 + (y2-y1)^2)
+x2-x1 means difference between xtest and xtrain
+y2-y1 means difference between ytest and ytrain
+
+user gives x2 and y2 which will be used for testing, for that we keep that values in formula every time and the x1 and y1 values are taken from the training data. Using this we get distance for every row.
+
+Eg : 
+height  weight  category
+170     65      fit
+172     68      fit
+180     90      Unfit 
+182     95      unfit
+
+new values entered by user for testing : 172  63 which will be our x2 and y2
+Now we put those values in formula and x1 and y1 from our data : k = sqrt((172 - 170)^2 + (63 - 65)^2)
+We suppose this values as d1 and similarly for every row we find values as d2 d3 d4
+suppose we have values : 
+d1=1.87 fit (this fit and unfit values are taken from the concurrent row category)
+d2=1.90 unfit
+d3=5.00 unfit
+d4=3.50 fit
+now from this all 4 data , knn takes odd number of nearest values suppose here 3 out of 4 and then if the majority is fit then the output data will be fit and if the majority is unfit then the output will be unfit.
+
+advantages : no need of data split, works fast on less data.
+disadvantages : feature scaling is must, works slow on large data.
+types of feature scaling in knn : min-max scaling, standardization
+
+3/6/26
+
+min-max scaling : It is used when the data range is high and we bring it down in the range of 0 to 1.
+Formula : (x-min) / (max-min)
+x = input data
+
+standardization : 
+
+height  salary  category
+170     65000   fit
+175     68000   fit
+180     90000   unfit
+182     98000   unfit
+
+Step 1 : find mean
+Step 2 : find (column values - mean)/std deviation for every value in that column.
+Step 3 : Now user enters a value so we use the step 2 formula for this input data and then find the nearest neighbour and see if it fits or unfits.
+
+suppose mean of all height values is 176.75
+then we will do step 2 : (170 - 176.75) / 4.6 where 4.6 is stdd deviation and find value with all height values replaced at the place of 170
+now suppose all values are -1.46, 0.7, -0.3, 1.16 
+now we will do the same thing for input data and if the value is 1.40 then the nearest neighbour is 1.46 and in 1.46 value the category is fit so the output will be fit.
+
+RANDOM FOREST : It is a group of decision trees and in this it works on the decision on majority of decision trees. It does voting if there is classification and does average in case of regression.
+It does bootstrap sampling technique and in this technique, the random no of trees are generated and based on the majority of output it gives the final output.
+
+5/6/26
+
+1 max_depth : It is a method used to define the number of questions to be asked.
+
+n_estimator : It is a method used to define the number of trees generated and this each tree have the max_depth, so the total number of questions to be asked will be max_depth*n_estimator.
+
+XGBoost(Xtream Gradient Boost) : Learn this
+Bagging : Every tree will work by itself and each will have its own error whereas in bagging the consecutive tree will solve the error of the first one and sequentially till last. So in short in bagging the trees work individually but in boosting the trees work in group one-by-one.
+
+Boosting : If the student percentage and study hours are 10 and 80 and its output is 85, now this actual output is checked with the predicted value of tree1 and the error in that will be solved/decreased by tree2 and the lesser error in that will be solved/decreased by tree3 until the last output is maximum accurate(100%). If after going thorugh the total number of trees, the accuracy is not 100% and it is less than that, so here now the trees are completed so now to solve this minimal error we use hyperparameter tuning.
+
+hyperparameter tuning : Frequently changing the max_depth and n_estimator values to gain maximum efficiency is known as hyperparameter tuning and the values of n_estimator(no of trees) should be between 50 to 200.
+
+learning rate : Suppose we have set the value of learning rate as 0.1 then whatever error will be there in the training will be solved 10% of total error everytime and in random forest and xgboost we set the values of learning rate as 0.1 always because increasing it will make the model training worse.
+
+The accuracy of xgboost is better than random forest as it uses boosting while random forest uses bagging.
+
+Epoch : Suppose we have an image/images and we have set 5 epoch, then in every epoch the model will find out the features(edges,patterns and line) and learn from it.
+
+YOLO (You only look once) : It is better than epoch and it only looks once.
+
+Task : api - use - stock market model - live xgboost
+# every morning - predict at least 5 stocks - see for profit and loss (accuracy)
+# frontend
+Dataset : https://www.alphavantage.co/
+API key : THOVUF8UUYXWOVSM
