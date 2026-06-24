@@ -25,7 +25,7 @@ life cycle of ML :
 7. train/test : 80/20
 8. accuracy : percentage of true prediction 0 to 1 : 0.7 to 0.94 (accurate) 
 9. development
-10. monitor : we make it live where it will get new data so we montior the effect on accuracy.
+10. monitor : we make it live where it will get new data so we monitor the effect on accuracy.
 
 17/4/26
 
@@ -130,7 +130,7 @@ We can also make requirements file in which python==version, fastapi==version an
 Advanced automation includes docker and kubernetes, docker is a OS level virtualization platform (image file) in which all the files including the project file, dependencies, requirements are stored in a single container and kubernetes has multiple containers like this.
 
 
-Monolithic Architecture : It has 1 project, 1 port (server), i database but it has multiple api.
+Monolithic Architecture : It has 1 project, 1 port (server), 1 database but it has multiple api.
 Microservice Architecture : Eg, zomato has admin, customer, hotel, rider and this all have their own servers and their requests are send to their respective servers.
 Main difference is monolithic has a single server whereas microservice has multiple servers.
 
@@ -193,13 +193,13 @@ name should be same as we have written in yml file here (written in deploy file)
       Alpha - learning rate 0.1 - slow 0 - medium in between - 1 means fast
       pc - gpu and cpu
 
-      1. forward propogation
-      2. backward propogation
+      1. forward propagation
+      2. backward propagation
 
       input = 20 + 0.5 . 20 + 0.5 . 40
       this prediction is matched with the actual data and if it does not match then it is called loss.
-      this prediction process is called forward propogation
-      if there is loss then to match the actual data and predicted data, we do backward propogation in which we just change weights and then again train data and predict the data to match with the actual and it is repeated until we get the predicted same as actual
+      this prediction process is called forward propagation
+      if there is loss then to match the actual data and predicted data, we do backward propagation in which we just change weights and then again train data and predict the data to match with the actual and it is repeated until we get the predicted same as actual
 
       epoch = no of iteration ,eg, 10
       batch size means the number of data we take in each epoch, eg, batch size of 30 in a data of 1000
@@ -265,8 +265,8 @@ loan approval
 yes yes yes no
 gini = 1 - (p1^2 + p2^2)
 p1 = yes = positive
-p2 = no - negative
-gini = 0 best split
+p2 = no = negative
+if gini = 0 means best split
 50 = average
 3/4 = 0.75 p1
 1/4 = 0.25 p2
@@ -274,7 +274,7 @@ gini = 1 - (0.75^2 + 0.25^2)
 gini = 
 
 
-gini if less then better (pure) and the more it gets it becomes impure and it ranges from 0 to 1. if 0 then 100% purity and if 0.9 then 90% impurity
+gini if less then better (pure) and the more it gets it becomes impure and it ranges from 0 to 0.5 and if 1 then 100% purity and if 0.9 then 90% impurity
 
 ONE HOT ENCODING : 
    Spark Matrix : It only stores non zero value.
@@ -353,7 +353,7 @@ entropy(parent) = -(p of yes*log2(p of yes) + p of no*log2(p of no))
         = 0.66 * log2(0.66) + 0.33 * log2(0.33)
         = output (parent entropy)
 
-entropy(child) : we will find child entropy for each column by dividing the data of a particular column based on its dependence on the output column , here in age if the age is above 30 then the purchased values is yes and otherwise no so it will divide it into 2 different parts. and from that using the same formula we calculate the entropy for each input columns.
+entropy(child) : we will find child entropy for each column by dividing the data of a particular column based on its dependence on the output column , here in age if the age is above 30 then the purchased values is yes and otherwise no so it will divide it into 2 different parts, and from that using the same formula we calculate the entropy for each input columns.
 
 after calculating the entropy of parent and all child we find ig for all columns and after that the column which has the highest ig will be the root node and the user will be asked questions about the root node for eg here age is the root node then it will ask about the age to the user and based on that it will take decision and give output and if there are two columns with same ig then the scikit learn will decide which column will be root node and for that it will refer to csv file and see which column comes first in that and takes that into priority , for eg it age and salary have same ig then scikit learn will go through the csv file and see which column comes first, suppose age salary comes first then user will be asked about salary and after that questions about all the leaf nodes will be asked.
 
@@ -444,3 +444,100 @@ Task : api - use - stock market model - live xgboost
 # frontend
 Dataset : https://www.alphavantage.co/
 API key : THOVUF8UUYXWOVSM
+
+Unsupervised Learning : 
+un = label 
+
+divide group : cluster, association, relationship
+
+cluster 
+	k-means
+	heirarchical
+	DBScan
+
+Eg, in jio , 1 cust buys 399 plan,599 wifi and 1 cust buys 399 and 1 cust buys 299 then it divides these 3 types of cust into different clusters.
+
+association : suppose we buy an item online then it will suggest the same type of products along with the item we bought and this is called association.
+
+
+1. K-MEANS : 
+K : cluster MEANS : center point of data cluster (centroid)
+
+col 1
+12
+15
+10
+70
+75
+80
+cluster 1
+cluster 2
+
+centroid - suppose we select 2 centroid 12 and 75. 
+formula = x - c where input c = centroid
+Now the column values which are near to centroid 1 then it will belong to cluster 1 and the other values belong to cluster 2.
+12 - 12 = 0, 12 - 75 = 63
+15 - 12 = 3, 15 - 75 = 60
+
+now after we get all the values of cluster 1 and cluster 2, we take the avg of it and if there is difference in value as compared to centroid then the new value will become new centroid 1 and same for centroid 2 and the same process repeats again until the avg and the old centroid values match. After it matches the algorithm stops.
+
+16/6/26
+
+model - api - client server communication
+chatbot - question - mcp server - api json - server
+fastapi - framework
+flask, django
+framework - collection of multiple libraries, it supports mvc but library individually does not support mvc.
+rest api :
+    merits : language independent, security
+
+Two types of apis : 
+1) rest - no protocol follow, low bandwidth, less secure
+2) soap - protocol follow, high bandwidth, more secure
+
+MCP(model context protocol) protocol - 
+MCP(model context protocol) server - 
+fine tuning - Customize the already pretrained llm model according to our app. Eg, train the model acc to my company needs and it wil answer only for the questions related to my company. 
+agentic ai
+langchain - single agent
+langgraph - single agent
+crew ai -
+LLM
+RAG(Retrieval Augmented Generation) : It can only be applied to static data and not dynamic data.
+Embedding
+Vector db
+https://chatgpt.com/share/6a329771-d888-83ee-99cc-3e4566c82c38
+
+17/6/26
+
+RNN (Recurrent Neural Network) :
+Eg, in whatsapp whenever i write a word, it automatically suggests the next suitable words that comes after that.
+    Input : I AM PLAYING CRICKET
+    XT = INPUT TIME STAMP -- AM
+    HT-1 = OLD MEMORY - HIDDEN TIME STAMP -- I AM
+    HT = TIME STAMP - NEW MEMORY -- EMPTY + i = i [I AM PLAYING CRICKET]
+    YT = OUTPUT
+    VANISHING GRADIENT : As new word comes in memory, the old word is forgotten from memory.
+    EXPLODING GRADIENT PROBLEM : It does not work properly on long sentence.
+ANN (Artificial Neural Network) : It does not have memory. Domain Chatbot - RAG - LLM - GEMINI MONTHLY CHARGE
+Hugging Face : It is a open source platform consisting of AI models from which we can take any model and fine tune according to our needs and put it in our app and we can also deploy the whole model in our app from it.
+
+NLP : In this, from the whole sentence meaningful words are taken and it also converts the grammatical form of the word into simple word (played -> play).
+
+CNN (Convolutional Neural Network) : Image and Video Processing. In this it has to see the image multiple times to get trained. It is mostly used in pre training.
+YOLO(You Only Look Once) : In this it sees the image only once to get trained. Eg, it can be used in challan where it sees number plate only once and gives challan without having to look again.
+https://chatgpt.com/share/6a329771-d888-83ee-99cc-3e4566c82c38
+
+In a form sensitive data passed through get is less secure than post. Using get, the sensitive data can be seen in the url by anyone. Post enters lakhs of entries at a single time and get does it one by one.
+Suppose there comes the number of users greater than the capacity then the server may crash in post but not in get, butin get the data gets exposed so we have to encrypt it.
+
+Transformer : It remembers every data we have given to train the RNN model so that if we want to get answer from some old data then also the model will give answer correctly.
+Encoder : Input
+Decoder : Output
+
+24/6/26
+SQL - normalization
+duplicate
+data performance
+acid properties
+indexing
