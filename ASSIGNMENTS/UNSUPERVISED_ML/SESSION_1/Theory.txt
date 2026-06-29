@@ -1,0 +1,140 @@
+2. Create a table comparing supervised and unsupervised learning in at least four points using real-world app examples.
+
+-------------------------------------------------------------------------------------------------------------------------------
+| Feature            | Supervised Learning                                    | Unsupervised Learning                         |
+| ------------------ | ------------------------------------------------------ | --------------------------------------------- |
+| Training Data      | Uses labeled data                                      | Uses unlabeled data                           |
+| Objective          | Predict known outputs                                  | Discover hidden patterns                      |
+| Example App        | Instagram feed ranking predicts posts a user will like | Spotify groups similar songs into playlists   |
+| Algorithms         | Linear Regression, Decision Trees, Random Forest, SVM  | K-Means, DBSCAN, Hierarchical Clustering, PCA |
+| Output             | Predicted class/value                                  | Clusters or groups                            |
+| Real-world Example | Gmail spam detection                                   | Netflix customer segmentation                 |
+-------------------------------------------------------------------------------------------------------------------------------
+
+Supervised learning learns from historical labeled examples, while unsupervised learning analyzes unlabeled data to discover similarities, clusters, or hidden structures.
+
+3. Given eight products with price and number of reviews, manually segment them into 2–3 clusters.
+
+---------------------------------------------
+| Product             | Price (₹) | Reviews |
+| ------------------- | --------- | ------- |
+| Wireless Mouse      | 500       | 180     |
+| Mechanical Keyboard | 2800      | 210     |
+| Gaming Headphones   | 3200      | 190     |
+| USB Cable           | 250       | 420     |
+| Smartphone          | 18000     | 950     |
+| Laptop              | 65000     | 1200    |
+| Tablet              | 24000     | 600     |
+| Smartwatch          | 5500      | 350     |
+---------------------------------------------
+
+Cluster 1 – Low Price, High Popularity
+
+----------------------------------------------------
+| Product        | Reason                          |
+| -------------- | ------------------------------- |
+| USB Cable      | Very low price and many reviews |
+| Wireless Mouse | Affordable and popular          |
+----------------------------------------------------
+
+These are inexpensive accessories with a large customer base.
+
+Cluster 2 – Medium Price Electronics
+
+----------------------------------------------------
+| Product             | Reason                     |
+| ------------------- | -------------------------- |
+| Mechanical Keyboard | Mid-range price            |
+| Gaming Headphones   | Similar price and audience |
+| Smartwatch          | Mid-priced wearable device |
+----------------------------------------------------
+
+These products have similar pricing and attract tech enthusiasts.
+
+Cluster 3 – Premium Devices
+
+---------------------------------------------------
+| Product    | Reason                             |
+| ---------- | ---------------------------------- |
+| Smartphone | High price and many reviews        |
+| Tablet     | Premium electronic device          |
+| Laptop     | Most expensive and highly reviewed |
+---------------------------------------------------
+
+These products are high-value electronics purchased less frequently but receive many reviews due to popularity.
+
+Conclusion : The products are grouped based on both price and customer popularity (number of reviews), which is similar to how clustering algorithms identify similar items.
+
+4. List three scenarios in Zomato, Flipkart, or Spotify where unsupervised learning could be used.
+
+Scenario 1 – Zomato Customer Segmentation
+Data Required
+- Order frequency
+- Cuisine preferences
+- Average order value
+- Delivery locations
+
+Insights
+Customers can be grouped into budget users, premium users, and frequent food lovers for targeted promotions.
+
+Scenario 2 – Flipkart Product Clustering
+Data Required
+- Product price
+- Customer ratings
+- Categories
+- Purchase frequency
+
+Insights
+Products with similar characteristics can be grouped together to improve recommendations and inventory management.
+
+Scenario 3 – Spotify Music Grouping
+Data Required
+- Tempo
+- Energy
+- Danceability
+- Genre
+- Listening history
+
+Insights
+Songs with similar audio features can be clustered to create personalized playlists such as "Workout", "Relax", or "Party".
+
+5. Find a real-world dataset suitable for customer segmentation.
+
+One of the most commonly used datasets is the Mall Customer Segmentation Dataset.
+
+Dataset Link:
+https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial
+
+Dataset Structure : 
+
+-------------------------------------------------------------------------
+| Feature                | Description                                  |
+| ---------------------- | -------------------------------------------- |
+| CustomerID             | Unique customer identifier                   |
+| Gender                 | Male or Female                               |
+| Age                    | Customer age                                 |
+| Annual Income (k$)     | Annual income in thousand dollars            |
+| Spending Score (1–100) | Spending behavior score assigned by the mall |
+-------------------------------------------------------------------------
+
+Number of Features
+- 5 columns
+- 200 customer records
+
+Datatypes : 
+
+--------------------------------
+| Feature        | Type        |
+| -------------- | ----------- |
+| CustomerID     | Integer     |
+| Gender         | Categorical |
+| Age            | Numerical   |
+| Annual Income  | Numerical   |
+| Spending Score | Numerical   |
+--------------------------------
+
+Is the Dataset Labeled?
+-> No. It is an unlabeled dataset, making it suitable for unsupervised learning techniques such as K-Means, Hierarchical Clustering, and DBSCAN.
+
+Why This Dataset?
+-> This dataset contains customer demographic and spending information without predefined labels. Clustering algorithms can identify different customer segments, helping businesses design targeted marketing campaigns and improve customer engagement.

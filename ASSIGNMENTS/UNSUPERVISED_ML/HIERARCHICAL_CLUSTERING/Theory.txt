@@ -1,0 +1,142 @@
+1. Given a small dataset of 6 food delivery orders (with features like delivery_time and distance), manually create the initial distance matrix using the Euclidean distance formula between each pair of orders.<br><br><em><strong>Hint:</strong> Use the formula sqrt((x2 - x1)^2 + (y2 - y1)^2) for each pair.</em>
+
+-----------------------------------------------
+| Order | Delivery Time (min) | Distance (km) |
+| ----- | ------------------- | ------------- |
+| O1    | 10                  | 2             |
+| O2    | 12                  | 3             |
+| O3    | 15                  | 5             |
+| O4    | 18                  | 8             |
+| O5    | 20                  | 9             |
+| O6    | 25                  | 12            |
+-----------------------------------------------
+
+Euclidean Distance Formula
+d=((x2 - x1)^2 + (y2 - y1)^2)^1/2
+
+Distance(O1,O2) = 2.24
+Distance(O1,O3) = 5.83
+Distance(O1,O4) = 10
+Distance(O1,O5) = 12.21
+Distance(O1,O6) = 18.03
+
+--------------------
+| Pair  | Distance |
+| ----- | -------- |
+| O2-O3 | 3.61     |
+| O2-O4 | 7.81     |
+| O2-O5 | 10.00    |
+| O2-O6 | 15.62    |
+| O3-O4 | 4.24     |
+| O3-O5 | 6.40     |
+| O3-O6 | 12.21    |
+| O4-O5 | 2.24     |
+| O4-O6 | 8.06     |
+| O5-O6 | 5.83     |
+--------------------
+
+Initial Distance Matrix : 
+
+|        | O1    | O2    | O3    | O4    | O5    | O6    |
+| ------ | ----- | ----- | ----- | ----- | ----- | ----- |
+|   O1   | 0     | 2.24  | 5.83  | 10.00 | 12.21 | 18.03 |
+|   O2   | 2.24  | 0     | 3.61  | 7.81  | 10.00 | 15.62 |
+|   O3   | 5.83  | 3.61  | 0     | 4.24  | 6.40  | 12.21 |
+|   O4   | 10.00 | 7.81  | 4.24  | 0     | 2.24  | 8.06  |
+|   O5   | 12.21 | 10.00 | 6.40  | 2.24  | 0     | 5.83  |
+|   O6   | 18.03 | 15.62 | 12.21 | 8.06  | 5.83  | 0     |
+
+Explanation : 
+The distance matrix represents the similarity between every pair of delivery orders.
+Smaller distance → More similar
+Larger distance → Less similar
+Hierarchical clustering begins by merging the two closest orders.
+
+Conclusion : 
+The smallest distance is 2.24 between O1 & O2 and O4 & O5. Hence these pairs will merge first.
+
+
+5. Imagine you are building a 'similar movies' feature for a movie app. Briefly describe which linkage method (single, complete, average, or Ward) you would choose for grouping movies by user ratings and why.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+| Linkage Method   | Description                                  | Advantages                                | Disadvantages                |
+| ---------------- | -------------------------------------------- | ----------------------------------------- | ---------------------------- |
+| Single Linkage   | Uses the minimum distance between clusters   | Can detect irregular cluster shapes       | Suffers from chaining effect |
+| Complete Linkage | Uses the maximum distance between clusters   | Produces compact clusters                 | Sensitive to outliers        |
+| Average Linkage  | Uses the average distance between all points | Balanced clustering                       | Computationally slower       |
+| Ward Linkage     | Minimizes within-cluster variance            | Produces compact, well-separated clusters | Assumes spherical clusters   |
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Best Choice
+Ward Linkage
+
+Ward linkage is the most suitable choice for building a Similar Movies recommendation feature.
+
+Reason
+
+Movie recommendation systems generally group movies based on similarities in user ratings, genres, watch history, popularity, and viewing behavior.
+
+Ward linkage:
+
+Minimizes the variance within each cluster.
+Produces compact and homogeneous groups.
+Keeps similar movies together while separating different movie categories.
+Reduces the chances of placing unrelated movies in the same cluster.
+
+For example:
+
+Cluster 1
+----------
+Avengers
+Iron Man
+Captain America
+Thor
+
+Cluster 2
+----------
+The Conjuring
+Insidious
+Annabelle
+
+Cluster 3
+----------
+Toy Story
+Frozen
+Moana
+
+Each cluster contains movies with similar characteristics, making recommendations more accurate.
+
+Why Not the Others?
+Single Linkage
+Creates long chain-like clusters.
+May group unrelated movies because of one similar rating.
+
+Example:
+
+Movie A
+↓
+
+Movie B
+↓
+
+Movie C
+↓
+
+Movie D
+
+Even though Movie A and Movie D are very different, they may end up in the same cluster.
+
+Complete Linkage
+Produces compact clusters.
+Sometimes splits movies that are actually similar because it considers the farthest distance between points.
+Average Linkage
+Better than Single Linkage.
+More balanced clustering.
+However, it is not as effective as Ward linkage for recommendation systems.
+Final Answer
+
+Ward Linkage is the preferred method for a movie recommendation system because it creates compact and well-separated clusters by minimizing the variance within each cluster. This results in groups of movies that are highly similar in terms of user ratings and viewing behavior, improving the accuracy and relevance of recommendations.
+
+Conclusion
+
+Ward linkage provides the best clustering quality for movie recommendation systems. It creates balanced, homogeneous clusters that help users discover movies similar to those they have already enjoyed.

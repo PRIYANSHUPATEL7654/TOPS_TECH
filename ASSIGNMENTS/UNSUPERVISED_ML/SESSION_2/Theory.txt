@@ -1,0 +1,82 @@
+1. Given a small dataset of 2D points representing food delivery locations:
+A = (2,3)
+B = (5,8)
+C = (1,2)
+D = (6,9)
+E = (7,7)
+Plot the points, randomly choose two centroids, and manually assign each point to the nearest centroid using Euclidean distance.
+
+Step 1 : Dataset
+
+-----------------------
+| Point | Coordinates |
+| ----- | ----------- |
+| A     | (2,3)       |
+| B     | (5,8)       |
+| C     | (1,2)       |
+| D     | (6,9)       |
+| E     | (7,7)       |
+-----------------------
+
+Step 2 : Choose initial centroids
+
+randomly select :
+
+Centroid 1 (C1) = (2,3)
+Centroid 2 (C2) = (6,9)
+
+Step 3: Euclidean Distance Formula
+d=((x2 - x1)^2 + (y2 - y1)^2)^1/2
+
+Step 4: Calculate Distances
+Point A (2,3)
+
+Distance to C1 : ((2−2)^2+(3−3)^2)^1/2 ​= 0
+
+Distance to C2 : ((6−2)^2+(9−3)^2)^1/2 ​= 7.21
+
+Assigned to Cluster 1
+
+Point B (5,8)
+
+Distance to C1 ​= 5.83
+
+Distance to C2 ​= 1.41
+
+Assigned to Cluster 2
+
+Point C (1,2)
+
+Distance to C1 = 1.41
+
+Distance to C2 = 8.60
+
+Assigned to Cluster 1
+
+Point D (6,9)
+
+Distance to C1 = 7.21
+
+Distance to C2 = 0
+
+Assigned to Cluster 2
+
+Point E (7,7)
+
+Distance to C1 = 6.40
+
+Distance to C2 = 2.24
+
+Assigned to Cluster 2
+
+Final Cluster Assignment :
+
+---------------------
+| Point | Cluster   |
+| ----- | --------- |
+| A     | Cluster 1 |
+| C     | Cluster 1 |
+| B     | Cluster 2 |
+| D     | Cluster 2 |
+| E     | Cluster 2 |
+---------------------

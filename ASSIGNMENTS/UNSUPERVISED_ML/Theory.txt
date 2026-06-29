@@ -1,0 +1,25 @@
+4. Interpret the dendrogram you created: Write a short explanation (3-4 lines) describing how you can tell which clusters are most similar and which are most different, based on the heights and structure of the branches.
+
+Interpretation : 
+The dendrogram visually represents how clusters are formed during hierarchical clustering.
+-> Clusters that merge at a lower height are more similar because the distance between them is small.
+-> Clusters that merge at a greater height are less similar because they are farther apart.
+-> Long vertical branches indicate that the merged clusters are significantly different.
+-> By drawing a horizontal line across the dendrogram, we can determine the desired number of clusters based on where the line intersects the branches.
+
+Example
+
+Suppose the dendrogram looks like:
+
+            ________
+           |
+      ______|
+     |      |
+  ___|___   |
+ |       |  |
+A       B  C
+
+Here:
+
+A and B merge first because they are very similar.
+C joins later at a higher height, meaning it is more different from A and B.
