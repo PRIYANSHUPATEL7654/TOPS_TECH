@@ -541,3 +541,73 @@ duplicate
 data performance
 acid properties
 indexing
+
+29/6/26
+
+If data is large k means and if less then hierarchical clustering
+If category is pre defined then k means and if not then hierarchical clustering
+
+Hierarchical Clustering : 
+Dendrogram structure (made using Linkage method): 
+A	12
+B	10
+C	40
+D	45
+
+Initially the all values are considered as clusters. Now the nearest values are clubbed to form a cluster.
+Formula to find nearest values to form club : d = x1 - x2
+
+A-B=2
+A-C=28
+A-D=33
+B-C=30
+B-D=35
+C-D=5
+Now in (A,B),C,D if we want to find distance between the cluster (A,B) and individual C then we use linkage method.
+
+Linkage :
+to find the distance between (A,B) and C
+A-C=28
+B-C=30
+Now find the minimum of all the values (here 28)
+So now the new cluster will be ((A,B),C)
+
+to find the distance between (A,B) and D
+A-D=33
+B-D=35
+Now find the minimum of all the values (here 33)
+So now the new cluster will be ((A,B),D)
+
+
+Types of linkage :
+1) Single : It takes the min value
+2) Complete : It takes the max value
+3) Average : It takes the avg value
+4) Ward : It takes the variance value
+
+Types of hierarchical clustering : 
+1) Aggromative Cluster : 
+Eg : 
+A  10
+B  20
+C  30
+D  45
+It converts the individual clusters into a single cluster.
+
+2) Divisive : 
+Eg : 
+(A,B,C,D)
+It converts a single cluster into individual clusters.
+
+DBSCAN (Density Based Spatial Clustering for Applications with Noise) : 
+
+Density-Based 	→ Forms clusters based on how densely packed the data points are.
+Spatial		→ Works with distances between data points.
+Clustering 	→ Groups similar points together.
+Noise 		→ Detects points that don't belong to any cluster (outliers).
+
+Constraints :
+eps - distance - 200m : It means if we have set the eps(distance between 2 elements should be maximum 200 and not more than that) and club elements according to that.
+min_sample - 3 : It means that there should be minimum 3 elements in a cluster.
+
+In hierarchical clustering,fcluster means final cluster in which after clustering there are 200 clusters then we can further divide it into k no of clusters using this fcluster.
