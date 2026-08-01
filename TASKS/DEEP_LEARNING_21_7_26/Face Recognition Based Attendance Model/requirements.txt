@@ -1,0 +1,15 @@
+opencv-python
+numpy
+chromadb
+openpyxl
+
+# IMPORTANT: install these two in this exact order/way to avoid a slow dlib
+# compile from source (can take 20-40+ minutes on some machines):
+#
+#   pip install dlib-bin
+#   pip install face_recognition_models
+#   pip install face_recognition --no-deps
+#
+# dlib-bin provides a prebuilt dlib wheel and registers itself as the
+# "dlib" module, so face_recognition (which normally depends on "dlib")
+# works fine when installed with --no-deps.
