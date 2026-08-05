@@ -20,13 +20,13 @@ project/
 │       ├── Priyanshu_2.jpg
 │       └── Priyanshu_3.jpg
 ├── encodings/
-│   └── encodings.pkl            # pickled face encodings (already generated)
-├── chroma_db/                    # ChromaDB persistent storage (created on first run)
+│   └── encodings.pkl           # pickled face encodings (already generated)
+├── chroma_db/                  # ChromaDB persistent storage (created on first run)
 ├── attendance_records/
-│   └── attendance.xlsx           # generated when attendance.py is run
-├── enroll.py                     # Step 1+2: capture photos & generate encodings
-├── vector_store.py                # Step 3: push encodings into ChromaDB
-├── attendance.py                   # Step 4+5: live recognition + Excel marking
+│   └── attendance.xlsx         # generated when attendance.py is run
+├── enroll.py                   # Step 1+2: capture photos & generate encodings
+├── vector_store.py             # Step 3: push encodings into ChromaDB
+├── attendance.py               # Step 4+5: live recognition + Excel marking
 ├── requirements.txt
 └── README.md
 ```
