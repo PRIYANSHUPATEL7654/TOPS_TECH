@@ -43,21 +43,11 @@ pip install face_recognition_models
 pip install face_recognition --no-deps
 ```
 
-## 2. Already done for you
+## 2. Already done
 
 A sample student, **Priyanshu (Roll No: TT1)**, has already been enrolled:
 - His 3 photos are in `dataset/Priyanshu/`
 - His face encoding is already saved in `encodings/encodings.pkl`
-
-> **Note on the photos provided:** Only 1 of the 3 photos (the frontal shot)
-> had a clearly detectable face — the other two are steep side-profile shots,
-> and side profiles are notoriously unreliable for face detection/encoding
-> (this is a known limitation of face recognition in general, not just this
-> project). All 3 photos are still stored in the dataset folder as requested,
-> but only 1 usable face vector went into the pickle file. **For best
-> accuracy, re-enroll with 4-5 more front-facing / slightly-angled photos**
-> using `enroll.py` (see below) — one good encoding works, but more angles
-> make recognition far more robust to lighting and head-turns.
 
 ## 3. Enroll a new student (via webcam)
 
