@@ -1,0 +1,601 @@
+city,restaurant,delivery_time_minutes,revenue
+Delhi,Butter Chicken Co,23.1,378.7
+Delhi,Rolls Royale,44.6,419.07
+Mumbai,Bombay Bites,27.4,302.73
+Ahmedabad,Spice Villa,33.9,177.8
+Bangalore,Silicon Spice,38.5,212.85
+Mumbai,Wok This Way,24.7,222.89
+Mumbai,Tandoori Nights,27.0,403.79
+Delhi,Butter Chicken Co,27.6,359.98
+Delhi,Rolls Royale,27.2,435.27
+Ahmedabad,Green Bowl,27.2,516.71
+Delhi,Butter Chicken Co,27.7,349.5
+Mumbai,Bombay Bites,38.6,240.12
+Mumbai,Tandoori Nights,54.2,457.43
+Mumbai,Bombay Bites,37.9,365.42
+Bangalore,Dosa Delight,23.9,207.5
+Mumbai,Sea Breeze Cafe,28.3,445.14
+Bangalore,Garden Cafe,23.0,362.1
+Delhi,Chandni Chowk Eats,26.6,405.05
+Bangalore,Brew and Bite,36.7,429.9
+Delhi,Rolls Royale,25.3,322.17
+Delhi,Chandni Chowk Eats,19.9,448.97
+Bangalore,Brew and Bite,23.1,242.34
+Delhi,Butter Chicken Co,38.7,376.69
+Ahmedabad,Pizza Point,34.9,291.94
+Ahmedabad,Spice Villa,44.0,380.44
+Delhi,Rolls Royale,11.0,423.97
+Mumbai,Wok This Way,20.6,443.82
+Bangalore,Garden Cafe,30.2,382.14
+Ahmedabad,Pizza Point,25.7,416.93
+Bangalore,Brew and Bite,25.5,304.84
+Mumbai,Tandoori Nights,36.0,454.24
+Mumbai,Wok This Way,27.8,396.19
+Mumbai,Tandoori Nights,43.0,365.8
+Bangalore,Silicon Spice,26.4,320.51
+Ahmedabad,Pizza Point,42.2,323.72
+Ahmedabad,Pizza Point,32.0,328.89
+Ahmedabad,Green Bowl,28.8,323.98
+Bangalore,Garden Cafe,30.7,386.36
+Bangalore,Garden Cafe,24.5,476.36
+Ahmedabad,Green Bowl,16.6,347.61
+Ahmedabad,Curry House,32.8,311.07
+Mumbai,Wok This Way,30.5,377.14
+Mumbai,Bombay Bites,34.7,349.34
+Bangalore,Brew and Bite,41.1,417.67
+Delhi,Chandni Chowk Eats,25.6,474.56
+Bangalore,Dosa Delight,36.7,547.14
+Bangalore,Garden Cafe,28.1,433.08
+Mumbai,Wok This Way,32.8,304.69
+Delhi,Butter Chicken Co,32.1,317.1
+Delhi,Butter Chicken Co,23.5,392.62
+Ahmedabad,Curry House,37.0,335.52
+Ahmedabad,Pizza Point,25.7,321.01
+Delhi,Rolls Royale,29.1,400.05
+Bangalore,Garden Cafe,33.8,467.64
+Bangalore,Silicon Spice,29.4,331.47
+Bangalore,Silicon Spice,34.1,420.36
+Ahmedabad,Spice Villa,42.4,271.96
+Delhi,Butter Chicken Co,34.0,381.18
+Bangalore,Garden Cafe,33.8,426.27
+Delhi,Butter Chicken Co,34.3,285.71
+Ahmedabad,Green Bowl,33.4,240.48
+Mumbai,Sea Breeze Cafe,22.5,409.09
+Ahmedabad,Curry House,26.0,248.26
+Bangalore,Garden Cafe,39.7,387.15
+Ahmedabad,Curry House,25.1,363.13
+Delhi,Capital Kitchen,24.9,276.58
+Mumbai,Tandoori Nights,39.0,328.44
+Delhi,Rolls Royale,32.1,480.82
+Bangalore,Brew and Bite,20.7,346.89
+Ahmedabad,Curry House,23.4,393.42
+Bangalore,Dosa Delight,31.0,416.63
+Ahmedabad,Pizza Point,25.2,213.66
+Delhi,Chandni Chowk Eats,24.6,303.83
+Ahmedabad,Green Bowl,33.4,384.68
+Bangalore,Dosa Delight,33.8,277.2
+Mumbai,Sea Breeze Cafe,32.5,247.13
+Mumbai,Tandoori Nights,39.0,445.96
+Delhi,Capital Kitchen,21.0,265.6
+Delhi,Capital Kitchen,34.4,373.15
+Ahmedabad,Curry House,36.1,696.75
+Ahmedabad,Curry House,42.6,438.94
+Bangalore,Dosa Delight,29.5,418.31
+Bangalore,Dosa Delight,33.3,272.97
+Mumbai,Sea Breeze Cafe,50.5,181.95
+Ahmedabad,Green Bowl,28.7,357.22
+Bangalore,Dosa Delight,28.2,448.01
+Bangalore,Silicon Spice,44.5,361.57
+Bangalore,Garden Cafe,26.2,369.48
+Ahmedabad,Curry House,51.1,515.91
+Delhi,Butter Chicken Co,15.8,366.78
+Ahmedabad,Curry House,28.4,199.78
+Delhi,Capital Kitchen,36.0,427.92
+Ahmedabad,Spice Villa,29.3,321.39
+Mumbai,Wok This Way,46.1,386.45
+Bangalore,Silicon Spice,35.0,498.62
+Mumbai,Bombay Bites,19.8,306.42
+Bangalore,Brew and Bite,30.1,518.48
+Mumbai,Tandoori Nights,10.0,257.81
+Ahmedabad,Green Bowl,16.0,232.98
+Mumbai,Tandoori Nights,28.5,361.77
+Delhi,Capital Kitchen,32.5,561.32
+Ahmedabad,Curry House,24.1,391.59
+Bangalore,Garden Cafe,30.4,355.48
+Bangalore,Garden Cafe,32.9,409.59
+Mumbai,Sea Breeze Cafe,27.1,540.02
+Delhi,Rolls Royale,30.8,402.95
+Ahmedabad,Curry House,28.1,368.68
+Bangalore,Silicon Spice,27.3,426.46
+Bangalore,Dosa Delight,39.6,480.73
+Ahmedabad,Curry House,38.5,406.67
+Ahmedabad,Curry House,36.4,286.09
+Bangalore,Brew and Bite,31.8,360.56
+Mumbai,Bombay Bites,26.6,454.57
+Mumbai,Wok This Way,30.3,448.89
+Ahmedabad,Pizza Point,28.7,373.55
+Ahmedabad,Spice Villa,42.4,351.89
+Mumbai,Bombay Bites,30.1,426.86
+Bangalore,Silicon Spice,34.6,338.29
+Bangalore,Garden Cafe,47.3,445.87
+Ahmedabad,Spice Villa,24.0,240.72
+Delhi,Chandni Chowk Eats,38.2,410.04
+Ahmedabad,Pizza Point,31.9,269.25
+Delhi,Capital Kitchen,15.3,509.34
+Delhi,Chandni Chowk Eats,25.4,321.08
+Bangalore,Silicon Spice,36.9,472.21
+Ahmedabad,Green Bowl,34.0,304.38
+Mumbai,Bombay Bites,36.5,428.53
+Ahmedabad,Spice Villa,20.4,223.33
+Bangalore,Silicon Spice,26.7,472.41
+Delhi,Rolls Royale,34.5,482.78
+Delhi,Capital Kitchen,29.6,349.59
+Bangalore,Dosa Delight,34.6,275.55
+Ahmedabad,Pizza Point,35.9,358.0
+Delhi,Butter Chicken Co,37.5,313.89
+Mumbai,Bombay Bites,32.6,438.52
+Delhi,Butter Chicken Co,32.8,280.43
+Bangalore,Silicon Spice,50.2,386.56
+Mumbai,Sea Breeze Cafe,49.2,280.94
+Mumbai,Sea Breeze Cafe,31.1,437.87
+Bangalore,Silicon Spice,25.3,296.05
+Mumbai,Wok This Way,40.3,187.09
+Bangalore,Silicon Spice,34.7,518.86
+Ahmedabad,Spice Villa,36.6,437.35
+Ahmedabad,Spice Villa,21.4,514.83
+Bangalore,Dosa Delight,31.4,324.6
+Ahmedabad,Green Bowl,18.3,471.85
+Mumbai,Sea Breeze Cafe,34.2,375.09
+Mumbai,Bombay Bites,19.2,296.06
+Bangalore,Brew and Bite,34.1,377.21
+Delhi,Chandni Chowk Eats,32.0,354.23
+Ahmedabad,Spice Villa,29.5,206.08
+Mumbai,Bombay Bites,33.0,396.3
+Mumbai,Bombay Bites,40.5,488.72
+Bangalore,Brew and Bite,34.7,282.64
+Mumbai,Tandoori Nights,32.9,489.61
+Bangalore,Silicon Spice,48.5,507.98
+Mumbai,Sea Breeze Cafe,23.8,325.78
+Delhi,Rolls Royale,37.2,473.18
+Mumbai,Sea Breeze Cafe,28.5,319.19
+Bangalore,Dosa Delight,40.5,191.71
+Mumbai,Sea Breeze Cafe,39.1,337.66
+Bangalore,Silicon Spice,44.0,356.67
+Bangalore,Dosa Delight,39.9,379.76
+Ahmedabad,Spice Villa,18.4,345.0
+Bangalore,Silicon Spice,32.0,386.28
+Ahmedabad,Green Bowl,21.6,410.27
+Delhi,Rolls Royale,23.2,393.89
+Bangalore,Silicon Spice,31.5,435.96
+Ahmedabad,Curry House,28.4,307.19
+Delhi,Chandni Chowk Eats,27.8,278.64
+Ahmedabad,Green Bowl,20.5,332.76
+Mumbai,Bombay Bites,47.7,353.17
+Ahmedabad,Green Bowl,36.1,458.42
+Delhi,Butter Chicken Co,31.1,330.11
+Ahmedabad,Curry House,26.1,402.16
+Delhi,Rolls Royale,29.8,142.83
+Mumbai,Wok This Way,27.0,152.71
+Ahmedabad,Green Bowl,36.6,378.01
+Mumbai,Sea Breeze Cafe,24.2,357.15
+Mumbai,Tandoori Nights,19.1,368.31
+Ahmedabad,Pizza Point,30.5,345.7
+Ahmedabad,Spice Villa,26.8,252.66
+Bangalore,Silicon Spice,33.7,431.95
+Bangalore,Dosa Delight,31.9,483.19
+Delhi,Butter Chicken Co,51.0,441.31
+Bangalore,Garden Cafe,23.7,332.87
+Ahmedabad,Spice Villa,43.2,232.13
+Mumbai,Sea Breeze Cafe,20.8,400.67
+Mumbai,Bombay Bites,28.3,293.66
+Bangalore,Dosa Delight,27.3,272.24
+Delhi,Butter Chicken Co,12.0,411.62
+Bangalore,Garden Cafe,30.1,268.32
+Bangalore,Brew and Bite,33.9,374.62
+Ahmedabad,Green Bowl,36.0,262.02
+Ahmedabad,Green Bowl,48.3,495.77
+Delhi,Chandni Chowk Eats,26.7,401.35
+Mumbai,Wok This Way,34.2,103.31
+Ahmedabad,Curry House,34.1,268.61
+Bangalore,Dosa Delight,22.9,374.1
+Bangalore,Silicon Spice,26.8,354.27
+Mumbai,Wok This Way,27.2,418.42
+Ahmedabad,Spice Villa,36.2,479.74
+Bangalore,Dosa Delight,17.8,257.06
+Ahmedabad,Spice Villa,35.0,295.64
+Ahmedabad,Green Bowl,35.9,492.21
+Bangalore,Silicon Spice,34.7,312.93
+Mumbai,Wok This Way,29.5,321.28
+Ahmedabad,Pizza Point,34.3,536.79
+Bangalore,Silicon Spice,29.8,435.29
+Bangalore,Garden Cafe,15.7,259.27
+Delhi,Chandni Chowk Eats,40.4,274.08
+Delhi,Chandni Chowk Eats,34.6,330.28
+Delhi,Capital Kitchen,39.1,358.61
+Delhi,Rolls Royale,20.2,452.94
+Bangalore,Garden Cafe,36.1,462.26
+Bangalore,Dosa Delight,33.5,372.34
+Mumbai,Bombay Bites,23.3,276.47
+Delhi,Chandni Chowk Eats,32.6,307.01
+Mumbai,Bombay Bites,29.2,424.62
+Mumbai,Bombay Bites,29.8,261.91
+Ahmedabad,Curry House,28.6,300.26
+Bangalore,Silicon Spice,39.0,472.01
+Delhi,Butter Chicken Co,18.9,375.29
+Ahmedabad,Curry House,17.8,484.64
+Delhi,Capital Kitchen,33.4,587.92
+Ahmedabad,Spice Villa,32.9,415.32
+Bangalore,Silicon Spice,33.7,389.79
+Mumbai,Bombay Bites,47.1,471.09
+Mumbai,Sea Breeze Cafe,33.5,359.01
+Mumbai,Sea Breeze Cafe,24.1,338.68
+Ahmedabad,Green Bowl,52.3,397.16
+Ahmedabad,Pizza Point,30.7,311.58
+Bangalore,Silicon Spice,38.8,141.13
+Delhi,Capital Kitchen,21.7,233.44
+Mumbai,Sea Breeze Cafe,20.0,326.53
+Bangalore,Brew and Bite,30.0,325.45
+Delhi,Butter Chicken Co,38.4,335.85
+Ahmedabad,Spice Villa,46.8,451.39
+Bangalore,Dosa Delight,23.9,396.5
+Bangalore,Silicon Spice,29.8,250.41
+Bangalore,Brew and Bite,32.0,364.24
+Ahmedabad,Curry House,32.1,347.83
+Delhi,Butter Chicken Co,31.1,363.95
+Ahmedabad,Spice Villa,31.7,301.09
+Bangalore,Brew and Bite,43.1,110.66
+Bangalore,Silicon Spice,42.0,163.39
+Delhi,Butter Chicken Co,34.3,327.07
+Delhi,Rolls Royale,20.7,280.0
+Mumbai,Tandoori Nights,29.1,343.74
+Bangalore,Garden Cafe,39.5,464.44
+Ahmedabad,Spice Villa,26.4,284.45
+Delhi,Rolls Royale,27.8,394.04
+Ahmedabad,Curry House,29.2,329.37
+Bangalore,Garden Cafe,37.7,389.98
+Delhi,Butter Chicken Co,45.2,259.36
+Ahmedabad,Green Bowl,36.7,322.14
+Delhi,Capital Kitchen,18.6,508.82
+Mumbai,Bombay Bites,27.8,444.41
+Mumbai,Sea Breeze Cafe,42.5,192.22
+Bangalore,Garden Cafe,21.8,507.93
+Mumbai,Bombay Bites,18.0,300.96
+Bangalore,Dosa Delight,27.6,385.92
+Mumbai,Tandoori Nights,39.8,347.21
+Bangalore,Garden Cafe,29.1,344.87
+Mumbai,Bombay Bites,49.2,410.5
+Delhi,Chandni Chowk Eats,33.4,333.44
+Bangalore,Dosa Delight,21.7,359.07
+Delhi,Chandni Chowk Eats,33.6,261.95
+Mumbai,Tandoori Nights,48.0,414.58
+Mumbai,Wok This Way,34.0,438.44
+Bangalore,Silicon Spice,24.0,395.93
+Ahmedabad,Spice Villa,17.3,234.84
+Mumbai,Tandoori Nights,29.2,367.87
+Bangalore,Brew and Bite,27.1,223.4
+Bangalore,Brew and Bite,42.7,270.46
+Delhi,Butter Chicken Co,24.4,586.91
+Delhi,Butter Chicken Co,32.8,366.11
+Ahmedabad,Green Bowl,27.4,360.98
+Mumbai,Sea Breeze Cafe,18.5,438.84
+Mumbai,Tandoori Nights,31.7,509.37
+Delhi,Butter Chicken Co,19.5,313.97
+Delhi,Capital Kitchen,37.1,437.53
+Mumbai,Tandoori Nights,17.9,452.97
+Bangalore,Brew and Bite,31.4,405.86
+Delhi,Butter Chicken Co,40.5,360.76
+Bangalore,Brew and Bite,36.5,447.27
+Mumbai,Wok This Way,28.4,406.96
+Ahmedabad,Curry House,35.4,368.69
+Delhi,Capital Kitchen,38.5,362.05
+Mumbai,Sea Breeze Cafe,23.4,444.78
+Bangalore,Garden Cafe,41.0,342.76
+Delhi,Rolls Royale,39.5,303.56
+Ahmedabad,Green Bowl,20.8,395.09
+Bangalore,Silicon Spice,33.8,306.91
+Bangalore,Dosa Delight,29.9,362.15
+Delhi,Butter Chicken Co,43.6,367.69
+Ahmedabad,Spice Villa,38.9,375.47
+Mumbai,Wok This Way,32.7,445.89
+Bangalore,Garden Cafe,41.8,288.49
+Ahmedabad,Green Bowl,50.4,317.34
+Bangalore,Garden Cafe,18.5,191.73
+Ahmedabad,Spice Villa,28.6,324.64
+Mumbai,Wok This Way,24.0,255.42
+Mumbai,Bombay Bites,31.7,371.08
+Ahmedabad,Spice Villa,23.4,411.44
+Mumbai,Bombay Bites,39.9,330.74
+Mumbai,Wok This Way,50.5,290.25
+Ahmedabad,Pizza Point,33.3,394.32
+Ahmedabad,Pizza Point,19.4,356.66
+Mumbai,Bombay Bites,27.0,300.01
+Delhi,Butter Chicken Co,28.0,334.87
+Delhi,Rolls Royale,43.4,298.63
+Mumbai,Bombay Bites,34.7,316.11
+Mumbai,Bombay Bites,33.6,213.58
+Ahmedabad,Curry House,25.3,364.82
+Ahmedabad,Curry House,27.1,315.11
+Ahmedabad,Pizza Point,36.3,447.52
+Ahmedabad,Pizza Point,30.6,278.15
+Delhi,Capital Kitchen,39.1,264.44
+Mumbai,Tandoori Nights,27.9,370.14
+Ahmedabad,Green Bowl,10.0,271.68
+Ahmedabad,Pizza Point,28.1,443.97
+Mumbai,Wok This Way,18.9,391.63
+Mumbai,Wok This Way,36.7,449.78
+Ahmedabad,Pizza Point,35.2,414.35
+Delhi,Chandni Chowk Eats,40.5,455.24
+Delhi,Rolls Royale,26.8,393.25
+Delhi,Chandni Chowk Eats,30.7,363.2
+Delhi,Chandni Chowk Eats,26.5,394.55
+Bangalore,Dosa Delight,32.2,465.06
+Delhi,Capital Kitchen,38.5,215.95
+Ahmedabad,Spice Villa,21.1,417.16
+Bangalore,Garden Cafe,44.0,369.23
+Mumbai,Sea Breeze Cafe,34.0,491.97
+Bangalore,Dosa Delight,41.7,220.27
+Mumbai,Bombay Bites,28.4,367.47
+Delhi,Butter Chicken Co,29.1,365.72
+Mumbai,Tandoori Nights,41.6,212.91
+Delhi,Capital Kitchen,34.9,302.68
+Delhi,Chandni Chowk Eats,44.5,344.08
+Mumbai,Sea Breeze Cafe,18.4,313.42
+Ahmedabad,Curry House,20.4,152.11
+Delhi,Rolls Royale,37.2,438.86
+Bangalore,Garden Cafe,34.0,299.23
+Mumbai,Sea Breeze Cafe,30.2,246.77
+Ahmedabad,Pizza Point,46.8,253.69
+Mumbai,Sea Breeze Cafe,39.2,331.41
+Delhi,Capital Kitchen,22.0,479.94
+Delhi,Butter Chicken Co,36.0,347.4
+Mumbai,Bombay Bites,34.7,391.11
+Delhi,Rolls Royale,35.7,404.68
+Delhi,Chandni Chowk Eats,33.6,413.81
+Mumbai,Sea Breeze Cafe,23.8,345.52
+Ahmedabad,Green Bowl,26.6,512.08
+Mumbai,Wok This Way,26.1,348.71
+Mumbai,Bombay Bites,38.7,291.26
+Delhi,Butter Chicken Co,29.8,347.71
+Mumbai,Tandoori Nights,28.4,131.85
+Delhi,Capital Kitchen,40.2,251.57
+Ahmedabad,Curry House,24.3,345.71
+Ahmedabad,Curry House,51.2,347.97
+Bangalore,Silicon Spice,30.2,352.42
+Bangalore,Silicon Spice,25.0,353.39
+Ahmedabad,Green Bowl,24.0,324.7
+Delhi,Capital Kitchen,39.9,406.1
+Mumbai,Tandoori Nights,43.2,433.22
+Mumbai,Bombay Bites,46.5,382.21
+Bangalore,Garden Cafe,39.2,407.17
+Mumbai,Sea Breeze Cafe,32.9,435.51
+Mumbai,Tandoori Nights,48.6,287.97
+Ahmedabad,Curry House,29.0,368.41
+Mumbai,Wok This Way,26.8,306.45
+Ahmedabad,Pizza Point,23.7,302.36
+Delhi,Chandni Chowk Eats,31.8,542.8
+Mumbai,Tandoori Nights,24.5,417.8
+Bangalore,Garden Cafe,32.3,360.8
+Mumbai,Sea Breeze Cafe,28.0,369.04
+Delhi,Rolls Royale,29.9,199.83
+Mumbai,Bombay Bites,39.5,428.58
+Bangalore,Silicon Spice,22.2,218.21
+Bangalore,Garden Cafe,19.5,530.16
+Ahmedabad,Green Bowl,40.6,346.53
+Mumbai,Wok This Way,18.9,298.45
+Delhi,Capital Kitchen,43.8,474.21
+Delhi,Chandni Chowk Eats,35.2,288.3
+Bangalore,Dosa Delight,27.6,289.55
+Mumbai,Tandoori Nights,34.6,323.77
+Ahmedabad,Spice Villa,36.3,316.64
+Delhi,Capital Kitchen,14.1,371.17
+Mumbai,Sea Breeze Cafe,29.1,249.23
+Ahmedabad,Curry House,38.5,237.88
+Delhi,Chandni Chowk Eats,28.3,381.19
+Ahmedabad,Pizza Point,19.6,325.48
+Delhi,Capital Kitchen,32.6,234.53
+Mumbai,Wok This Way,29.9,461.03
+Bangalore,Garden Cafe,44.0,426.52
+Bangalore,Dosa Delight,38.8,460.03
+Ahmedabad,Spice Villa,35.1,388.7
+Bangalore,Brew and Bite,29.6,384.18
+Ahmedabad,Curry House,31.4,346.65
+Delhi,Chandni Chowk Eats,31.0,256.85
+Ahmedabad,Pizza Point,32.6,170.16
+Mumbai,Wok This Way,33.1,390.73
+Ahmedabad,Pizza Point,40.0,89.34
+Mumbai,Sea Breeze Cafe,25.0,386.31
+Bangalore,Dosa Delight,40.9,256.41
+Mumbai,Wok This Way,34.2,291.44
+Bangalore,Dosa Delight,30.5,369.57
+Mumbai,Bombay Bites,31.8,530.31
+Ahmedabad,Green Bowl,33.6,444.56
+Bangalore,Brew and Bite,33.6,390.43
+Ahmedabad,Spice Villa,37.1,247.13
+Ahmedabad,Curry House,25.8,376.7
+Bangalore,Dosa Delight,31.5,379.59
+Bangalore,Silicon Spice,34.7,479.17
+Ahmedabad,Pizza Point,30.0,436.77
+Mumbai,Wok This Way,40.4,401.3
+Mumbai,Bombay Bites,29.6,473.81
+Delhi,Chandni Chowk Eats,33.0,257.42
+Ahmedabad,Spice Villa,23.2,220.4
+Delhi,Rolls Royale,24.9,489.73
+Ahmedabad,Spice Villa,26.9,230.92
+Bangalore,Dosa Delight,33.4,286.99
+Mumbai,Tandoori Nights,26.5,552.72
+Delhi,Chandni Chowk Eats,32.5,451.35
+Mumbai,Wok This Way,20.9,201.91
+Ahmedabad,Pizza Point,50.6,415.26
+Bangalore,Brew and Bite,36.8,426.81
+Delhi,Rolls Royale,30.0,385.29
+Delhi,Rolls Royale,26.0,324.74
+Ahmedabad,Curry House,25.0,261.42
+Delhi,Chandni Chowk Eats,33.4,475.28
+Bangalore,Dosa Delight,44.1,419.58
+Ahmedabad,Spice Villa,24.1,329.78
+Delhi,Rolls Royale,24.2,399.59
+Ahmedabad,Pizza Point,27.2,378.78
+Mumbai,Bombay Bites,43.2,343.24
+Ahmedabad,Curry House,33.0,311.35
+Delhi,Chandni Chowk Eats,41.6,384.56
+Mumbai,Wok This Way,26.4,290.34
+Mumbai,Wok This Way,41.2,322.92
+Bangalore,Garden Cafe,22.0,287.64
+Ahmedabad,Curry House,38.4,299.56
+Bangalore,Brew and Bite,26.6,375.11
+Bangalore,Dosa Delight,49.8,238.6
+Delhi,Chandni Chowk Eats,37.1,387.24
+Delhi,Chandni Chowk Eats,41.8,496.11
+Bangalore,Brew and Bite,27.5,226.72
+Ahmedabad,Spice Villa,34.5,349.81
+Delhi,Rolls Royale,25.6,497.52
+Mumbai,Bombay Bites,39.8,449.36
+Delhi,Butter Chicken Co,36.6,496.56
+Delhi,Chandni Chowk Eats,23.2,285.98
+Ahmedabad,Pizza Point,32.3,280.7
+Mumbai,Wok This Way,27.0,413.12
+Ahmedabad,Curry House,34.6,425.02
+Mumbai,Wok This Way,22.6,238.99
+Mumbai,Tandoori Nights,45.4,387.71
+Mumbai,Wok This Way,32.8,288.72
+Bangalore,Silicon Spice,36.3,267.14
+Ahmedabad,Pizza Point,24.7,357.31
+Ahmedabad,Pizza Point,26.1,461.25
+Bangalore,Garden Cafe,27.7,223.36
+Bangalore,Dosa Delight,41.7,362.75
+Ahmedabad,Curry House,26.0,370.28
+Delhi,Butter Chicken Co,33.1,336.28
+Mumbai,Wok This Way,23.4,269.92
+Mumbai,Bombay Bites,17.3,395.72
+Bangalore,Dosa Delight,49.2,248.17
+Delhi,Capital Kitchen,32.0,425.46
+Mumbai,Wok This Way,28.9,391.76
+Delhi,Chandni Chowk Eats,32.7,341.1
+Delhi,Capital Kitchen,36.5,403.96
+Bangalore,Dosa Delight,30.6,281.98
+Mumbai,Sea Breeze Cafe,23.7,468.18
+Bangalore,Dosa Delight,40.7,392.72
+Ahmedabad,Spice Villa,51.7,322.99
+Mumbai,Tandoori Nights,32.1,231.93
+Ahmedabad,Green Bowl,29.0,260.69
+Bangalore,Silicon Spice,32.5,397.67
+Bangalore,Garden Cafe,17.6,291.81
+Mumbai,Wok This Way,24.5,337.03
+Mumbai,Wok This Way,36.3,234.58
+Bangalore,Brew and Bite,30.3,484.17
+Mumbai,Tandoori Nights,27.5,313.02
+Ahmedabad,Curry House,27.1,322.78
+Bangalore,Garden Cafe,32.1,284.41
+Delhi,Butter Chicken Co,35.5,457.16
+Bangalore,Silicon Spice,36.0,555.98
+Delhi,Capital Kitchen,21.1,329.77
+Delhi,Rolls Royale,41.7,321.5
+Ahmedabad,Spice Villa,27.4,116.81
+Mumbai,Tandoori Nights,38.9,278.32
+Mumbai,Wok This Way,20.2,366.5
+Ahmedabad,Green Bowl,24.0,347.22
+Bangalore,Brew and Bite,41.6,335.73
+Delhi,Chandni Chowk Eats,22.5,346.39
+Bangalore,Garden Cafe,30.6,504.05
+Ahmedabad,Spice Villa,25.0,145.13
+Ahmedabad,Green Bowl,26.6,443.59
+Ahmedabad,Green Bowl,19.2,313.39
+Mumbai,Tandoori Nights,49.3,295.49
+Mumbai,Wok This Way,34.2,421.95
+Delhi,Chandni Chowk Eats,32.3,282.19
+Delhi,Chandni Chowk Eats,32.7,504.99
+Ahmedabad,Curry House,29.1,366.62
+Bangalore,Brew and Bite,25.6,466.89
+Mumbai,Wok This Way,41.6,290.88
+Delhi,Rolls Royale,28.4,310.76
+Ahmedabad,Spice Villa,41.5,414.71
+Bangalore,Dosa Delight,36.9,468.0
+Mumbai,Sea Breeze Cafe,29.4,327.43
+Mumbai,Wok This Way,37.1,460.22
+Mumbai,Sea Breeze Cafe,26.9,433.51
+Bangalore,Dosa Delight,43.6,511.93
+Delhi,Butter Chicken Co,36.3,446.53
+Delhi,Capital Kitchen,36.5,331.07
+Delhi,Chandni Chowk Eats,23.6,173.03
+Bangalore,Dosa Delight,36.6,363.29
+Mumbai,Wok This Way,30.2,325.09
+Mumbai,Bombay Bites,21.3,432.17
+Bangalore,Dosa Delight,30.7,375.43
+Ahmedabad,Green Bowl,41.7,337.4
+Bangalore,Dosa Delight,37.3,455.61
+Delhi,Butter Chicken Co,34.6,352.73
+Mumbai,Wok This Way,35.2,291.38
+Delhi,Capital Kitchen,32.2,215.73
+Bangalore,Garden Cafe,34.5,503.2
+Ahmedabad,Spice Villa,16.8,357.06
+Delhi,Rolls Royale,38.0,384.3
+Delhi,Chandni Chowk Eats,27.0,393.03
+Mumbai,Tandoori Nights,30.3,273.45
+Mumbai,Tandoori Nights,34.1,223.95
+Bangalore,Dosa Delight,22.4,390.01
+Ahmedabad,Curry House,34.2,480.93
+Mumbai,Tandoori Nights,25.7,408.35
+Mumbai,Bombay Bites,20.4,250.43
+Delhi,Rolls Royale,37.8,316.45
+Ahmedabad,Green Bowl,25.5,161.53
+Bangalore,Dosa Delight,33.8,433.93
+Ahmedabad,Green Bowl,45.4,282.42
+Ahmedabad,Green Bowl,19.8,463.63
+Ahmedabad,Spice Villa,33.4,274.78
+Bangalore,Silicon Spice,27.5,366.61
+Bangalore,Dosa Delight,46.9,519.8
+Mumbai,Wok This Way,40.2,403.33
+Delhi,Butter Chicken Co,31.9,468.12
+Mumbai,Sea Breeze Cafe,30.6,309.21
+Mumbai,Tandoori Nights,39.6,411.38
+Bangalore,Brew and Bite,22.9,332.57
+Delhi,Chandni Chowk Eats,25.3,337.83
+Bangalore,Silicon Spice,44.1,406.77
+Delhi,Chandni Chowk Eats,33.5,401.91
+Ahmedabad,Green Bowl,41.8,402.39
+Delhi,Rolls Royale,41.2,322.62
+Delhi,Rolls Royale,47.1,488.89
+Ahmedabad,Curry House,20.7,244.3
+Ahmedabad,Pizza Point,33.1,190.84
+Ahmedabad,Pizza Point,40.3,332.45
+Ahmedabad,Curry House,36.1,302.06
+Mumbai,Wok This Way,23.1,345.35
+Bangalore,Dosa Delight,31.8,509.5
+Ahmedabad,Curry House,39.2,420.03
+Mumbai,Tandoori Nights,24.0,377.16
+Delhi,Butter Chicken Co,34.8,360.94
+Mumbai,Wok This Way,31.2,331.67
+Bangalore,Brew and Bite,34.8,330.1
+Bangalore,Dosa Delight,39.3,277.71
+Mumbai,Bombay Bites,27.8,348.74
+Bangalore,Dosa Delight,12.6,429.56
+Delhi,Capital Kitchen,34.0,357.86
+Delhi,Butter Chicken Co,19.5,302.39
+Ahmedabad,Spice Villa,23.1,401.03
+Bangalore,Silicon Spice,35.7,346.79
+Bangalore,Garden Cafe,25.5,321.63
+Mumbai,Bombay Bites,26.1,277.08
+Delhi,Capital Kitchen,40.1,589.69
+Ahmedabad,Spice Villa,35.4,412.38
+Ahmedabad,Pizza Point,35.0,513.04
+Mumbai,Tandoori Nights,23.4,87.08
+Ahmedabad,Spice Villa,28.4,530.9
+Bangalore,Brew and Bite,37.0,535.17
+Bangalore,Brew and Bite,43.2,355.13
+Mumbai,Sea Breeze Cafe,26.8,278.07
+Bangalore,Dosa Delight,41.3,280.85
+Mumbai,Sea Breeze Cafe,34.6,327.29
+Mumbai,Wok This Way,29.1,396.03
+Ahmedabad,Curry House,39.1,342.99
+Ahmedabad,Green Bowl,24.2,349.51
+Bangalore,Brew and Bite,28.6,453.36
+Delhi,Chandni Chowk Eats,17.4,368.06
+Bangalore,Silicon Spice,47.0,447.2
+Delhi,Chandni Chowk Eats,38.1,332.74
+Bangalore,Dosa Delight,35.9,273.83
+Bangalore,Dosa Delight,38.7,311.5
+Delhi,Rolls Royale,29.3,313.67
+Bangalore,Garden Cafe,34.4,418.48
+Delhi,Chandni Chowk Eats,48.5,253.92
+Mumbai,Sea Breeze Cafe,33.5,371.71
+Mumbai,Sea Breeze Cafe,31.4,390.71

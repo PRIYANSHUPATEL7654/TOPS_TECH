@@ -1,0 +1,70 @@
+Section A — Concept Application: Answers
+
+Assessment Code: M9-A1 | Stack: Python 3 / Streamlit / Keras
+
+---
+
+S1 — Order-Tracking Dashboard (Streamlit Components)
+
+| Requirement | Component |
+|---|---|
+| City dropdown filter | `st.selectbox("City", city_list)` |
+| Delivery-time range slider | `st.slider("Delivery Time Range (min)", min_value, max_value, (low, high))` |
+| Page navigation without cluttering main canvas | `st.sidebar` containing `st.sidebar.radio()` or `st.sidebar.selectbox()` to switch between "Overview" and "Restaurant Performance" |
+
+Why sidebar navigation improves usability: Putting page navigation in `st.sidebar` separates *global, structural* controls (which page am I on) from *page-local* controls (filters that only apply to the content currently in view). When a dashboard already has several filters (city dropdown, time-range slider) competing for space on the main canvas, adding page-switching controls there too would force the analyst to visually hunt for the right control among unrelated ones. The sidebar acts as a persistent, always-visible control panel that stays in the same place regardless of which page is active, so analysts build muscle memory for "navigation lives on the left, page content lives in the middle." It also keeps the main canvas dedicated entirely to data (metrics, charts, tables), maximizing the space available for the actual analysis and reducing cognitive load, especially on smaller screens where horizontal space for the main canvas is limited.
+
+---
+
+S2 — Plotly vs. `st.line_chart` for Live Analytics
+
+Why Plotly: `st.line_chart` is a thin wrapper around a simplified charting backend intended for quick, low-configuration visualizations. It does not support interactive zoom/pan, hover tooltips with exact values, per-series legend toggling, or custom styling — all of which the PM explicitly asked for. Plotly is a full-featured, interactive charting library that natively supports zooming, panning, crosshair hover tooltips, and clickable legends that let a user toggle individual restaurant series on/off, all without any extra code beyond building the figure. Since Streamlit can render any Plotly `Figure` object directly, using Plotly gives you these interactive features "for free" instead of having to hand-roll them.
+
+The two essential lines of code:
+```python
+fig = px.line(df, x="hour", y="order_count", color="restaurant")
+st.plotly_chart(fig, use_container_width=True)
+```
+The first line constructs the Plotly `Figure` object; the second passes it to Streamlit's dedicated Plotly renderer, which embeds the interactive JavaScript-based chart (zoom, hover, legend toggle) directly into the app.
+
+---
+
+S3 — Deploying a Delivery-Time Prediction Model
+
+Sequence of steps:
+1. Train & save the model offline — after training the scikit-learn regressor, persist it with `joblib.dump(model, "delivery_model.pkl")`.
+2. Load the model inside the Streamlit app — write a function (e.g., `load_model()`) that calls `joblib.load("delivery_model.pkl")`, and decorate it with `@st.cache_resource`.
+3. Collect dispatcher inputs — build input widgets (sliders/number inputs/selectboxes) for the order details the model needs (distance, order value, time of day, etc.).
+4. Assemble the feature vector — on button click, gather the widget values into the exact array/DataFrame shape and column order the model was trained on.
+5. Run inference — call `model.predict(features)`.
+6. Display the result — show the predicted delivery time back to the dispatcher, e.g., with `st.success(f"Estimated delivery time: {prediction:.1f} minutes")`.
+
+Why `st.cache_resource` is critical: Streamlit re-runs the entire script top-to-bottom on every user interaction (every widget change, every button click). Without caching, the `.pkl` file would be deserialized from disk on every single re-run, which is slow, wastes I/O and memory, and would make the app feel sluggish under real dispatcher usage. `st.cache_resource` is designed specifically for objects that are expensive to create and *not* serializable/data-like (models, DB connections, ML pipelines) — it stores the loaded object in memory across reruns and even across sessions, so the model is deserialized only once, and every subsequent interaction reuses the same in-memory object. This is essential for production responsiveness, especially if multiple dispatchers are hitting the app concurrently.
+
+---
+
+S4 — Output Activation for 3-Class Urgency Classification
+
+Correct activation: `softmax`.
+
+Why sigmoid is wrong here: Sigmoid squashes each output neuron's value independently into the range (0, 1), treating each class as an independent, non-exclusive* binary decision (as in multi-label problems where an example can belong to several classes at once). It does not guarantee that the three outputs sum to 1, so the network could, for example, output 0.9 for "Standard," 0.85 for "Priority," and 0.7 for "Express" simultaneously — numbers that cannot be interpreted as a valid probability distribution over three *mutually exclusive* classes. Softmax, by contrast, exponentiates each logit and normalizes by the sum of all class exponentials, producing outputs that are always non-negative and sum exactly to 1. This correctly encodes "the order is Standard **OR** Priority **OR** Express, with these relative probabilities," which matches the mutually-exclusive, single-label nature of the urgency-tier problem.
+
+---
+
+S5 — Dropout vs. L2 Regularization for Overfitting (96% train / 71% val)
+
+| Aspect | Dropout | L2 (Weight Decay) |
+|---|---|---|
+| Mechanism | Randomly "turns off" (zeroes) a fraction of neuron activations during each training forward pass, forcing the network to not rely on any single neuron and effectively training an ensemble of thinned sub-networks | Adds a penalty term (`λ * Σ(weight²)`) to the loss function, discouraging individual weights from growing large, which keeps the learned function smoother and less able to memorize noise |
+| Typical setting | Rate of 0.2–0.5 (0.3 is a common default) applied after Dense hidden layers | λ (l2 factor) typically 0.001–0.0001 applied via a kernel_regularizer on Dense layers |
+| What it targets | Co-adaptation between neurons (redundant/over-specialized feature detectors) | Magnitude of the weights themselves |
+
+Which to apply first, in practice: For a dense multi-layer network showing this large a train/validation gap (96% vs 71%), **Dropout is usually applied first**, typically at a rate around **0.3** (sometimes 0.2 for smaller layers, up to 0.5 for very large ones) after each hidden Dense layer. Dropout tends to give a bigger, more immediate reduction in overfitting for fully-connected architectures and is simpler to tune (a single rate per layer) than searching for the right L2 λ. L2 regularization is often added afterward as a complementary, finer-grained control if Dropout alone doesn't fully close the gap, or the two are combined at a lighter Dropout rate.
+
+---
+
+S6 — ANN vs. CNN for Image Quality Classification
+
+Key architectural difference: A plain ANN takes the flattened 1D pixel vector as input and connects every input pixel to every neuron in the first hidden layer (fully connected / dense). This immediately discards the image's 2D spatial structure — a pixel's relationship to its neighbors — and treats every pixel as an independent, unordered feature. It also creates an enormous number of parameters (width × height × channels × neurons), which is both computationally wasteful and prone to overfitting on limited data. A CNN instead uses convolutional layers, where small filters (kernels, e.g., 3×3) slide across the image and are applied locally and repeatedly at every spatial position, with the *same* filter weights shared across the whole image (parameter sharing) and each output value depending only on a small local neighborhood (local receptive field).
+
+What a convolutional filter learns from spatial data: Because a filter is applied across small local patches and reused everywhere, it learns to detect a specific local visual pattern — such as an edge, a color gradient, a texture, or (in deeper layers) more complex shapes and object parts — regardless of *where* in the image that pattern occurs (translation invariance). Fully connected layers cannot efficiently capture this because they would need a separate set of weights to recognize the same pattern at every different pixel location, which is both parameter-inefficient and fails to generalize when the pattern shifts position — exactly the kind of shift that's common in photos of food taken from different angles or crops.

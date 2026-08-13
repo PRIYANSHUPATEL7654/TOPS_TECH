@@ -1,0 +1,15 @@
+# Prompt(s) given to the AI tool
+
+**Tool used:** Claude
+
+**Prompt:**
+
+> Write a Python program using Keras that builds a Sequential neural network to
+> classify food delivery orders into three priority levels — Low, Medium, and
+> High — based on at least three numeric input features (e.g., order value,
+> distance from restaurant, and estimated preparation time). Generate a small
+> synthetic dataset for this. Train the model for 20 epochs and print the
+> training accuracy after every epoch. Plot the training and validation loss
+> curves side by side using Matplotlib. Finally, save the trained model to a
+> file named `food_priority_model.keras`, reload it, and use the reloaded
+> model to make and print one test prediction.

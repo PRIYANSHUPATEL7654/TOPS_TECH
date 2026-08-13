@@ -1,0 +1,23 @@
+# Step 2 — Bug Found & Fix Explanation
+
+**What I changed:**
+The AI's code used `sigmoid` on the 3-neuron output layer and compiled the
+model with `mean_squared_error` loss. I changed the output activation to
+`softmax` and the loss to `categorical_crossentropy`.
+
+**Why the AI's version needed correction:**
+This is a mutually-exclusive, single-label, multi-class problem (an order is
+exactly one of Low/Medium/High), so the output layer must produce a proper
+probability distribution over the three classes. Sigmoid treats each output
+neuron independently, so the three "probabilities" don't sum to 1 — running
+the AI's saved model on a test sample produced `[1.000, 0.695, ~0]`
+(sums to ~1.69, not 1), which is not a valid probability distribution.
+Pairing that with MSE loss (a regression loss) instead of
+`categorical_crossentropy` further slowed learning — validation accuracy
+stalled around 30% after 20 epochs.
+
+**Effect of the fix:** After switching to `softmax` + `categorical_crossentropy`,
+the reloaded model's test prediction summed to exactly `1.0` (a valid
+distribution, e.g., `[0.36, 0.55, 0.09]`), and validation accuracy climbed
+into the 50–60% range on the same synthetic dataset — a clear improvement
+attributable directly to the two fixes.

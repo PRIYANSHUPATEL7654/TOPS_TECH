@@ -1,0 +1,51 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786353803.174936    1643 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1786353803.217306    1643 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786353804.422440    1643 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+/usr/local/lib/python3.12/dist-packages/keras/src/layers/core/dense.py:107: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+Epoch 1/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 1s 20ms/step - accuracy: 0.3250 - loss: 10.7830 - val_accuracy: 0.3900 - val_loss: 3.9684
+Epoch 2/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 6ms/step - accuracy: 0.4325 - loss: 6.0285 - val_accuracy: 0.3200 - val_loss: 5.0184
+Epoch 3/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.4150 - loss: 3.8276 - val_accuracy: 0.4100 - val_loss: 3.0534
+Epoch 4/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.4075 - loss: 2.9703 - val_accuracy: 0.4900 - val_loss: 2.2221
+Epoch 5/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 6ms/step - accuracy: 0.4575 - loss: 2.2355 - val_accuracy: 0.5000 - val_loss: 1.8104
+Epoch 6/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.4975 - loss: 1.7903 - val_accuracy: 0.5000 - val_loss: 1.4085
+Epoch 7/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.4600 - loss: 1.5052 - val_accuracy: 0.5300 - val_loss: 1.2329
+Epoch 8/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 6ms/step - accuracy: 0.4475 - loss: 1.3377 - val_accuracy: 0.5300 - val_loss: 1.1114
+Epoch 9/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.4850 - loss: 1.3379 - val_accuracy: 0.2700 - val_loss: 1.8470
+Epoch 10/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.4375 - loss: 1.4726 - val_accuracy: 0.5300 - val_loss: 1.0709
+Epoch 11/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.4300 - loss: 1.4357 - val_accuracy: 0.5600 - val_loss: 1.7511
+Epoch 12/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.4450 - loss: 1.7032 - val_accuracy: 0.2900 - val_loss: 1.7946
+Epoch 13/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.4650 - loss: 1.3759 - val_accuracy: 0.5000 - val_loss: 0.9639
+Epoch 14/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.4725 - loss: 1.1670 - val_accuracy: 0.5100 - val_loss: 0.9143
+Epoch 15/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.4800 - loss: 1.1053 - val_accuracy: 0.5800 - val_loss: 0.9256
+Epoch 16/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.5025 - loss: 1.0805 - val_accuracy: 0.3100 - val_loss: 1.3467
+Epoch 17/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step - accuracy: 0.4950 - loss: 1.0983 - val_accuracy: 0.5900 - val_loss: 1.1671
+Epoch 18/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.4875 - loss: 1.4288 - val_accuracy: 0.5700 - val_loss: 0.8630
+Epoch 19/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.5550 - loss: 1.3741 - val_accuracy: 0.5800 - val_loss: 1.4616
+Epoch 20/20
+13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step - accuracy: 0.5150 - loss: 1.0984 - val_accuracy: 0.5200 - val_loss: 1.0024
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 55ms/step
+Predicted priority probabilities: [[0.36205733 0.55157423 0.08636845]] sum = 1.0
+Predicted class: 1

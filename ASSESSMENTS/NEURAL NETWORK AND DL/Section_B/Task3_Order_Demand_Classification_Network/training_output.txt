@@ -1,0 +1,6 @@
+Order Demand Classification Network — Training Summary
+=======================================================
+Train samples: 1275 | Test samples: 225
+
+Final test accuracy: 0.5556
+Final test loss: 0.8713
