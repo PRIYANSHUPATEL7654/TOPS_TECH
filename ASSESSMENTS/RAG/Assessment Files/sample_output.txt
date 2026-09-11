@@ -1,0 +1,1 @@
+Sample output for assessment_m18_a1. Run the included script after installing requirements to generate live output.
