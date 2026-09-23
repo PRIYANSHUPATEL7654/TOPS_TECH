@@ -1,0 +1,5 @@
+SESSION 9 — Agentic AI with LLMs (Part 1)
+
+2. Movie recommendation: the agent identifies that the user wants a recommendation, checks useful constraints such as preferred genre and age rating, and chooses a suitable title. External response: “Try The Martian if you enjoy smart, funny science fiction.” The code/answer exposes a short rationale, not private internal chain-of-thought. A ReAct-style cricket lookup demo is also included in agent_rationale.py.
+
+4. User-facing PhonePe transfer plan: Open PhonePe and sign in; choose Transfer to Mobile Number or Bank Account; verify the recipient name and enter the amount; review details; authenticate with your UPI PIN only inside PhonePe; check the success receipt. Never share a UPI PIN or OTP in chat. This is a safe action plan and does not initiate a transfer.

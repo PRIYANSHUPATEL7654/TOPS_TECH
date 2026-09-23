@@ -1,0 +1,7 @@
+SESSION 18 TASK 5 — AI PROMPT AND TEST NOTE
+
+Prompt: “Add a DELETE filename command to a local file server. Restrict all operations to one server directory, reject path traversal, return clear not-found errors, and include a test.”
+
+Implemented response: filesystem_server.py supports DELETE inside server_files only; test_filesystem_server.py checks deletion, missing files, and traversal rejection.
+
+Change made: path resolution is checked before any read or delete so a client cannot use ../ to reach files outside the shared directory.

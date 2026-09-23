@@ -1,0 +1,7 @@
+SESSION 15 — LangChain + LangGraph + MCP Integration
+
+1. review_summary.py prints the original Flipkart-style product review and a concise summary using a LangChain Runnable. No LLM API key is required for this deterministic classroom exercise.
+2. ipl_team_qa.py answers questions using only the supplied team/captain mapping and says when the team is unknown. Captain information is sample/course data and should be checked against the class's assigned season.
+3. langgraph_city_restaurants.py runs a city-first graph: ask city → select three hardcoded sample suggestions → display. The two supported city catalogs are Ahmedabad and Mumbai.
+4. movie_review_followup.py summarizes the review then branches based on whether more details are wanted.
+5. The runnable code fetches mock social trends, sorts by count, and prints two results; using real X/Twitter requires developer access and authorized credentials.

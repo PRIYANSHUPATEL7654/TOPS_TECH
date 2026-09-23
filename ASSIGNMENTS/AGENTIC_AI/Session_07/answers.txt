@@ -1,0 +1,5 @@
+SESSION 7 — Building a Basic Agent (Part 2)
+
+2. Sample sentiment analysis (manual labels for the three supplied example reviews): “Great delivery, loved the food” → positive; “The food was cold and late” → negative; “The order arrived today” → neutral. To run a pretrained Hugging Face model, install transformers and torch and use a sentiment pipeline; no API key is required, though the first run downloads model weights.
+
+5. Prompt used: “Write Python-like pseudocode for an agent that reads new product reviews, detects delivery complaints, calls log_delivery_complaint(review) only for those complaints, and summarizes counts. Show a safety check that avoids logging duplicates and explain each step.” Review new text; classify; check complaint category and duplicate ID; log only eligible complaints; return aggregate counts. This is pseudocode until connected to a real review/logging service.

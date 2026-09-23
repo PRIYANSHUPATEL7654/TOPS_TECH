@@ -1,0 +1,3 @@
+SESSION 6 — Building a Basic Agent (Part 1)
+
+Task 4 correction: Gemini function declarations require parameters to be a JSON Schema object, with type=OBJECT and properties as an object. The supplied malformed list of parameter objects is replaced by a valid object schema in tool_schemas.json.

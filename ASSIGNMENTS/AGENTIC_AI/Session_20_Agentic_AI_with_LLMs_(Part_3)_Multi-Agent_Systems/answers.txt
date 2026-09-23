@@ -1,0 +1,5 @@
+SESSION 20 — Agentic AI with LLMs (Part 3): Multi-Agent Systems
+
+1. SearchAgent filters a hardcoded product list by query; RecommendationAgent independently returns up to three phone choices for a user ID.
+2–3. MultiAgentManager sends the request from ChatAgent to PlaylistAgent, receives a playlist, then replies. The message list records both handoffs.
+4. The cricket example passes a score dictionary from the score-fetch function to the summary function.

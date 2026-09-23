@@ -1,0 +1,7 @@
+SESSION 19 ADVANCED TASK 4 — AI PROMPT AND WORKFLOW
+
+Prompt: “Suggest an AI automation for a food delivery app, then outline a practical agent workflow in 5–7 ordered steps with safety checks.”
+
+Selected idea: a delivery-capacity coordinator that drafts and monitors dispatch plans.
+
+Workflow (six steps): perceive new orders, location, restaurant hours, and ratings; check capacity and delivery commitments; draft a proposed partner assignment; request dispatcher approval; observe partner acceptance and revised ETAs; replan delays and notify customers. Do not retain unnecessary personal details.

@@ -1,0 +1,6 @@
+SESSION 14 — Introduction to MCP
+
+1–3. mcp_server.py is a runnable MCP SDK v2 server with a static status tool and random song tool; mcp.run() defaults to stdio.
+2. http_client.py connects to Streamable HTTP and calls tools using the SDK; the SDK carries JSON-RPC and handles transport negotiation. The JSON-RPC tools/call request body is shown in http_jsonrpc_example.py; requests_jsonrpc_client.py sends initialize, initialized, and tools/call over HTTP. To run: `mcp run mcp_server.py --transport streamable-http` in one terminal, then run `python http_client.py` in another.
+4. stdio is suitable for a local child process with private machine access and no listening port. Streamable HTTP suits remote/multi-client connections and service deployments; it needs network access controls and authentication. stdio_client.py demonstrates a stdio call.
+5. Prompt text is provided by get_movie_showtimes() in mcp_server.py. It can be integrated by registering an additional tool that calls a BookMyShow-compatible showtime provider, validating city/date, and requiring user confirmation before any booking.

@@ -1,0 +1,5 @@
+SESSION 11 — Agentic AI with LLMs (Part 3): Multi-Agent Systems
+
+4. Agent-to-agent communication is explicit: fetch_menu(request) returns a menu object; analyze_order(menu, request) receives it and returns selected items and total; generate_delivery_report(order) receives that result and formats status. No function depends on hidden global state.
+
+5. Prompt: “Design a Zomato-style review aggregator with three agents: sentiment/topic classifier, duplicate and evidence checker, and concise report writer. Show their JSON handoffs and do not invent facts.” Example response: Classifier labels reviews by sentiment and topic; verifier removes duplicates and checks each topic has review evidence; report writer summarizes counts and representative themes, noting small samples. Data flow: review records → classified records → verified aggregate → user report.

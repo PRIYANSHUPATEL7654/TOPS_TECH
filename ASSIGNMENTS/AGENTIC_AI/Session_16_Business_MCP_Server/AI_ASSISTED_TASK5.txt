@@ -1,0 +1,7 @@
+SESSION 16 TASK 5 — AI PROMPT AND TEST NOTE
+
+Prompt: “Add a Flask GET /user-profile/<user_id> endpoint returning a mock name, email, and phone for known IDs; validate unknown IDs with a JSON 404. Add a local test.”
+
+Implemented response: business_mcp_server.py includes the route and a fictional U100 profile. test_business_server.py checks its fields and root/order/notification endpoints.
+
+The tests are provided but require Flask from requirements.txt before they can run. No real account or personal profile data is connected.

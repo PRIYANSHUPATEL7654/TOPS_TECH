@@ -1,0 +1,3 @@
+SESSION 12 — Advanced Agent Concepts (Part 1)
+
+4. Example code is supplied in advanced_agents.py and reads a plain-text IPL score summary; question matching returns the lines mentioning the requested team/player. A production version should use a structured match dataset and cite the source row to improve accuracy.

@@ -1,0 +1,5 @@
+SESSION 24 — Case Study: Building a Personal Assistant Agent (Part 1)
+
+1. The script geocodes a city using Open-Meteo and requests current 2 m air temperature.
+3. GNews headlines require a free API key; the script returns the top three technology headlines when GNEWS_API_KEY is configured.
+5. A sample motivational quote is provided so the task runs without an API credential. To use Gemini or OpenAI instead, configure an API key and call that provider's official text-generation endpoint.

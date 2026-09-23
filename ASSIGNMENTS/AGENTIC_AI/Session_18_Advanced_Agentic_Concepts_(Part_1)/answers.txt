@@ -1,0 +1,3 @@
+SESSION 18 — Advanced Agentic Concepts (Part 1)
+
+Task 4 refactor: has_preference() checks user preference; item_available() checks stock; decide_action() coordinates the helpers. Task 5 cart check: Dosa ₹180 + Lassi ₹60 totals ₹240; after removing Lassi, total is ₹180.

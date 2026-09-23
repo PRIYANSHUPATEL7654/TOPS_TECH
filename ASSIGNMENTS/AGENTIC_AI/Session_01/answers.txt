@@ -1,0 +1,12 @@
+SESSION 1 — Introduction to Agentic AI
+
+1. An AI agent differs from a traditional machine-learning model because an agent can take a goal, decide what action is useful, use tools, and adjust based on the result; a conventional model usually returns a prediction for a supplied input. For example, an Instagram agent could notice that I saved several Ahmedabad food posts, find similar nearby places, and prepare a shortlist. A basic classifier would only label a post or predict whether I might like it.
+
+2. Three characteristics and examples:
+• Goal-directed autonomy: a Flipkart shopping agent can compare a user's stated budget and requirements, then shortlist matching products.
+• Tool use and environment interaction: a Swiggy agent can check restaurant menus and delivery estimates before suggesting an order.
+• Feedback and adaptation: a BookMyShow agent can learn from rejected seat or genre suggestions and adjust the next recommendations.
+
+3. AutoGPT-style agents use a language model to break a goal into steps, choose tools, inspect tool results, and continue or stop. ReAct means interleaving reasoning summaries with actions and observations. Use case: a music-streaming agent could check a user's playlist, search for new releases in similar genres, and queue a short preview playlist. It should ask before changing a shared playlist or purchasing anything.
+
+4. The accompanying digital flowchart uses a ChatGPT-style assistant. It shows user input, goal interpretation, a permission/safety check, tool action, observation, and response. The agent can proactively prepare an action, while confirmation is required for consequential actions.

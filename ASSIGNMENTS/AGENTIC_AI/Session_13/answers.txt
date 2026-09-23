@@ -1,0 +1,5 @@
+SESSION 13 — Advanced Agent Concepts (Part 2)
+
+2. Zapier workflow to configure: Trigger app Gmail; trigger “New Email Matching Search” with subject:Assignment. Action app Google Drive; choose “Upload File” and map the Gmail attachment to the file field and choose the destination folder. Test with a sample email, then turn the Zap on. This must be created and authorized in your own Gmail/Drive/Zapier accounts; no credentials are included.
+
+5. Demo evaluation: Accuracy: the sample receiver correctly reports the supplied text and image filename but does not claim to interpret image contents. Task completion rate: 15 fully completed of 20 gives strict 75%; counting each of 2 partial tasks as half credit gives (15 + 1)/20 = 80%. Reasoning trace analysis: assess the visible task plan and tool/result checks rather than requesting hidden chain-of-thought; the demo currently has no vision model, so it should ask for an image-capable model before image questions.

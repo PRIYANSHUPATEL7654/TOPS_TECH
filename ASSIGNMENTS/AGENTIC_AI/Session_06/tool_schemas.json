@@ -1,0 +1,21 @@
+{
+  "song_search": {
+    "name": "search_songs",
+    "description": "Search the music catalog for songs matching a title and optionally an artist.",
+    "parameters": {"type": "object", "properties": {"song_name": {"type": "string", "description": "Full or partial song title"}, "artist": {"type": "string", "description": "Artist name, if known"}}, "required": ["song_name"], "additionalProperties": false}
+  },
+  "movie_ticket_finder": {
+    "name": "find_movie_tickets",
+    "description": "Find available cinema showtimes and ticket options.",
+    "parameters": {"type": "object", "properties": {"city": {"type": "string"}, "movie_name": {"type": "string"}, "date": {"type": "string", "description": "Show date in YYYY-MM-DD format"}}, "required": ["city", "movie_name", "date"], "additionalProperties": false}
+  },
+  "get_weather": {
+    "type": "function",
+    "function": {"name": "get_weather", "description": "Get the weather forecast for a location and date.", "parameters": {"type": "object", "properties": {"location": {"type": "string", "description": "City or place name"}, "date": {"type": "string", "description": "Date in YYYY-MM-DD format"}}, "required": ["location", "date"], "additionalProperties": false}}
+  },
+  "track_order_gemini": {
+    "name": "trackOrder",
+    "description": "Tracks the status of a food delivery order.",
+    "parameters": {"type": "object", "properties": {"order_id": {"type": "string", "description": "Food delivery order identifier"}, "user_phone": {"type": "string", "description": "Phone number associated with the order"}}, "required": ["order_id", "user_phone"]}
+  }
+}

@@ -1,0 +1,5 @@
+SESSION 5 — Agent Architecture & Workflow (Part 3)
+
+1. The flowchart diagram shows a LangChain-style flow from user request to a flight-search tool, observation, and response, with an error/clarification branch.
+
+5. Generated ordering-agent pseudocode: collect location and cuisine; search restaurants; show menus; collect dishes and quantities; calculate a quote; summarize the cart; ask the user to confirm; submit the order only after confirmation; show the order ID. Safety check: validate restaurant and item IDs against current tool results, check price/availability again, and never place an order without explicit confirmation. Code is in safe_food_order().

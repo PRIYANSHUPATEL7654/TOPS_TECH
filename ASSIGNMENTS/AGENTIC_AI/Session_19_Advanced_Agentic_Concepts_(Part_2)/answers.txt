@@ -1,0 +1,3 @@
+SESSION 19 — Advanced Agentic Concepts (Part 2)
+
+Task 4 idea: a delivery-capacity coordinator reads orders, ratings, location, and restaurant hours; checks constraints; drafts a dispatch plan for approval; observes confirmations; replans delays; and notifies customers. It avoids automatic consequential changes without human approval.

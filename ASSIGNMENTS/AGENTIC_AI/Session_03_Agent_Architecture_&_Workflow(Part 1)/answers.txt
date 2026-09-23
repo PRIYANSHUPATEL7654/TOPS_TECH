@@ -1,0 +1,9 @@
+SESSION 3 — Agent Architecture & Workflow (Part 1), revised assignment
+
+2. Food-delivery agent loop: Perceive: extract the user's meal request, location, dietary needs, and budget. Think: find safe restaurants and menu items matching the constraints. Act: show options or prepare a cart and request confirmation before placing an order. Learn: update only user-approved preferences after feedback.
+
+5. Contextual-memory examples: WhatsApp can use the active conversation context to resolve “send that again” as the last shared message, reducing repeated explanations. Instagram DMs can remember a user's current conversation topic so a reply or suggested response fits the thread; users should be able to clear or correct saved context.
+
+Tasks 1, 3, and 4 are implemented in session3_memory_agent.py; the earlier same-title Session_03 folder is preserved separately in the package.
+
+The earlier Session 3 solution is copied here as earlier_session3_agent_memory.py with its original written answers. The photo-specific revised task solution is session3_memory_agent.py. Both versions are retained because the task prompts differ.

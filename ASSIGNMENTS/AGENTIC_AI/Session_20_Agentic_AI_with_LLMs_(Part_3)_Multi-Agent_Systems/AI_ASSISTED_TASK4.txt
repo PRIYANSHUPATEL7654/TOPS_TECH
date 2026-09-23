@@ -1,0 +1,9 @@
+SESSION 20 TASK 4 — AI PROMPT AND TEST NOTE
+
+Prompt: “Write two small Python functions representing agents: one returns a dictionary of sample IPL player scores, and a second accepts only that dictionary, finds the highest score, and formats a summary. Include a test run.”
+
+Implemented response: cricket_fetch_agent() passes a score dictionary to cricket_summary_agent() in multi_agent_system.py.
+
+Test: run python multi_agent_system.py. Sample output identifies Player A with 72 runs.
+
+Change made: none after the smoke run; score data is clearly labeled as a simulation rather than live IPL data.

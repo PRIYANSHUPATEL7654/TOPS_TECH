@@ -1,0 +1,9 @@
+SESSION 15 TASK 5 — AI PROMPT AND TEST NOTE
+
+Prompt: “Write a short Python example that fetches a mock list of trending social posts, summarizes each trend, and prints the top two by post count. Use LangChain Runnable patterns, keep it deterministic, and include a small local test.”
+
+Implemented response: twitter_trends.py uses RunnableLambda around a mock trends function, sorts by post count, and prints the two highest entries.
+
+Test: run python twitter_trends.py; expected top two are #Cricket (1200) and #Python (990).
+
+Change made: real social-network APIs need a developer account and current credentials, so the example stays mock-based and labels the data instead of implying it is live.

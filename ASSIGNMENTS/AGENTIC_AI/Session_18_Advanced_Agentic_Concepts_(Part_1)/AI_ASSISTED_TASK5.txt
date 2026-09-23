@@ -1,0 +1,7 @@
+SESSION 18 ADVANCED TASK 5 — AI PROMPT AND TEST NOTE
+
+Prompt: “Create a simple Flipkart-style shopping cart class with add_item(name, price), remove_item(name), and get_total(). Show tests for adding two items, calculating the total, removing one, and calculating again.”
+
+Implemented response: Cart in advanced_agents.py supports all three operations.
+
+Test: Dosa ₹180 and Lassi ₹60 produce ₹240; after removing Lassi, the total is ₹180. The local run passed; missing removals are safely ignored.

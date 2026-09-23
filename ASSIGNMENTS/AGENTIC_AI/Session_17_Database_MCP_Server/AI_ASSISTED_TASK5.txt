@@ -1,0 +1,7 @@
+SESSION 17 TASK 5 — AI PROMPT AND TEST NOTE
+
+Prompt: “Write a Python SQLite function that deletes an order by order_id using a parameterized DELETE statement, reports whether a row was deleted, and handles a missing ID safely.”
+
+Implemented response: the DELETE_ORDER command in database_server.py validates order_id and executes DELETE FROM orders WHERE order_id=? with a parameter. test_database_server.py inserts, retrieves, deletes, and checks validation in a temporary database.
+
+Tests require Flask, installed from requirements.txt. No live database is modified.

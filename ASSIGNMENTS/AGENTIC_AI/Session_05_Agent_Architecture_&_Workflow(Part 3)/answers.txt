@@ -1,0 +1,9 @@
+SESSION 5 — Agent Architecture & Workflow (Part 3), revised assignment
+
+1. Diagram: session5_bookmyshow_flow.png maps request → movie/date/location check → showtime tool → seat availability → price/confirmation decision → reserve only after explicit user confirmation → ticket response.
+
+3. The pizza task is decomposed into four steps, logs progress, and checks a simulated open-now result.
+
+5. Wishlist safety issues: (a) a wrong product ID could add/remove the wrong item; solve by resolving against the user's own catalog results and validating ownership. (b) an agent could remove items or add high-cost items without consent; solve with action allowlists, confirmation gates, price limits, idempotency, and audit logs. Code demonstrates the confirmation and allowlist checks.
+
+The earlier Session 5 flight workflow, ticket state machine, and safe order demo are copied here as earlier_session5_agent_workflows.py with its original written answers. The photo-specific revised BookMyShow and food-order tasks are in session5_order_agent.py.

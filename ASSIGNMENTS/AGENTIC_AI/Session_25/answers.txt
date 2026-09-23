@@ -1,0 +1,3 @@
+SESSION 25 — Case Study: Building a Personal Assistant Agent (Part 2)
+
+The runnable Streamlit application is assistant_app.py. It provides a chat input, detects at least four intents, selects a tool label, keeps the last three exchanges in session memory, and displays a spinner while preparing the response. Booking and Spotify are clearly labeled mock/unconnected tools; no account data is accessed.

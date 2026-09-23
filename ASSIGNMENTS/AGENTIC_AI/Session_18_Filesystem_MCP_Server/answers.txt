@@ -1,0 +1,3 @@
+SESSION 18 — Filesystem MCP Server
+
+The JSON-lines TCP demo listens on 127.0.0.1:5050 and supports LIST, GET <filename>, DELETE <filename>. Files are constrained to server_files; path traversal is rejected. Start python filesystem_server.py in one VS Code terminal; use another with python filesystem_client.py LIST or GET music_playlist.txt. Test with python test_filesystem_server.py.

@@ -1,0 +1,3 @@
+SESSION 19 — GitHub MCP Server
+
+The official GitHub MCP Server is a separate Go service; webhook_app.py handles the requested local exercise. It validates HMAC signatures, logs opened issues, filters pull requests for label bug, and returns title/author. Test with python test_webhook_app.py. GitHub account-side tasks are in README.txt.

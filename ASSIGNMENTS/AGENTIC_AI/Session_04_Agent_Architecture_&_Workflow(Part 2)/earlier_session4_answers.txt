@@ -1,0 +1,5 @@
+SESSION 4 — Agent Architecture & Workflow (Part 2)
+
+4. The script demonstrates a two-stage prompt chain: ask for a genre, search titles, ask the user to choose one, then retrieve that title's details. OMDb searches a title, so the first call can be adapted to search results using s=genre; the supplied function uses t=title for a direct lookup.
+
+5. Booking a movie ticket is decomposed into: (1) collect city, movie, date, and preferred time; (2) check showtimes and show the user available options; (3) collect a seat choice and verify availability; (4) display the price and request confirmation before payment; (5) call the payment provider only after explicit consent; (6) verify booking and display the ticket. Payment credentials and final purchase require user confirmation.

@@ -1,0 +1,6 @@
+SESSION 3 — Agent Architecture & Workflow (Part 1)
+
+5. Memory use cases:
+• WhatsApp short-term memory: retain the last few turns so “make it shorter” applies to the previous draft.
+• Zomato long-term memory: remember opted-in dietary preferences such as vegetarian or no peanuts across visits.
+• Spotify contextual memory: use the last song or playlist context to recommend a similar track. Give users controls to inspect, edit, and clear saved preferences.

@@ -1,0 +1,3 @@
+SESSION 16 — Business MCP Server
+
+The Flask service listens on 127.0.0.1:5000 and implements the root status, POST /order-status, POST /notify (append-only local notifications.log), and GET /user-profile/<user_id>. Required fields are validated and missing order IDs return JSON with HTTP 400. A sample profile uses a reserved .test address and fictitious number. Run python business_mcp_server.py, then python test_business_server.py.

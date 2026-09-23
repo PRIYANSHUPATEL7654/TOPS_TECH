@@ -1,0 +1,11 @@
+SESSION 4 — Agent Architecture & Workflow (Part 2), revised assignment
+
+1. Workflow shown by the program: user input → configured restaurant API request (when endpoint/key are supplied) or transparent local mock → parse restaurant names → print up to three results. Zomato developer API availability and credentials depend on the account; the mock ensures a runnable classroom example.
+
+3. Prompt chain: ask the user's movie preference, ask Hollywood/Bollywood, then choose a recommendation consistent with both. The exact interaction is in movie_prompt_chain().
+
+4. Weekend trip is decomposed and printed in order: find transport, book accommodation, suggest sightseeing.
+
+5. record_search() stores the latest query and tool result in memory and prints the updated dictionary.
+
+The earlier Session 4 OMDb/menu/SQLite solution is copied here as earlier_session4_movie_tools.py with its sample menu and written answers. The photo-specific revised Zomato/playlist/prompt-chain tasks are in session4_tools.py.

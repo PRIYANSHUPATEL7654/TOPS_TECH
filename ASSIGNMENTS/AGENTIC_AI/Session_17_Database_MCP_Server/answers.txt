@@ -1,0 +1,3 @@
+SESSION 17 — Database MCP Server
+
+The SQLite REST-command demo supports parameterized add, user history, last-N history, and delete. All values are SQL parameters; the command name is selected from a fixed allowlist. Timestamps are stored in UTC ISO format and results sort newest first. Run python database_server.py. Test with python test_database_server.py.

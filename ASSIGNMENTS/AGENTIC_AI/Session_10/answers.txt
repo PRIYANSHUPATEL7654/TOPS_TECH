@@ -1,0 +1,5 @@
+SESSION 10 — Agentic AI with LLMs (Part 2)
+
+LangChain has changed its agent API over time. langchain_examples.py safely lists agent-related classes available in the installed version instead of assuming the old langchain.agents.Agent class exists. The Spotify agent is a deterministic mock with conversation history. The PDF example extracts text and finds relevant lines; it is a small local demonstration, not a full semantic RAG system. llamaindex_pdf_answer() uses SimpleDirectoryReader when LlamaIndex is installed and falls back to pypdf keyword search.
+
+A genuine LangChain calculator tool is supplied in calculator_tool.py. Test code: calculator.invoke({"expression": "15*8"}) returns 120. It is safer than eval because it only accepts numeric constants and the four basic arithmetic operators. langchain_examples.py also contains a dependency-free version.
