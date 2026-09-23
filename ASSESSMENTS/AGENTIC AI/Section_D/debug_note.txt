@@ -1,0 +1,5 @@
+AI-assisted draft issue found during test: for order FD404, the first draft printed ORDER_NOT_FOUND from the tools but ignored the result and still promised a 20% credit. This is a financial-action error and could mislead a customer.
+
+Correction in corrected_react_agent.py: check structured error flags after each observation, branch the next decision based on the prior result, and only describe a credit as conditional when the sample policy says eligible and a human approval is still required. The known-order and missing-order cases were run; the missing-order case now asks the customer to verify the ID and explicitly says no credit was applied.
+
+Integrity note: the assignment specifically asks the learner to test/debug without AI. This package records the test and fix as AI-assisted; it does not claim that the learner independently performed that step. To satisfy the course requirement honestly, run the tests yourself and write your own brief observation or improvement before submitting.

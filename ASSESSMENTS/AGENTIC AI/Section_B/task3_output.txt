@@ -1,0 +1,10 @@
+How can I place an order? -> prompt_template : I can help with your order. Please share any missing details for: How can I place an order?
+Memory: {'interaction_count': 1, 'preferred_cuisine': None, 'last_complaint': None}
+Show me the menu -> rag_lookup : Menu results: Dishes: masala dosa, Gujarati thali, paneer wrap
+Memory: {'interaction_count': 2, 'preferred_cuisine': None, 'last_complaint': None}
+Which dish is available? -> rag_lookup : Menu results: Dishes: masala dosa, Gujarati thali, paneer wrap
+Memory: {'interaction_count': 3, 'preferred_cuisine': None, 'last_complaint': None}
+My food arrived cold and late -> fine_tuned : I am sorry about the food-delivery issue. I have recorded the complaint for review under the service policy.
+Memory: {'interaction_count': 4, 'preferred_cuisine': None, 'last_complaint': 'My food arrived cold and late'}
+Recommend Gujarati food -> rag_lookup : Menu results: Dishes: masala dosa, Gujarati thali, paneer wrap
+Memory: {'interaction_count': 5, 'preferred_cuisine': 'Gujarati', 'last_complaint': 'My food arrived cold and late'}

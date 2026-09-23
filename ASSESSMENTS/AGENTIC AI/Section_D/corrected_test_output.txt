@@ -1,0 +1,18 @@
+=== Known order ===
+Cycle 1 — Thought summary: verify the order and delivery record first.
+Action: lookup_order_status(FD1001)
+Observation: {'order_id': 'FD1001', 'status': 'Delivered', 'minutes_late': 42, 'cold': True}
+Next-step decision: order exists; check the complaint against the refund policy.
+Cycle 2 — Thought summary: check eligibility; do not promise a credit unless policy confirms it.
+Action: check_refund_eligibility(FD1001, issue='late and cold')
+Observation: {'eligible': True, 'credit_percent': 20, 'policy': 'sample policy; approval required'}
+Final response: The order appears eligible for a 20% credit under the sample policy. A support agent must approve it before it is applied.
+=== Unknown order test ===
+Cycle 1 — Thought summary: verify the order and delivery record first.
+Action: lookup_order_status(FD404)
+Observation: {'error': 'ORDER_NOT_FOUND', 'order_id': 'FD404'}
+Next-step decision: the order was not found; verify the eligibility lookup also and ask the customer to check the ID.
+Cycle 2 — Thought summary: check eligibility; do not promise a credit unless policy confirms it.
+Action: check_refund_eligibility(FD404, issue='late and cold')
+Observation: {'error': 'ORDER_NOT_FOUND', 'order_id': 'FD404'}
+Final response: I could not verify this order. Please check the order ID; no refund or credit has been applied.

@@ -1,0 +1,87 @@
+Schemas:
+[
+  {
+    "name": "check_restaurant_status",
+    "description": "Check whether a restaurant is open.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    }
+  },
+  {
+    "name": "get_estimated_delivery_time",
+    "description": "Get sample ETA for an order.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "order_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "order_id"
+      ]
+    }
+  },
+  {
+    "name": "apply_discount",
+    "description": "Request an eligible discount; confirmation/policy is required in production.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "order_id": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "order_id",
+        "reason"
+      ]
+    }
+  },
+  {
+    "name": "file_complaint",
+    "description": "Record a complaint for an order.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "order_id": {
+          "type": "string"
+        },
+        "issue": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "order_id",
+        "issue"
+      ]
+    }
+  }
+]
+Q: Is Saravana Bhavan open?
+A: Saravana Bhavan: open now (sample availability).
+Q: Where is order FD4521?
+A: Order FD4521: estimated arrival in 32 minutes (sample ETA).
+Q: My order O77 is late, ETA?
+A: Order O77: estimated arrival in 32 minutes (sample ETA).
+Q: File complaint FD4521 cold food
+A: Complaint recorded for FD4521: File complaint FD4521 cold food. Reference C-FD4521.
+Q: Can I get a discount on FD4521?
+A: Discount review for FD4521: Can I get a discount on FD4521?; sample 10% credit eligible after approval.
+Session log:
+('Is Saravana Bhavan open?', 'check_restaurant_status', 'Saravana Bhavan: open now (sample availability).')
+('Where is order FD4521?', 'get_estimated_delivery_time', 'Order FD4521: estimated arrival in 32 minutes (sample ETA).')
+('My order O77 is late, ETA?', 'get_estimated_delivery_time', 'Order O77: estimated arrival in 32 minutes (sample ETA).')
+('File complaint FD4521 cold food', 'file_complaint', 'Complaint recorded for FD4521: File complaint FD4521 cold food. Reference C-FD4521.')
+('Can I get a discount on FD4521?', 'apply_discount', 'Discount review for FD4521: Can I get a discount on FD4521?; sample 10% credit eligible after approval.')

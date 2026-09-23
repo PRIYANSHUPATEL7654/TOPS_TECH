@@ -1,0 +1,3 @@
+SECTION B — PRACTICAL CODING TASKS
+
+Run: python task1_technique_decision.py; python task2_delivery_agent.py; python task3_memory_strategy.py; python task4_lifecycle.py. These are local simulations, with mocked service outcomes rather than live orders.

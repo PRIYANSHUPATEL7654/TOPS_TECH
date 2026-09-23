@@ -1,0 +1,4 @@
+The first draft ignored structured tool errors and promised a 20% credit even when order FD404 was not found.
+Automated tests covered one valid order and one missing order; the missing record returned ORDER_NOT_FOUND.
+The corrected version checks errors and eligibility before responding, and asks the customer to verify an unknown order ID.
+This is AI-assisted code and testing; complete the required independent test/debug step yourself before claiming it.

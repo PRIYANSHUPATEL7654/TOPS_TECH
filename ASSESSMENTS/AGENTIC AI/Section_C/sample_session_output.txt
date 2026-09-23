@@ -1,0 +1,180 @@
+Tool schemas:
+[
+  {
+    "name": "place_order",
+    "description": "Create a draft order and return an order ID.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "restaurant": {
+          "type": "string"
+        },
+        "item": {
+          "type": "string"
+        },
+        "cuisine": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "restaurant",
+        "item",
+        "cuisine"
+      ]
+    }
+  },
+  {
+    "name": "track_order",
+    "description": "Return status and ETA for an order ID.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "order_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "order_id"
+      ]
+    }
+  },
+  {
+    "name": "file_complaint",
+    "description": "Record a complaint for an order.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "order_id": {
+          "type": "string"
+        },
+        "issue": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "order_id",
+        "issue"
+      ]
+    }
+  },
+  {
+    "name": "get_recommendations",
+    "description": "Recommend sample dishes for a cuisine preference.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "cuisine": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cuisine"
+      ]
+    }
+  }
+]
+
+1 Place Order  2 Track Order  3 File Complaint  4 Get Personalised Recommendations  5 Exit
+Choose: Restaurant: Dish: Cuisine: Reason summary: route this request to the matching local tool; check the returned result.
+Action: place_order arguments: {'restaurant': 'Dosa House', 'item': 'Masala dosa', 'cuisine': 'South Indian'}
+Observation: {'order_id': 'FD5001', 'restaurant': 'Dosa House', 'item': 'Masala dosa', 'cuisine': 'South Indian', 'status': 'Placed', 'eta': '30 minutes'}
+Strategy: prompt
+Memory: {'orders_placed': ['FD5001'], 'complaints_filed': [], 'preferred_cuisine': 'South Indian', 'interaction_count': 1}
+
+1 Place Order  2 Track Order  3 File Complaint  4 Get Personalised Recommendations  5 Exit
+Choose: Order ID: Reason summary: route this request to the matching local tool; check the returned result.
+Action: track_order arguments: {'order_id': 'FD5001'}
+Observation: {'order_id': 'FD5001', 'restaurant': 'Dosa House', 'item': 'Masala dosa', 'cuisine': 'South Indian', 'status': 'Placed', 'eta': '30 minutes'}
+Strategy: rag
+Memory: {'orders_placed': ['FD5001'], 'complaints_filed': [], 'preferred_cuisine': 'South Indian', 'interaction_count': 2}
+
+1 Place Order  2 Track Order  3 File Complaint  4 Get Personalised Recommendations  5 Exit
+Choose: Order ID: Issue: Reason summary: route this request to the matching local tool; check the returned result.
+Action: file_complaint arguments: {'order_id': 'FD5001', 'issue': 'Food was cold'}
+Observation: {'complaint_id': 'C-FD5001', 'order_id': 'FD5001', 'issue': 'Food was cold', 'status': 'Recorded'}
+Strategy: prompt
+Memory: {'orders_placed': ['FD5001'], 'complaints_filed': ['C-FD5001'], 'preferred_cuisine': 'South Indian', 'interaction_count': 3}
+
+1 Place Order  2 Track Order  3 File Complaint  4 Get Personalised Recommendations  5 Exit
+Choose: Cuisine: Reason summary: route this request to the matching local tool; check the returned result.
+Action: get_recommendations arguments: {'cuisine': 'Gujarati'}
+Observation: {'cuisine': 'Gujarati', 'dishes': ['Gujarati thali', 'Khandvi']}
+Strategy: rag
+Memory: {'orders_placed': ['FD5001'], 'complaints_filed': ['C-FD5001'], 'preferred_cuisine': 'Gujarati', 'interaction_count': 4}
+
+1 Place Order  2 Track Order  3 File Complaint  4 Get Personalised Recommendations  5 Exit
+Choose: Session report:
+{
+  "actions": [
+    {
+      "action": "place_order",
+      "arguments": {
+        "restaurant": "Dosa House",
+        "item": "Masala dosa",
+        "cuisine": "South Indian"
+      },
+      "result": {
+        "order_id": "FD5001",
+        "restaurant": "Dosa House",
+        "item": "Masala dosa",
+        "cuisine": "South Indian",
+        "status": "Placed",
+        "eta": "30 minutes"
+      },
+      "strategy": "prompt"
+    },
+    {
+      "action": "track_order",
+      "arguments": {
+        "order_id": "FD5001"
+      },
+      "result": {
+        "order_id": "FD5001",
+        "restaurant": "Dosa House",
+        "item": "Masala dosa",
+        "cuisine": "South Indian",
+        "status": "Placed",
+        "eta": "30 minutes"
+      },
+      "strategy": "rag"
+    },
+    {
+      "action": "file_complaint",
+      "arguments": {
+        "order_id": "FD5001",
+        "issue": "Food was cold"
+      },
+      "result": {
+        "complaint_id": "C-FD5001",
+        "order_id": "FD5001",
+        "issue": "Food was cold",
+        "status": "Recorded"
+      },
+      "strategy": "prompt"
+    },
+    {
+      "action": "get_recommendations",
+      "arguments": {
+        "cuisine": "Gujarati"
+      },
+      "result": {
+        "cuisine": "Gujarati",
+        "dishes": [
+          "Gujarati thali",
+          "Khandvi"
+        ]
+      },
+      "strategy": "rag"
+    }
+  ],
+  "session_memory": {
+    "orders_placed": [
+      "FD5001"
+    ],
+    "complaints_filed": [
+      "C-FD5001"
+    ],
+    "preferred_cuisine": "Gujarati",
+    "interaction_count": 4
+  }
+}

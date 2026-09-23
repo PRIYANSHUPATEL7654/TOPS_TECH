@@ -1,0 +1,4 @@
+Real-time menu recommendations -> {'technique': 'RAG', 'justification': 'The answer depends on external information that changes frequently. Retrieval can use the latest approved menu or policy without retraining the model.'}
+Complaint categorization -> {'technique': 'Fine-Tuning', 'justification': 'The desired behavior is stable and domain-specific. Fine-tuning can teach consistent patterns after a representative, reviewed dataset is available.'}
+Order confirmation message -> {'technique': 'Prompt Engineering', 'justification': 'This task needs a simple response and a tight response-time budget. A short prompt avoids a retrieval step and a model-training workflow.'}
+Domain FAQ -> {'technique': 'RAG', 'justification': 'Authoritative external documents contain the relevant facts. Retrieval grounds responses in those documents and allows updates without changing model weights.'}
