@@ -1,3 +1,0 @@
-# Section C — QuickBite AI Mini Capstone
-
-Run `python -m quickbite.train_model`, then `python -m quickbite.api` in one terminal and `streamlit run quickbite/app.py` in another. The sidebar stores address and dietary preference in Streamlit session state. Menu results are filtered from `quickbite/menu.json` and limited to three. The model-backed agent exposes `get_delivery_estimate` and `search_menu` tools and includes two few-shot exchanges. The visible chat is rendered as right/left chat bubbles, and Clear Chat clears displayed history and session memory state. With no model credentials, a deterministic demo assistant is used; tool-backed model behavior requires a configured chat model.
