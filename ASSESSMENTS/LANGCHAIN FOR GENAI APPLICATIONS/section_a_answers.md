@@ -1,0 +1,19 @@
+# Section A — Concept Application
+
+## S1 — Pickle vs Joblib
+Both Pickle and Joblib serialize Python objects, including scikit-learn estimators. Joblib is a practical choice for this model because it is optimized for objects containing large NumPy arrays and can load efficiently; for a small linear model the speed difference is minor. Either format is Python-specific and can break when package versions, Python versions, custom classes, or preprocessing code differ from training. Serialized files can execute malicious code when loaded, so only load trusted artifacts. Pin compatible dependencies and test the artifact in the production image.
+
+## S2 — VAE vs Stable Diffusion
+A VAE encodes an input into a compact latent distribution and decodes samples from that latent space; this is efficient but often produces softer, less detailed images. Stable Diffusion is a latent diffusion model that iteratively denoises a latent representation conditioned on text and, with image conditioning, a reference photo. It generally offers richer detail and stronger prompt control, making it a better fit for realistic campaign imagery, although it needs more compute and careful licensing, safety, and quality review. A production pipeline should preserve the dish's real appearance and avoid misleading customers.
+
+## S3 — Decoder-only vs encoder-only
+A GPT-style decoder-only Transformer uses causal attention: each output token can attend to earlier tokens and predict the next one. That makes it suitable for open-ended trend answers and dialogue generation, subject to having current, grounded data. A BERT-style encoder-only Transformer uses bidirectional context, so it can interpret the full review at once and produce a classification label efficiently. Fine-tuning or a task-specific classification head can map review representations to Positive, Neutral, or Negative.
+
+## S4 — Zero-shot vs few-shot
+Zero-shot prompting gives instructions but no worked examples; few-shot prompting includes a small set of input/output demonstrations. Since only three labeled examples exist per complaint category, use few-shot prompting with carefully selected, representative examples, while explicitly instructing the model to handle unseen wording. Provide the complaint, category if known, policy constraints, empathy and action requirements, and a compact expected response format. Three examples help show style but do not guarantee correct handling; evaluate edge cases and escalate uncertain or safety-sensitive complaints.
+
+## S5 — Agent vs simple chain
+A simple LLM chain follows a predetermined sequence and does not independently choose actions. A LangChain agent reasons about the request, selects tools, passes their inputs, observes results, and forms a final answer. Live restaurant checks, delivery-time API calls, and discount validation are dynamic actions, so an agent with narrowly scoped tools is more appropriate. Risks include incorrect or repeated tool calls and latency/cost from extra model steps; tool failures or unsafe inputs are additional operational concerns. Validate arguments, enforce permissions and limits, and confirm high-impact actions.
+
+## S6 — Fine-tuning vs RAG
+Fine-tuning changes model weights and is useful for style, behavior, or domain patterns, but refreshing daily menus would require repeated training and can be costly; it does not reliably make a model recall every current fact. RAG retrieves current passages/menu entries at question time and grounds the answer in them, so updates can be published without retraining and private documents can remain in controlled storage. RAG is the better fit for a frequently updated policy and catalog. It still depends on document quality, chunking, retrieval, access control, and the model's faithful use of evidence; irrelevant retrieval or unsupported synthesis can still cause errors.

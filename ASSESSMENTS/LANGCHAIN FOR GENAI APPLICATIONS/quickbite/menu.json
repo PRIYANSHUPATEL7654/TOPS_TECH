@@ -1,0 +1,14 @@
+[
+ {"name":"Paneer Tikka Masala","cuisine":"North Indian","price":289,"veg":true},
+ {"name":"Dal Makhani","cuisine":"North Indian","price":219,"veg":true},
+ {"name":"Veg Hakka Noodles","cuisine":"Indo-Chinese","price":199,"veg":true},
+ {"name":"Chicken Dum Biryani","cuisine":"Hyderabadi","price":329,"veg":false},
+ {"name":"Margherita Pizza","cuisine":"Italian","price":249,"veg":true},
+ {"name":"Chicken Alfredo Pasta","cuisine":"Italian","price":349,"veg":false},
+ {"name":"Masala Dosa","cuisine":"South Indian","price":149,"veg":true},
+ {"name":"Grilled Fish Bowl","cuisine":"Continental","price":379,"veg":false},
+ {"name":"Chole Bhature","cuisine":"North Indian","price":189,"veg":true},
+ {"name":"Veg Sushi Roll","cuisine":"Japanese","price":299,"veg":true},
+ {"name":"Egg Fried Rice","cuisine":"Indo-Chinese","price":229,"veg":false},
+ {"name":"Mushroom Ramen","cuisine":"Japanese","price":319,"veg":true}
+]
