@@ -88,7 +88,7 @@ dth = 3 - 60%
 In this way it calculates the percentages of items bought together and then builds a recommendation.
 Now, suppose in this algorithm we pass a value (named as support) 65% then it means all the valus above 65% will be shown in user recommendation.
 
-GMM : It works on clusters like k-means and dbscan.
+GMM (Gaussian Mixture Model) : It works on clusters like k-means and dbscan.
 Suppose, it made 2 clusters for 5 products, with product 1,2,5 in cluster 1 and remaining in cluster 2.
 Now suppose product 2 matches 70% with cluster 1 and 30% with cluster 2 then it is kept in cluster 1 as written above.
 Reallife eg, a remote is mostly bought along with tv and not with another item then the recommendation system recommends remote along with tv nexttime to the customers.
