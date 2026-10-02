@@ -1,0 +1,45 @@
+TASK 1 - PREPROCESSOR
+'Loved the hot pizza!!! Delivered quickly.' => loved hot pizza delivered quickly
+'Not tasty; food arrived cold and late.' => not tasty food arrived cold late
+'App charged me twice, please help!' => app charged me twice please help
+
+TASK 2 - TF-IDF MATRIX
+            and  average   bowl  brownie  burger  chicken  chocolate  chutney   cold  crisp  delicious  delivery  dessert  dressing  excellent  flavor  fresh  fries   late  lemon  lettuce   mint  noodles  ordinary  paneer  pizza   rich  salad  soggy  spicy  sweet   very   with   wrap
+review_1  0.000    0.000  0.000    0.000   0.000    0.353      0.000    0.000  0.000  0.421      0.000     0.000    0.000     0.000      0.000   0.000  0.353  0.000  0.000  0.000    0.421  0.000    0.000     0.000   0.000  0.000  0.000  0.000  0.000  0.353  0.000  0.000  0.305  0.421
+review_2  0.380    0.000  0.000    0.000   0.000    0.440      0.000    0.000  0.440  0.000      0.000     0.000    0.000     0.000      0.000   0.000  0.000  0.440  0.000  0.000    0.000  0.000    0.000     0.000   0.000  0.000  0.000  0.000  0.525  0.000  0.000  0.000  0.000  0.000
+review_3  0.000    0.000  0.426    0.000   0.000    0.000      0.000    0.426  0.000  0.000      0.426     0.000    0.000     0.000      0.000   0.000  0.000  0.000  0.000  0.000    0.000  0.426    0.000     0.000   0.426  0.000  0.000  0.000  0.000  0.000  0.000  0.000  0.308  0.000
+review_4  0.352    0.486  0.000    0.000   0.486    0.000      0.000    0.000  0.000  0.000      0.000     0.000    0.000     0.000      0.000   0.000  0.000  0.408  0.000  0.000    0.000  0.000    0.000     0.486   0.000  0.000  0.000  0.000  0.000  0.000  0.000  0.000  0.000  0.000
+review_5  0.000    0.000  0.000    0.000   0.000    0.000      0.000    0.000  0.000  0.000      0.000     0.000    0.000     0.000      0.000   0.461  0.000  0.000  0.000  0.000    0.000  0.000    0.461     0.000   0.000  0.000  0.461  0.000  0.000  0.386  0.000  0.461  0.000  0.000
+review_6  0.352    0.000  0.000    0.000   0.000    0.000      0.000    0.000  0.408  0.000      0.000     0.486    0.000     0.000      0.000   0.000  0.000  0.000  0.486  0.000    0.000  0.000    0.000     0.000   0.000  0.486  0.000  0.000  0.000  0.000  0.000  0.000  0.000  0.000
+review_7  0.000    0.000  0.000    0.000   0.000    0.000      0.000    0.000  0.000  0.000      0.000     0.000    0.000     0.486      0.000   0.000  0.408  0.000  0.000  0.486    0.000  0.000    0.000     0.000   0.000  0.000  0.000  0.486  0.000  0.000  0.000  0.000  0.352  0.000
+review_8  0.000    0.000  0.000    0.447   0.000    0.000      0.447    0.000  0.000  0.000      0.000     0.000    0.447     0.000      0.447   0.000  0.000  0.000  0.000  0.000    0.000  0.000    0.000     0.000   0.000  0.000  0.000  0.000  0.000  0.000  0.447  0.000  0.000  0.000
+review_1 top: [('wrap', 0.421), ('lettuce', 0.421), ('crisp', 0.421)]
+review_2 top: [('soggy', 0.525), ('fries', 0.44), ('chicken', 0.44)]
+review_3 top: [('mint', 0.426), ('paneer', 0.426), ('bowl', 0.426)]
+review_4 top: [('average', 0.486), ('ordinary', 0.486), ('burger', 0.486)]
+review_5 top: [('rich', 0.461), ('very', 0.461), ('noodles', 0.461)]
+review_6 top: [('late', 0.486), ('pizza', 0.486), ('delivery', 0.486)]
+review_7 top: [('lemon', 0.486), ('salad', 0.486), ('dressing', 0.486)]
+review_8 top: [('brownie', 0.447), ('sweet', 0.447), ('chocolate', 0.447)]
+
+TASK 3 - COMPLAINT CLASSIFIER
+              precision    recall  f1-score   support
+
+    Delivery       0.50      0.50      0.50         2
+Food Quality       1.00      0.50      0.67         2
+         App       0.67      1.00      0.80         2
+
+    accuracy                           0.67         6
+   macro avg       0.72      0.67      0.66         6
+weighted avg       0.72      0.67      0.66         6
+
+Confusion matrix rows=true, columns=predicted [Delivery, Food Quality, App]:
+[[1 0 1]
+ [1 1 0]
+ [0 0 2]]
+
+TASK 4 - SENTIMENT MODEL COMPARISON
+                    Accuracy  Precision_macro  Recall_macro  F1_macro
+Model                                                                
+MultinomialNB            0.5              0.5           0.5     0.495
+LogisticRegression       0.5              0.5           0.5     0.495

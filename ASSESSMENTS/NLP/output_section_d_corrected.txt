@@ -1,0 +1,5 @@
+Holdout accuracy: 0.400
+Enter three reviews:
+Review 1: Predicted sentiment: Positive
+Review 2: Predicted sentiment: Negative
+Review 3: Predicted sentiment: Positive

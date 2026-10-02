@@ -1,0 +1,21 @@
+
+1 Add a labeled review
+2 Classify a new review
+3 Summary report
+4 Exit
+Choose: Review to classify: Sentiment: Negative | Issue category: Food Quality | Processed: cold food arrived late
+
+1 Add a labeled review
+2 Classify a new review
+3 Summary report
+4 Exit
+Choose: Total reviews: 8
+Sentiment counts: {'Positive': 5, 'Negative': 3}
+Issue category counts: {'Delivery': 3, 'General': 1, 'Food Quality': 2, 'App': 2}
+Top 5 content words: [('quick', 2), ('driver', 2), ('order', 2), ('food', 2), ('payment', 2)]
+
+1 Add a labeled review
+2 Classify a new review
+3 Summary report
+4 Exit
+Choose: 

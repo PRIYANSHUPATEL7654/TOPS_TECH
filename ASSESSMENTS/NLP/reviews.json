@@ -1,0 +1,10 @@
+[
+ {"raw":"Loved the hot pizza and quick driver","processed":"love hot pizza quick driver","sentiment":"Positive","category":"Delivery"},
+ {"raw":"Fresh meal and friendly support","processed":"fresh meal friend support","sentiment":"Positive","category":"General"},
+ {"raw":"The order arrived late","processed":"order arriv late","sentiment":"Negative","category":"Delivery"},
+ {"raw":"Cold food and spilled soup","processed":"cold food spill soup","sentiment":"Negative","category":"Food Quality"},
+ {"raw":"App crashed during payment","processed":"app crash payment","sentiment":"Negative","category":"App"},
+ {"raw":"Delicious food and tasty dessert","processed":"delici food tasti dessert","sentiment":"Positive","category":"Food Quality"},
+ {"raw":"Payment succeeded and order confirmed","processed":"payment succeed order confirm","sentiment":"Positive","category":"App"},
+ {"raw":"Driver found my address quickly","processed":"driver found address quick","sentiment":"Positive","category":"Delivery"}
+]
