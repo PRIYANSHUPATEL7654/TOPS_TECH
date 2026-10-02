@@ -1,0 +1,343 @@
+6/7/26
+
+In DL mostly work is done on image and video processing.
+
+number
+ann
+cnn
+rnn
+lstm
+gru
+yolo - algorithm - image used to detect object
+
+face encoding/embedding : webcam -> face detection -> image format -> pixels -> stored in vector db -> chroma db -> pickle file
+We get 128 pixels of every image.
+The image stored in db : eg, [1.9,2.8,2.6]
+The another image taken from web cam is checked with the stored image and distance between them is calculated to verify.
+The range and its meaning of the distance is defined below.
+0 to 0.35 = excellent
+0.35 to 0.50 - average
+0.50 to 0.60 - acceptable/positive
+more values than that will be considered negative and not acceptable, therefore 0.60 can be considered as threshold value.
+
+ANN - Artificial Neural Network
+    Input layer -- hidden layer -- output layer
+    Eg,
+    attendance study_hour marks result
+    70         7          76    pass
+    75         4          86    fail
+    80         6          66    pass
+    Inputs x1,x2,x3 are taken and they are connected to the hidden layer through neurons.
+    x1 - neurons - hidden layer
+
+    -> Now the hidden layer decides how much weight should be assigned to every type of input(columns).
+    -> Along with that it also decides a bias value.
+    -> Suppose the weights for each input is w1 = 0.6, w2 = 0.4, w3 = 0.8 and suppose the bias is 1.
+    -> So, x1.w1 = 70 . 0.6 + x2.w2 = 7 . 0.4 + x3.w3 = 76 . 0.8 + bias value = 1(forward propogation) (Note : the x1,x2,x3 values are taken from row 1)
+    -> So formula z = x1.w1 + x2.w2 + x3.w3 + b
+    -> This value of z is called as weighted sum.
+    -> Now if z = 8.8756 and we want to convert it into 0 to 1 then we use activation function.
+    -> Activation function named sigmoid is used to convert into 0 to 1 and relu is used to convert into 0 to 1 if the value is negative.
+    -> Sigmoid sigma(z) = 1/1+e^-z where e = 2.72 and it is constant.
+    -> Eg, the z value is put in place of z present in formula in power and the resulting sigma value will come in between 0 to 1.
+    -> Now if the ann model gives answer 0.76 which is near to the actual value but not the actual value than we try to reduce it with backward propogation and change the bias value and also change the weights until it gets the appropriate output and changing the bias and weights is done by adam optimizer using gradient descent method.
+    Eg,
+    -> suppose the value of z is 3.335
+    -> Now we convert into 0 to 1 using sigmoid function (use relu if negative)
+    -> Now if the converted value of z is 0.76 then the error is 1 - 0.76 = 0.24 then we try to reduce this error using backward propogation by changing weights and bias using adam optimizer.
+    -> Now if the value after numerous error reduction sticks to suppose 0.6 and then give this value again and again and does not reduce then this value is considered as threshold value.
+
+    -> Epoch / Batch : Epoch means iterations and batch means the number of data we take in each epoch.
+
+-> Dense(5) : 1 layer = 5 neurons
+    -> if there are 3 input then weight = 3*5 = 15
+    -> So technically 3 inputs is connected with 5 neurons of different weights to the hidden layer.
+    -> Bias : The value of bias is equal to the number of neurons we have taken in dense (here the value of bias will be 5).
+-> Sequential : [class = x = se()] It creates a pipeline in ann (it includes input then hidden layer and then output).
+-> Binary_Cross Entropy (loss function) : Loss means the difference between actual and predicted value. This entropy will only be used when there are only 2 classes such as yes or no.
+-> Catelogical_cross Entropy : It will be used when there are more than 2 classes.
+-> Evaluate : It checks the loss and accuracy.
+-> Drop Out : Suppose there are some neurons which are of no use then the model drops out those neurons to decrease the weight.
+-> Early Stopping : Suppose there are 10000 values and we have set 50 epochs so the model will go through 10000 data 50 times to increase accuracy. But sometimes after a certain epoch suppose 23 epoch the next epochs does not increase the accuracy so in this case doing 50 epochs is useless so we do early stopping to stop when the accuracy does not increase in increasing epochs and the model does not take unnecessary load.
+
+Eg,
+x1 = attendance
+x2 = marks
+x3 = percentage
+suppose the dense is 5.
+So this 5 neurons will be used as , attendance = 1 neuron, marks = 1 neuron, percentage = 1 neuron, attendance and marks = 1 neuron, attendance,marks and percentage = 1 neuron.
+
+-> Custom Pipeline : Model training, accuracy, api, deployment : We can manage this pipeline as we want.
+
+10/7/26
+
+ANN can do number text image and video but it becomes slow for image and video.
+
+Apriori algorithm : It works on association (finds relationship between data) and not on cluster.
+Eg, flipkart suggests remote along with tv automatically.
+
+x1  tv,remote,dth
+x2  tv,remote
+x3  remote,dth
+x4  tv,remote
+x5  remote,dth
+no of customers = 5
+no of tv = 3 - 60%
+remote = 5 - 100%
+dth = 3 - 60%
+In this way it calculates the percentages of items bought together and then builds a recommendation.
+Now, suppose in this algorithm we pass a value (named as support) 65% then it means all the valus above 65% will be shown in user recommendation.
+
+GMM (Gaussian Mixture Model) : It works on clusters like k-means and dbscan.
+Suppose, it made 2 clusters for 5 products, with product 1,2,5 in cluster 1 and remaining in cluster 2.
+Now suppose product 2 matches 70% with cluster 1 and 30% with cluster 2 then it is kept in cluster 1 as written above.
+Reallife eg, a remote is mostly bought along with tv and not with another item then the recommendation system recommends remote along with tv nexttime to the customers.
+
+14/7/26
+
+CNN - Convolutional Neural Network (image and video processing) : In this layer the training and testing data are kept in different folders and in that too the different types of images are kept aside and epoch and batch-size are assigned to it.
+    Input -- convocial layer -- relu -- pooling layer
+    Flatter layer -- fully connected layer -- output layer
+    Pixels range between 0 to 255
+    
+    -> Input layer : An image of 5*5 pixels(width*height) is given to the input layer and CNN converts that input into a matrix of 5*5 with digits 0 and 1 (binary).
+
+    -> Convocial Layer(Filter Layer/Kernel Layer) : The image passed in this layer is resized (suppose resized into 3*3 from 5*5) and creates a box of that size (here 3*3) inside the 5*5.
+
+        -> Filter Layer(heart of cnn) : It also generates a 3*3 matrix. Now this 3*3 and the 3*3  generated by convocial layer will be multiplied and the resulting 3*3 matrix is generated. Now the 9 elements of this multiplied matrix are added. After this convocial layer again makes a different 3*3 box out of 5*5 matrix and the whole process till addition is done again and again until the whole image is covered and everytime the filter layer gives random 3*3 matrix with which the 3*3 matrix of convocial layer is multiplied. In this way a feature map is generated.
+
+        It sees pattern after doing this process for eg, sees if there is nose, eyes in case it is a image of a face.
+
+    -> Relu : If there is a negative value in it then it is converted to 0.
+
+    -> Pooling Layer : The addition results in numbers forming the matrix which is called feature map. This matrix is converted into half sized matrices, suppose the resulting matrix is 4*4 then it is converted to 2*2 matrices.
+    Eg, 1  2  3  4
+        5  6  7  8 
+        9  10 11 12
+        13 14 15 16
+    then the resulting half matrices would be 1 2   3 4   9  10   11 12
+                                              5 6 , 7 8 , 13 14 , 15 16
+    Now there are 2 types of pooling : max pooling and average pooling.
+    In max pooling, the max values from each half matrices is taken.
+        Eg, 6  8
+            14 16
+    In average pooling, the average values from each half matrices is taken.
+        Eg, (1+2+5+6)/4  (3+4+7+8)/4
+            ......       ......
+
+    -> Flatten Layer : In this layer the 2d matrix is converted in 1D.
+    Eg, [6,8,14,16]
+
+    -> Fully Connected Layer : 
+    The 1D layer from flatten layer is considered as input here and weight will be assigned to each of the elements in it and then multiplied with it and along with that a bias value is also given like in ann.
+    Eg,
+    input*weight
+    6*0.2 = 1.2
+    8*0.4 = 2.8
+    14*0.6 = 8.4
+    16*0.3 = 4.8
+    Now addition is done for all 4 values along with a bias value (here 1) : 1.2 + 2.8 + 8.4 + 4.8 + 1 = 18.2
+    This addition value is then passed to sigmoid/softmax according to the number of classes.
+    Sigmoid will be done for 2 class / softmax for more than 2 class.
+    Eg, cat or dog (2 class)
+    The value of sigmoid ranges from 0 to 1.
+    If the value of sigmoid is <= 0.5 then it is considered negative and if >0.5 then positive.
+
+RNN - Recurrent Neural Network : It has a memory. Before this there was no memory in any model.
+    Eg, 'I love cricket' is the text i enter,after that if i write again 'i love' then it will automatically suggest the word 'cricket' as it is stored in the memory. It is used in whatsapp keyboard where suggestions are given.
+    It works only on Sequential Data.
+    Gates : Forgot Gate : In this it decides which things needs to be forgotten.
+            Memory Gate : In this it decides which things needs to be kept in memory.
+    tanh (Hyperbolic tangent) : It is like sigmoid but ranges from -1 to 1. Numbers of any range in a dataset is brought between -1 to 1. 
+[
+Natural Language Processing : In this suppose the text is as below.
+    Text : I love cricket , ? ? !cricket is a game,"f"
+    Cleaning : The first step is to clean all the special characters and punctuations.
+    Tokenization : Create a token for every word. Eg, ['i','love','cricket'].
+    Stop Words Removal : In this grammatical words are removed.
+    Lammitization/Steaming : Suppose there are similar words like playing and gaming then it will fetch the root meaning of it, here play.
+    Feature Extraction/Embedding : Then the remaining text is converted into vector form (numbers).
+
+LSTM : It is advanced version of RNN and the main difference is in rnn the length of text stored. In rnn it can only store short sentences but in lstm it can store long sentences and paragraphs. While adding new data to the memory, it forgets the old data.
+
+GRU : In companies we do not use rnn and lstm, we use gru.
+]
+
+21/7/26
+RNN continue :
+    Activation Function : tanh = (wx*x1 + wh*h1 + b)
+    weight input wx: random
+    weight of hidden state wh : random 
+    memory h1=0 (initially memory will be 0)
+    vector input of first word x1=0.5, bias b=1
+    I : 
+        tanh = (0.7 * 0.5 + 0.6 * 0 + 1) = 1.35(new memory)
+    vector input of second word x1=0.8, bias b=1
+    Love : 
+        tanh = (0.6 * 0.8 + 0.5 * 1.35(past memory value) + 1) = 0.99(new memory)
+    e^x-e^x/e^x+e^x = 0.271
+
+    Task : share market - data - claude seq data - rnn
+           Eg dataset, adani - 100 101 102 105 108 111
+
+LSTM (Long Short Term Memory) :  
+    Input gate : The lstm takes word from the paragraph in this gate.
+    Output gate : Predicting the next word which might come after the current word is managed by this gate.
+    forgot gate : Suppose the words are virat delhi 36 in cell state , so it will forget 36(temperature) because it is not a constant data, it may change anytime while another are constant.
+    cell state : lstm memory
+    Eg, the text "i love cricket" comes, the words get stored in the cell state one by one after processing on it.
+    hidden state : The whole input is there in the hidden state.
+
+GRU (Gated Recurrent Units) : 
+    It only has update and reset gates and no other gate. GRU has less time complexity. GRU and LSTM both have same accuracy but the process is faster in GRU. It has a transformer which does all the 
+    Update Gate : GRU combine the input and forget gates into a single update gate helps in reducing the number of parameters and making the model less computationally demanding. This gate decides how much of the information from the past should be kept for future steps. It helps the GRU remember important details.
+    Reset Gate : This gate decides how much past information should be forgotten. If something is no longer relevant it forget that part.
+
+Transformers : 
+    Transformers process sequences differently by using a self-attention mechanism that analyzes the entire sequence at once. This allows them to handle long sequences efficiently and capture long-range dependencies without relying on sequential steps.
+    Their key advantage is the ability to process data in parallel helps in making them highly scalable and faster to train on large datasets. Some popular transformer models include GPT, BERT and T5 which helps in tasks like text generation, language understanding and machine translation.
+    
+RNN vs LSTM vs GRU vs TRANSFORMER : "https://www.geeksforgeeks.org/deep-learning/rnn-vs-lstm-vs-gru-vs-transformers/"
+
+27/7/26
+
+Authentication : It checks for a valid user.
+    Session Based : In this it verifies the email and password by sending an otp or send link to email like authentication which only remains active only for sometime.
+    Bearer Token Based : When pressed on login after entering email password it creates a token on server and client side and if token on both side gets verified then only login is possible.
+    JWT(json web token) : Used mostly in companies. It is same as Bearer Token Based, but there is only 1 difference. In Bearer Based the token is checked but the first seven characters are skipped and the other is checked but in JWT the whole token is checked.
+    multi factor authentication
+    oAuth 2.0 : In applications/websites if we get login with google/gmail then it is oAuth.
+
+Authorization : It gives role based access to the user.
+gpt : free/paid both get different Authorization.
+
+Langsmith : 
+
+    Langchain : Single agent, single task at a time
+    Langgraph : Single agent, multiple task at a time
+    Crew AI : Multiple agent
+
+    In tradition programming, we use exception handling if there is error in the code to rectify the part of code that has errors and also see log file to find errors on the server side.
+    This all same work is done by langsmith in our model.
+    Earlier the automation was done by us and it was called traditional automation using selenium/paywrite. This traditional automation is also used by n8n and after adding agent it becomes automated(automation) the sgent does nowadays.
+    The model does all the working like finding the problems, and solving it and also does the automation.
+    Eg, google form -> n8n form -> fill -> excel
+
+
+MCP (Model Context Protocol) : https://grok.com/share/c2hhcmQtMi1jb3B5_0ebe12d9-1168-4354-a444-9b0a4c4d7f6f
+    The main problem of ai models is that it cannot access third party apps and also cannot integrate it in itself. If want to do so we had to integrate code for that part (eg, login password accesss) with the original code and that was very slow process so MCP came into picture and solved this problems.
+    AI agent(claude) is the MCP client for the MCP server.
+    We set rules and regulations as to what the MCP server can access in a particular app (eg, if we give gmail access then we give permission only to read the unread messages) and this set of rules is called MCP protocol .
+    We set request and response in our mcp protocol.
+    MCP server is available as paid, open source(free+customization), freeware(free) and we can also create a custom mcp server in it.
+
+28/7/26
+
+This whole below part until next day content comes in NLP.
+Suppose there is a sentence "machine learning is a part of ai."
+So NLP will take maching learning part ai and remove grammer.
+Now in below grams the way of storing and combining data is different and its name reflects the way it stores.
+Sliding Window : 
+    Ngram : machine learning part ai
+    Unigram : [(machine),(learning),(part),(ai)]
+    Bigram : [(machine,learning),(learning,part),(part,ai),(ai)]
+    Trigram : consecutively 3 words...
+    Fourgram : consecutively 4 words...
+
+    Suppose there is bag of words method of storing words after removing grammer, it calculates the number of times a word comes.
+    Eg, machine learning part ai machine
+    [2,1,1,1]
+    But there is a problem here, the repeated words exact place cannot be identified.
+    Now as the repetition of words increases the weight of it also increases.
+
+The one hot encoding is another way of storing data and it is used and not the bag of words to solve the problem we have above.
+    In this method the words are converted to numbers in below way.
+    machine   learning  part      ai
+    [1,0,0,0] [0,1,0,0] [0,0,1,0] [0,0,0,1]
+    Now as we add one word here the all lists get updated
+    [1,0,0,0,1] [0,1,0,0,0] [0,0,1,0,0] [0,0,0,0,1] [1,0,0,0,1]
+    Now if there are 1000s of words then for each word the list will be like [1,999 times 0],[0,1,998 times 0], so there is again one problem here, the memory gets wasted here a lot as there are many 0 which play no role but eats up a lot of memory and this vector is called sparcial vector.
+
+To solve this error we use web2vec which is used nowadays.
+    Eg, machine learning part ai
+    In this it assigns weight to each word
+    [0.87,another random weights to all other words]
+    [random weights,0.76,random weights]
+    [random, random, 0.84, random] Now this ai and machine words will have weights near to each other as they both are related to each other more.
+    [random,random,random,o.78]
+
+29/7/26
+
+Nowadays no one uses these gru lstm rnn and all, instead they use transformers.
+BERT - does the encoding
+GPT - does the decoding
+
+BERT : Suppose there comes the sentence "i want to play box cricket."
+It takes a word and then picks all other words in all 4 directions of it.
+
+                     box
+                      |
+            want  -  play - cricket
+                      |
+                      i
+
+GPT : It does the predicting of how well does the centre word fit with all the surrounding words.
+
+Model : Suppose we make a model and integrate the gemini llm or any other model in it then it becomes costly to use as the bill gets generated as per the tokens and this bill comes very high and is not feasible to use. The working happens in this way : Suppose we ask a question to our model then it sends it to the integrated gemini llm and then it gives back the answer to the client side but in this the tokens are generated and things happen as seen before (the feasible thing).
+
+Rate Limit : Companies set a rate limit on the particular apis like the login api to control the cost, so for eg if the google has set the login api limit to 3 then if we try to do different login more than that then it will block for sometime and this is done by rate limit.
+Also the companies set the timer for a particular searched data like a mobile phone in flipkart and it gives a list of 50 (products related to it) and set it to suppose 5 minutes then the llm will not be asked to fetch the result of the same question again in this time window in case if any other user asks the same question, as in this time window this data will be saved temporarily and this same result will be given to other users.
+
+Caching : Suppose we have the model as defined above then in this suppose i ask a question to it then it will give me answer by generating a token, now if we ask that question again then the cost might increase to call the llm so instead what it does is the answer we got is stored in cache and then give the same answer again from the cache and not the llm which saves cost.
+
+Cost Optimization : As seen above that if the content is generated from the llm then it is saved in the cache so if the same type of question is asked again then we can give the same answer again which we stored in cache. 
+Eg, if we have a student guidance system, and in this we have categories of fields according to which the guidance is given, so the first time if a student asks for btech then the content of it is generated from the llm which we have integrated in our model and also pay token bills, so here after generating the answer that answer is given to the student and also saved in the cache so if in future the other students ask the same question we can give answer from the cache and there will be no need of llm in this cases which will save us costing tokens. This concept is called cost optimization.
+
+NGIX : It manages the load on the server/website. Suppose on a particular website the load limit is 2lakh on a particular port then ngix will divert the other users on different port.
+
+REMEMBER : Whenever we build a website and make it live on render or at any other place then it should always have this all above things namely rate limit, caching, cost optimization, NGIX.
+
+30/7/26
+
+Made the lstm model.
+
+31/7/26
+
+MCQ Test link for all topics : https://splendorous-pika-254be5.netlify.app/
+
+4/8/26
+
+AutoEncoder : Converts large scale data into small scale data.
+
+    Eg, suppose we have a 1000 pixel image, encoder converts in it into a 20 pixel compressed image in the form of vectors [0.78,0.87,0.86] and this vctor is called latent vector.
+    The decoder converts this latent vector into image and gives that to the user.
+    The space between encoder and decoder is called latent space.
+
+    Disadvantages : 
+        We need to give the image to do encoding.
+
+    Advantages : 
+        Image is compressed.
+        If the image is missing then it will automatically add the missing part.
+
+    Latent Vector z=f(x) : 
+
+    Input
+      |
+    Encoder
+      |
+    Latent Vector
+      |
+    Decoder
+      |
+    Output
+      |
+    Loss = mse
+      |
+    Backward Propogation 
+      |
+    Weight Update
+      |
+    Neural Network
+
+VAE (Variational Auto Encoder) (Alternate option of autoencoder) : We give it a number of images and based on that image it can generate a new image. 
