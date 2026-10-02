@@ -1,0 +1,4 @@
+Tokens: ['I', 'love', 'ordering', 'pizza', 'from', 'Zomato!']
+Enter a movie review: Sentiment: Positive
+Spam example 1: True
+Spam example 2: False

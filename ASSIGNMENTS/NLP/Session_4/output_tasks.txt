@@ -1,0 +1,17 @@
+Sample IPL tweet data (teaching data):
+                                       text source
+  RCB fans celebrate a thrilling final over sample
+Great innings and brilliant bowling tonight sample
+          Umpire decision changed the match sample
+              What a chase by the home team sample
+      Disappointed with the dropped catches sample
+          The captain handled pressure well sample
+    A close game that went to the last ball sample
+        The pitch helped the spinners today sample
+          Amazing atmosphere at the stadium sample
+  Rain interruption made the game difficult sample
+Naive Bayes accuracy: 0.4
+Logistic Regression accuracy: 0.4
+Message: Free voucher claim now => spam
+Message: Can we meet after class => not spam
+Message: Your package arrives tomorrow => not spam

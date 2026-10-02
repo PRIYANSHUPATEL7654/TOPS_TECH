@@ -1,0 +1,5 @@
+attention('Fresh food arrived' -> 'Fresh food arrived') = 0.393
+attention('Fresh food arrived' -> 'The order was late') = 0.258
+attention('Fresh food arrived' -> 'Great taste and service') = 0.348
+Weighted context vector: [[0.663, 0.441, 0.37]]
+Interpretation: larger weights mean the query assigns more influence to that key in this toy example.
