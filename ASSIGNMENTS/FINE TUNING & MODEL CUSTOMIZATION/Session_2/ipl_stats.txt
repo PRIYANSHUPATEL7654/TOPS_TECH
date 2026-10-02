@@ -1,0 +1,5 @@
+IPL sample statistics (illustrative teaching data; not a live score feed)
+2023 final: Chennai Super Kings defeated Gujarat Titans by 5 wickets.
+2024 final: Kolkata Knight Riders defeated Sunrisers Hyderabad by 8 wickets.
+2025 final: Royal Challengers Bengaluru won the title.
+Teams: Chennai Super Kings, Gujarat Titans, Kolkata Knight Riders, Royal Challengers Bengaluru, Sunrisers Hyderabad.

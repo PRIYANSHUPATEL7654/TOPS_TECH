@@ -1,0 +1,7 @@
+# Session 3 - LoRA, PEFT, and QLoRA
+
+PEFT trains a small set of adapter parameters while keeping the base model weights frozen. It can reduce trainable parameter count, optimizer memory, and storage for task-specific updates. It still needs representative data, evaluation, and enough compute for the base model's forward pass. For example, a WhatsApp-style intent classifier can use separate adapters for supported languages; a food-delivery platform can maintain a small adapter for its support taxonomy without storing a full copy of the base model per task.
+
+The scripts use a small DistilBERT sequence classifier and target attention projection layers (`q_lin`, `v_lin`) with LoRA. Parameter counts and adapter file size are measured at runtime; no unrun measurement is fabricated. The QLoRA-style example uses 4-bit bitsandbytes quantization if supported by the installed hardware/backend. It records peak process RAM and CUDA memory to a CSV; memory varies widely by GPU, OS, batch size, and package versions. A real Task Manager screenshot must come from the machine used for that run, so the script produces machine-specific evidence when executed.
+
+A quantized encoder classifier is a small pedagogical adaptation of QLoRA. QLoRA is most commonly associated with quantized large decoder language models; hardware/backend support for quantizing DistilBERT can vary. The script reports a clear error rather than silently pretending quantization occurred.
