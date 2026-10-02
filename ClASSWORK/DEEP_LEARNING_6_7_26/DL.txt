@@ -304,3 +304,40 @@ Made the lstm model.
 31/7/26
 
 MCQ Test link for all topics : https://splendorous-pika-254be5.netlify.app/
+
+4/8/26
+
+AutoEncoder : Converts large scale data into small scale data.
+
+    Eg, suppose we have a 1000 pixel image, encoder converts in it into a 20 pixel compressed image in the form of vectors [0.78,0.87,0.86] and this vctor is called latent vector.
+    The decoder converts this latent vector into image and gives that to the user.
+    The space between encoder and decoder is called latent space.
+
+    Disadvantages : 
+        We need to give the image to do encoding.
+
+    Advantages : 
+        Image is compressed.
+        If the image is missing then it will automatically add the missing part.
+
+    Latent Vector z=f(x) : 
+
+    Input
+      |
+    Encoder
+      |
+    Latent Vector
+      |
+    Decoder
+      |
+    Output
+      |
+    Loss = mse
+      |
+    Backward Propogation 
+      |
+    Weight Update
+      |
+    Neural Network
+
+VAE (Variational Auto Encoder) (Alternate option of autoencoder) : We give it a number of images and based on that image it can generate a new image. 

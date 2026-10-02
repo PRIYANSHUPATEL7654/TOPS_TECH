@@ -1,0 +1,193 @@
+5/8/26
+
+Agentic AI : It can perform end to end tasks and can generate it as per need. 
+Chatbot - Agentic AI chatbot
+static - dynamic
+no memory - memory
+goal - goal
+no thinking - thinking
+single task (sync) - async : in sync only a single process can execute at a time so it is slow while in async multiple processes can be executed at a time using threading and it is fast.
+
+Suppose there are 3 processes p1, p2 and p3 which will be executed in 8,6 and 1 sec resp. Now if there is async then it will execute all 3 in 8 seconds only while sync takes 15 seconds total time.
+
+1. kafka/redis : If there comes multipe tasks on one api port and there is a load in doing it and cannot do it then there comes kafka. It just takes what the jobs are and then gives appropriate apis the work it needs them to do which reduces load on only one server.
+
+2. MultiThreading : In this we use keywords async and await before function name to make that function async and this function will run async without waiting for any other function to complete its process and await means if there is a process to be run before then we will use await in this so this process will run before anything else.
+    We can also make subprocesses in a process and we only need to call the main process and all subprocesses will run sequentially. So there is a seq of execution within a process.
+
+3. Life Cycle of a thread : Phases of this life cycle are as below.
+    1) Born phase / New phase : In this phase we make the process async from sync.
+    2) Runnable phase / ready : In a process whatever tasks are there will be made ready here for getting executed in next phase. 
+    3) Running phase : The tasks in the process are executed here. These tasks are the prompts given by the user.
+    4) Wait / block : If the user gives a new task while the first one is executing then that task will enter the running phase and this first incompleted task will enter in this wait phase. And if now user asks for that first task then that task will get into running phase and the other task will come into wait phase.
+    5) Destroy : The task will get destroyed if a particular task is completed.
+
+To see all these things manually and do monitoring and debugging then we use langsmith for that.
+
+10/8/26
+
+Langchain : 
+
+    Prompt Template : If I want to make a model which gives language, capital and population of the country user enters, then that things are brought fom llm by langchain and this specific answers set (here 3 things of a country) is known as prompt template. Even if there are another data for this countries then also it will only give this 3 fields because of prompt template.
+    Api works on single server and database. Micro Service runs on multiple apis.
+    Flow : Frontend - api (fastapi) - langchain - llm - langchain - api - frontend
+
+11/8/26
+
+Langchain Lifecycle :
+
+12/8/26
+
+Creating api in mockapi website and langchain will fetch data from that api and api will be live.
+
+Steps to make api :
+    Open mockapi and click new project and give it a name with prefix such as /api/v1
+    Then click on new resource and add fields with their datatypes as per need.
+    Now that api will be created.
+    Open it and copy its url. This url will be our api which we will be using in our project.
+    Right now it does not have any data so give claude the task to give the data and add that data in it.
+    Note the data should be json.
+    Our electronicsapi : https://6a7d92cbf8b2ed99ca4e8036.mockapi.io/api/v1/electronicsapi
+
+17/8/26
+
+Conversation Memory :
+The Conversation can be stored in 3 different ways :
+    local - stored in temporary list - forgot - APIlangchain2.ipynb
+    redis - temporary stores the chat using session id and then logout
+    db - permanently store data
+
+18/8/26
+
+Redis (Remote Disc Server) : APIlangchain3.ipynb
+    %pip install -U langchain-redis
+    %pip install -U langchain-core
+    Install both of the above to save the chatbot conversation in redis.
+    https://chatgpt.com/share/6a843e98-ffb8-83ee-8c6d-d0b7cf46c449 - See this if the redis is not working (if it gives connection error).
+
+19/8/26
+
+Mysql Database : APIlangchain4.ipynb
+
+20/8/26
+
+MCP Server in between tools and langchain model : Here the tools we make will be in mcp server and not langchain which will benefit in the way tools are accessed. Before the langchain had access to all the tools but now it will only access the tools it needs.
+Like fastapi is for making api, fastmcp is for making mcp servers.
+
+21/8/26
+
+After writing the full code in mcp_server.py file, open terminal and run mcp_server.py using command (mcp dev mcp_server.py)
+After that the browser will open and there set below things instead of the default ones given:
+Command : C:\Users\Priyanshu\AppData\Roaming\Python\Python313\Scripts\mcp.exe
+Arguments: run mcp_server.py
+This will connect the mcp server to the database.
+
+25/8/26
+
+LANGGRAPH
+
+Langchain               vs              Langgraph 
+tool based                              node based
+agent work flow off                     agent work flow on 
+                                        stategraph, typeddict, node, edge, state 
+                                        stategraph : state means data and its graph
+                                        typeddict : python dictionary key and value
+tool : function as a tool               node : function as a node 
+                                        edge : it connects 2 nodes
+In this it just executes everything     in this it first sees if it is executable or not, if not then it stops it otherwise continues it
+
+31/8/26
+
+add node to Function
+stategraph
+object.addnode ("optional name",function name)
+add_edges (start,nodename)
+          (nodename,end)
+compile
+invoke
+
+1/9/26
+
+gate : it means we set the number of words to be given back by llm in response and it breaks if the desired output is not of the same length. 
+Loop : it means in gate when the desired output does not come it will retry and not break.
+
+Project task : 
+Chatbot - frontend - live
+product - koe pr - answer
+api - mockapi
+python rest api - product
+order
+user chatbot - product - fetch
+admin panel - add product - api - electronics - 50
+render
+python - restapi - test with postman - admin panel integration
+After whole project works do with mcp server
+
+7/9/26
+
+Langchain is used when we want data in sequence and langgraph is used when we want conditional data.
+We are now implementing rag in our langgraph.
+RAG : It is a system/application used for static data such as company policy which cannot be put on cloud. After applying this we can just ask what the company policy is to the chatbot without actually calling the policy from the cloud.
+    - Step 1 : The pdf is loaded in the chatbot.
+    - Step 2 : Suppose the pdf is of 10 pages then it is divided into chunks.
+    ... Explanation of steps : https://chatgpt.com/share/6a9fe027-0e58-83ee-8e2c-36c845504fe6
+
+8/9/26
+
+Task : 3 pdf - rag - answer - it should tell about the content whether it is in pdf 1 or 2 or 3 and gives appropriate answer of the question.
+
+CREW AI (Combination of Multiple agents):
+    Langchain/langgraph : Single agent
+    In crew ai 1 agent is for calling api and another for db
+
+    Two types of work flow for making crew ai agent : 
+        1 - sequential work flow (like n8n)
+            agents for every task like customer registration, rest api data fetch, order, payment and all the agents works one by one in a sequential way
+            best for business work flows.
+
+        2 - hierarchical work flow 
+            manager/front agent manages the work flow of every agent so all the agents for every task + 1 agent for managing this all agents.
+            Input goes to front agent and then the agent decides which agent will do the task according to context of the input and all other agents are not allowed to do work
+            best for chatbots
+            Condition 1 : If the prompt contains cheapest hotel list, last payment, last order then this prompt first goes to front agent and then front agent decides which agents needs to be called and given work and then these agents executes multiple agents simultaneously and then the answer to all the questions are given together.
+
+Important terms in crew ai :
+Kickoff : This is the position from where the agent starts work.
+Orchestration Architecture : In this architecture, it defines the front agent. In other words it defines the work flow of crew ai.
+Delegation : It means work to be assigned by one to another.
+Backstory : In prompts we give backstory (Eg, You are my payment agent) to the agents.
+
+In sequential workflow we declare agents.
+
+Trigger : As seen in sql when a task is done it triggers something and it is after trigger, and the other one is before trigger in which when a task is about to start it triggers something.
+Await : Any process does not have to wait for any process to complete to execute itself.
+Async : All the processes are asynchronised.
+
+17/9/26
+
+In traditional workflows if there is any change in the code then the existing code stops and we need to implement the new changes to final environment to continue.
+Langchain - It a framework which has a collection of multiple libraries.
+
+1. Anonymous Agent : In this the work done by agent has 0 involvement of humans.
+2. Re-act : It means reasoning + action. It will reason it and act according to it.
+3. Hallucination : In some scenarios, the agent passes the false information. It will not fail to answer in any condition.
+4. Human-in-loop : For a certain task if the chatbot asks for user permission like to download something and then after human gives permission to download it, it downloads it then this is called human in loop as the bot asks for permission for any task unlike in anonymous agent in which it performs all tasks by itself without any permission of human and it may lead to hallucination.
+
+18/9/26
+
+integration of langsmith in the practical.
+
+26 sept saturday = DL 
+3rd oct Sat = Agentic AI 
+1 Oct to 8 Oct = No lec only mock.
+300 ques.
+
+21/9/26
+
+friday - sql mock
+Normalization
+acid property
+sql query architecture - user query - parser - optimizer - execute engine(innodb,myisam) - storage engine - output
+object relational mapping(rdbms)/object document mapping(no sql mongodb) architecture - 
+join,view,procedure,trigger,window function, cte
+monday - python mock 

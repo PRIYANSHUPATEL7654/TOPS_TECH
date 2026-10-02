@@ -1,3 +1,4 @@
+
 sql :   request in frontend ---------------- response ---------------- server
 orm :   request - object ---------------- orm -------------------- server
 
@@ -11,11 +12,11 @@ request sent to 1, orm will start session of current request in 2
 
 caching : stores temp data such as login credentials and when user requests login it does not go to server , orm checks the data itself so the server does not get busy
 
-View : creating a virtual table of an existing table(the data in the virtual table maybe less than or equal to the original table
+View : creating a virtual table of an existing table(the data in the virtual table maybe less than or equal to the original table)
 should not do insert, update, delete as the new data will also be reflected in the original table, if we insert new data in the original table then it will also be reflected in the original table
 
 ACID PROPERTIES
-A - Atomicity : Either the operation is done fully, or it is completelty destroyed. When it is completed it is called commit and if destroyed then it is called rollback
+A - Atomicity : Either the operation is done fully, or it is completely destroyed. When it is completed it is called commit and if destroyed then it is called rollback
 C - Consistency : After inserting, updating, deleting data (transaction) the table structure should not change
 I - Isolation : All transactions must happen independently (at the same time)
 D - Durability : If there is a crash in database or server ,all the transactions before the time of crash should be saved(backup) and it should not get lost

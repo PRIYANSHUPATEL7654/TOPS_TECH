@@ -1,0 +1,31 @@
+22/9/26
+
+NLP : In NLP it understands the human language and then process it, sentiments  it and then generate based on that.
+Pipeline : 
+    Text : Text got from human.
+    Text Preprocessing : All the special characters, extra space are removed in this.
+    Tokenization : Sentence converted into tokens. Eg, [i] [am]....
+    Stop Word Removal : Unnecesaary words are removed in this like the grammatical words.
+    Lemmitization/Steaming : In steaming, it forcefully removes the last 2-3 letters from the word. Here it is done to get the root word eg, learning -> learn but here in some words it might not work properly eg, learnings-> learni, which makes no sense so this problem is solved by lemmitization where it uses its dictionary to get the root word instead of removing fixed number of letters.
+    Feature Extraction : Converting texts into numbers using word2vac, fasttext.
+    Ai branch selection (DL/ML)
+    Result
+
+23/9/26
+
+Sentence : I love python 
+1 unigram : I 
+            Love
+            python
+2 bigram : I love 
+           Love python
+3 trigram : I love python
+
+TF : Term Frequency
+IDF : Inverse Document Frequency 
+TF - IDF decides importance of a word in a sentence.
+
+25th friday - sql mock
+26th saturday - dl mock
+28th monday - python mock
+30th wednesday - agentic ai mock
