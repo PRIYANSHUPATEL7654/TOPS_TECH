@@ -1,0 +1,30 @@
+== insta_caption_generator.py ==
+Title             : Welcome to Insta Caption Generator!
+Input label       : Describe your photo | Button label: Generate Caption
+
+Input  : Sunset at Sabarmati Riverfront with friends
+Your Description: **Your Description:** Sunset at Sabarmati Riverfront with friends
+Caption: Caught in the good light 🌅 #sunset #sabarmati
+
+Input  : Chai and rain on a Monday
+Your Description: **Your Description:** Chai and rain on a Monday
+Caption: Living for moments like this ✨ #chai #rain
+
+Input  : My first IPL match at Narendra Modi Stadium
+Your Description: **Your Description:** My first IPL match at Narendra Modi Stadium
+Caption: Caught in the good light 🌅 #first
+
+Input  : Garba night outfit
+Your Description: **Your Description:** Garba night outfit
+Caption: Living for moments like this ✨ #garba #night #outfit
+
+Chat bubbles shown (last 3 exchanges = 6 bubbles): 6 ['user', 'assistant', 'user', 'assistant', 'user', 'assistant']
+
+== pdf_chatbot.py extraction ==
+Ahmedabad College of Engineering - Class Timetable (Sem 5)
+Monday    09:00-10:00  Machine Learning       Room 204
+Tuesday   10:00-11:00  Generative AI          Lab 3
+Wednesday 11:00-12:00  Data Structures       Room 101
+Thursday  09:00-11:00  Python Lab             Lab 1
+Friday    14:00-15:00  Transformers & LLMs    Room 204
+

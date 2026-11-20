@@ -1,0 +1,9 @@
+--- Task 3 ---
+[offline demo] Best Cafes in Ahmedabad - a quick guide. Looking for the best spots? Start with local favourites, check recent reviews and go at off-peak hours.
+
+--- Task 5 (improved) ---
+[offline demo]
+# Best Cafes in Ahmedabad: A Student's Guide
+Hook: Your next favourite spot is closer than you think!
+Tip 1: Try places with student discounts. Tip 2: Go on weekdays. Tip 3: Ask locals.
+Where will you go first? Tell us in the comments!
